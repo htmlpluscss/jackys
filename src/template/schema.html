@@ -1,0 +1,51 @@
+	<script type="application/ld+json">
+
+		[
+
+			{
+				"@context": "https://schema.org",
+				"@type": "Organization",
+				"name": "The Platinental",
+				"url": "{{ url }}",
+				"logo": "{{ url }}og.png",
+				"email": "info@platinental.ru",
+				"address": {
+					"@type": "PostalAddress",
+					"hoursAvailable": "Ежедневно 10:00—21:00",
+					"telephone": "+7 (495) 989 21 16",
+					"addressCountry": "Россия",
+					"postalCode": "105062",
+					"addressLocality": "Москва",
+					"streetAddress": "Лялин переулок, дом 21, стр. 2"
+				}
+			},
+
+			{
+				"@context": "https://schema.org",
+				"@type": "BreadcrumbList",
+				"itemListElement":
+				[
+					{
+						"@type": "ListItem",
+						"position": "1",
+						"item":
+						{
+							"@id": "{{ url }}",
+							"name": "The Platinental"
+						}
+					},
+					{
+						"@type": "ListItem",
+						"position": "2",
+						"item":
+						{
+							"@id": "{{ url }}{{ folder }}/",
+							"name": "{{ title }}"
+						}
+					}
+				]
+			}
+
+		]
+
+	</script>

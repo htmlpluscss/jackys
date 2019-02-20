@@ -1,0 +1,51 @@
+.social {
+
+	display: flex;
+	justify-content: center;
+
+	&__item {
+
+		margin: 0 12px;
+
+		@media ($smWidth) {
+
+			margin: 0 15px;
+
+		}
+
+	}
+
+	&__link {
+
+		display: block;
+		width: 24px;
+		height: 24px;
+		border-radius: 50%;
+		color: transparent;
+		font-size: 0;
+		fill: var(--bg);
+		background-color: var(--medium-light);
+
+		@media ($smWidth) {
+
+			width: 20px;
+			height: 20px;
+
+			svg {
+
+				width: 20px;
+				height: 20px;
+
+			}
+
+		}
+
+		&:hover {
+
+			background-color: var(--color);
+
+		}
+
+	}
+
+}
