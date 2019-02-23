@@ -27,7 +27,7 @@
 		bottom: 0;
 		content: '';
 		z-index: 2;
-		background-image: linear-gradient(to right, color(var(--bg) a(100%)), color(var(--bg) a(0%)));
+		background-image: linear-gradient(to right, color(#000 a(100%)), color(#000 a(0%)));
 
 		@media ($mdWidth) {
 
@@ -99,13 +99,13 @@
 	top: 245px;
 	width: 24px;
 	height: 24px;
-	background-color: var(--color);
-	fill: var(--bg);
+	background-color: #000;
+	fill: #000;
 	z-index: 2;
 	&:hover {
-		background-color: var(--bg);
-		fill: var(--color);
-		box-shadow: inset 0 0 0 1px var(--color);
+		background-color: #000;
+		fill: #000;
+		box-shadow: inset 0 0 0 1px #000;
 	}
 	@media ($mdWidth) {
 		top: 208px;
@@ -140,7 +140,7 @@
 	height: 5px;
 	opacity: 0.2;
 	margin: 0 6px;
-	background-color: var(--color);
+	background-color: #000;
 	&-active {
 		opacity: 1;
 	}

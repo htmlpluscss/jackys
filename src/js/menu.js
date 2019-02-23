@@ -3,24 +3,24 @@
 
 	btn.addEventListener('click', function () {
 
-		if(PLATINENTAL.OpenMenu) {
+		if(JACKYS.OpenMenu) {
 
-			PLATINENTAL.body.classList.remove('menu-show');
+			JACKYS.body.classList.remove('menu-show');
 
-			window.scrollTo(0,PLATINENTAL.windowScrollOld);
+			window.scrollTo(0,JACKYS.windowScrollOld);
 
-			PLATINENTAL.OpenMenu = false;
+			JACKYS.OpenMenu = false;
 
 		}
 		else {
 
-			PLATINENTAL.OpenMenu = true;
+			JACKYS.OpenMenu = true;
 
 			// записываем значение скролла страницы
-			PLATINENTAL.windowScrollOld = window.pageYOffset;
+			JACKYS.windowScrollOld = window.pageYOffset;
 			window.scrollTo(0,0);
 
-			PLATINENTAL.body.classList.add('menu-show');
+			JACKYS.body.classList.add('menu-show');
 
 		}
 

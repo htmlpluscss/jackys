@@ -1,4 +1,4 @@
-PLATINENTAL.accordion = function(elems){
+JACKYS.accordion = function(elems){
 
 	Array.prototype.forEach.call(elems, function(elem){
 
@@ -38,9 +38,9 @@ PLATINENTAL.accordion = function(elems){
 
 			});
 
-			body.addEventListener(PLATINENTAL.cssAnimation('transition'),function(){
+			body.addEventListener(JACKYS.cssAnimation('transition'),function(){
 
-				if(!PLATINENTAL.isInViewport(active.querySelector('.accordion__head'))){
+				if(!JACKYS.isInViewport(active.querySelector('.accordion__head'))){
 
 					animateScroll(active, 500, 'linear');
 
@@ -57,6 +57,6 @@ PLATINENTAL.accordion = function(elems){
 
 if(document.querySelectorAll('.accordion').length) {
 
-	PLATINENTAL.accordion(document.querySelectorAll('.accordion'));
+	JACKYS.accordion(document.querySelectorAll('.accordion'));
 
 }

@@ -11,13 +11,13 @@
 
 			link.addEventListener('click', function (e) {
 
-				if(PLATINENTAL.OpenMenu) {
+				if(JACKYS.OpenMenu) {
 
 					document.body.classList.remove('menu-show');
 
-					window.scrollTo(0,PLATINENTAL.windowScrollOld);
+					window.scrollTo(0,JACKYS.windowScrollOld);
 
-					PLATINENTAL.OpenMenu = false;
+					JACKYS.OpenMenu = false;
 
 				}
 				else {

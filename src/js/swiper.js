@@ -43,12 +43,12 @@
 			swipeNext.classList.add('hide');
 			swipePrev.classList.add('hide');
 
-			if (PLATINENTAL.width < 768) {
+			if (JACKYS.width < 768) {
 
 				swipeNav.classList.remove('hide');
 
 			}
-			else if (PLATINENTAL.width < 1200) {
+			else if (JACKYS.width < 1200) {
 
 				swipeNext.classList.remove('hide');
 				swipePrev.classList.remove('hide');
@@ -65,7 +65,7 @@
 
 				resetSwipe();
 
-				if (PLATINENTAL.width < 768) {
+				if (JACKYS.width < 768) {
 
 					mySwipe = new Swiper(swipe, {
 						loop: true,
@@ -76,7 +76,7 @@
 					});
 
 				}
-				else if (PLATINENTAL.width < 1200) {
+				else if (JACKYS.width < 1200) {
 
 					mySwipe = new Swiper(swipe, {
 						loop: true,
@@ -120,9 +120,9 @@
 
 						resizeTimeout = null;
 
-						if(PLATINENTAL.width != windowWidthOLd){
+						if(JACKYS.width != windowWidthOLd){
 
-							windowWidthOLd = PLATINENTAL.width;
+							windowWidthOLd = JACKYS.width;
 
 							toggleSwipe();
 

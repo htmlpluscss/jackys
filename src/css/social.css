@@ -7,12 +7,6 @@
 
 		margin: 0 12px;
 
-		@media ($smWidth) {
-
-			margin: 0 15px;
-
-		}
-
 	}
 
 	&__link {
@@ -23,26 +17,11 @@
 		border-radius: 50%;
 		color: transparent;
 		font-size: 0;
-		fill: var(--bg);
-		background-color: var(--medium-light);
-
-		@media ($smWidth) {
-
-			width: 20px;
-			height: 20px;
-
-			svg {
-
-				width: 20px;
-				height: 20px;
-
-			}
-
-		}
+		fill: #fff;
 
 		&:hover {
 
-			background-color: var(--color);
+			fill: var(--blue);
 
 		}
 

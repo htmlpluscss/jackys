@@ -6,14 +6,15 @@
 
 }
 
-.dev0 {
+body {
 
 	background-image: url(/css/main.png);
-	background-position: center -284px;
+	background-position: center 0;
 
 	* {
 
 		color: red !important;
+		background-color: transparent !important;
 
 	}
 
@@ -37,6 +38,7 @@ body {
 	-ms-overflow-style: scrollbar;
 	overflow-y: scroll;
 	display: flex;
+	letter-spacing: 1.3px;
 	flex-direction: column;
 
 	/* IE10+ CSS styles go here */
@@ -104,6 +106,10 @@ li {
 }
 
 .h3 {
+
+	font-size: 16px;
+	line-height: 30px;
+	font-weight: 400;
 
 }
 

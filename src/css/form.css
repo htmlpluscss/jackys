@@ -7,6 +7,8 @@
 	background-color: transparent;
 	cursor: pointer;
 	user-select: none;
+	font-size: 0;
+	color: transparent;
 
 	&:focus {
 
@@ -17,13 +19,6 @@
 	&[disabled] {
 
 		cursor: default;
-
-	}
-
-	/* IE10+ CSS styles go here */
-	@media (-ms-high-contrast: none), (-ms-high-contrast: active) {
-
-		overflow: visible;
 
 	}
 
@@ -45,82 +40,13 @@
 	letter-spacing: 0.5px;
 	text-align: center;
 	text-transform: uppercase;
-	color: var(--color);
-	box-shadow: inset 0 0 0 1px var(--light);
 
 	&:hover {
 
 		color: #fff;
-		background-color: var(--color);
+		background-color: #000;
 		box-shadow: none;
 		transition: .15s ease;
-
-	}
-
-	@media ($smWidth) {
-
-		padding: 0 9px;
-		height: 30px;
-		line-height: 30px;
-		font-size: 11px;
-		letter-spacing: 0.6px;
-
-	}
-
-	&--big {
-
-		padding: 0 34px;
-		height: 60px;
-		line-height: 60px;
-
-		@media ($mdWidth) {
-
-			padding: 0 24px;
-			height: 48px;
-			line-height: 48px;
-
-		}
-
-		@media ($smWidth) {
-
-			padding: 0 20px;
-			height: 40px;
-			line-height: 40px;
-			font-size: 12px;
-			letter-spacing: 0.5px;
-
-		}
-
-	}
-
-	&--black {
-
-		color: #fff;
-		background-color: var(--color);
-		box-shadow: none;
-
-		&:hover {
-
-			color: var(--color);
-			background-color: transparent;
-			box-shadow: inset 0 0 0 1px var(--color);
-
-		}
-
-	}
-
-	&--white {
-
-		background-color: #fff;
-		box-shadow: none;
-
-		&:hover {
-
-			color: #fff;
-			background-color: transparent;
-			box-shadow: inset 0 0 0 1px #fff;
-
-		}
 
 	}
 
@@ -143,30 +69,22 @@
 	line-height: 24px;
 	font-weight: 400;
 	color: #fff;
-	border-bottom: 1px solid var(--light);
+	border-bottom: 1px solid #000;
 	background-color: transparent;
 
-/*	textarea& {
+	textarea& {
 
-		resize: none !important;
+		resize: none;
 		min-height: 109px;
-		overflow: hidden !important;
+		overflow: hidden;
 		padding: 6px 0;
 		border: 0;
-		border-top: 1px solid var(--light);
-
-		@media ($smWidth) {
-
-			min-height: 93px;
-			padding: 4px 0;
-
-		}
 
 	}
-*/
+
 	&::placeholder {
 
-		color: var(--medium);
+		color: #000;
 		opacity: 1;
 
 	}
@@ -186,7 +104,7 @@
 
 	&:-webkit-autofill {
 
-		box-shadow: inset 0 0 0 100px var(--bg);
+		box-shadow: inset 0 0 0 100px #fff;
 
 	}
 
@@ -199,43 +117,7 @@
 
 	&--error {
 
-		border-bottom-color: var(--red);
-
-	}
-
-	&-box {
-
-		position: relative;
-
-		&--error::after {
-
-			position: absolute;
-			top: 100%;
-			left: 0;
-			right: 0;
-			content: attr(data-error);
-			font-size: 12px;
-			line-height: 1.5;
-			text-align: center;
-			color: var(--red);
-			padding: 8px;
-
-			@media ($smWidth) {
-
-				position: relative;
-				display: block;
-				padding: 0;
-				top: -10px;
-
-			}
-
-		}
-
-	}
-
-	@media ($smWidth) {
-
-		height: 32px;
+		border-bottom-color: red;
 
 	}
 
@@ -247,29 +129,10 @@
 	position: relative;
 	cursor: pointer;
 	padding-left: 24px;
-	color: var(--medium);
-
-	@media ($smWidth) {
-
-		font-size: 12px;
-		line-height: 15px;
-		padding-top: 2px;
-
-	}
 
 	&--error {
 
-		color: var(--red);
-
-	}
-
-	&__input {
-
-		position: absolute;
-		top: 0;
-		left: 0;
-		opacity: 0;
-		z-index: -1;
+		color: red;
 
 	}
 
@@ -286,7 +149,7 @@
 			left: 0;
 			content: '';
 			opacity: .9;
-			border: 1px solid var(--medium);
+			border: 1px solid #000;
 
 		}
 
@@ -318,13 +181,13 @@
 
 	&__input:checked + &__label::after {
 
-		background-color: var(--bg);
+		background-color: #fff;
 
 	}
 
 	&__input:focus + &__label {
 
-		outline: 1px dotted var(--bg);
+		outline: 1px dotted #fff;
 
 	}
 
@@ -345,76 +208,5 @@
 .form {
 
 	position: relative;
-	overflow: hidden;
-
-
-	&__text-ok {
-
-		background-color: var(--color);
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		transition: .3s;
-		transform: translate3d(0,-100%,0);
-
-		.center {
-
-			max-width: 700px;
-
-		}
-
-	}
-
-	&--submit .center {
-
-		pointer-events: none;
-
-	}
-
-	&--submit &__text-ok {
-
-		transform: translate3d(0,0,0);
-
-	}
-
-	&__btn-reset {
-
-		position: absolute;
-		bottom: 56px;
-		right: 0;
-		left: 0;
-		margin: auto;
-		width: 50px;
-		height: 50px;
-		font-size: 0;
-		color: transparent;
-		background-color: transparent;
-
-		&::after,
-		&::before {
-
-			width: 2px;
-			height: 25px;
-			transform: rotate(45deg);
-			background-color: #797979;
-			position: absolute;
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			margin: auto;
-			content: '';
-
-		}
-
-		&::before {
-
-			transform: rotate(-45deg);
-
-		}
-
-	}
 
 }

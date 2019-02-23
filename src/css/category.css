@@ -1,0 +1,45 @@
+.category {
+
+	background-color: #b7b7b7;
+	border-top: 1px solid #000;
+	border-bottom: 1px solid #a7a7a7;
+
+	&__list {
+
+		display: flex;
+		justify-content: center;
+		padding: 36px 0 39px 50px;
+
+	}
+
+	&__item {
+
+		width: 442px;
+		display: flex;
+
+	}
+
+	&__link {
+
+		text-transform: uppercase;
+		white-space: nowrap;
+
+	}
+
+	figure {
+
+		display: flex;
+		align-items: center;
+
+	}
+
+	&__img {
+
+		display: block;
+		border-radius: 50%;
+		border: 1px solid #fff;
+		margin-right: 40px;
+
+	}
+
+}

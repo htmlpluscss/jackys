@@ -11,7 +11,7 @@
 
 		el.addEventListener('click', function () {
 
-			PLATINENTAL.closeModal();
+			JACKYS.closeModal();
 
 		});
 
@@ -21,7 +21,7 @@
 
 		if(e.target.classList.contains('modal')) {
 
-			PLATINENTAL.closeModal();
+			JACKYS.closeModal();
 
 		}
 
@@ -29,13 +29,13 @@
 
 	Array.prototype.forEach.call(items, function(el){
 
-		el.addEventListener(PLATINENTAL.cssAnimation('transition'),function(){
+		el.addEventListener(JACKYS.cssAnimation('transition'),function(){
 
-			if(PLATINENTAL.activeModal && !PLATINENTAL.activeModal.classList.contains('modal__item--active')){
+			if(JACKYS.activeModal && !JACKYS.activeModal.classList.contains('modal__item--active')){
 
-				PLATINENTAL.body.classList.remove('modal-show');
+				JACKYS.body.classList.remove('modal-show');
 				wrapper.style.top = 0;
-				window.scrollTo(0,PLATINENTAL.windowScrollOld);
+				window.scrollTo(0,JACKYS.windowScrollOld);
 
 			}
 
@@ -43,12 +43,12 @@
 
 	});
 
-	PLATINENTAL.closeModal = function() {
+	JACKYS.closeModal = function() {
 
-		PLATINENTAL.activeModal.classList.remove('modal__item--active');
+		JACKYS.activeModal.classList.remove('modal__item--active');
 
 		// clear video
-		if(PLATINENTAL.activeModal.classList.contains('modal__item--video')){
+		if(JACKYS.activeModal.classList.contains('modal__item--video')){
 
 			if (typeof yaCounter52326247 != 'undefined') {
 
@@ -63,7 +63,7 @@
 
 	};
 
-	PLATINENTAL.modalShow = function (selector) {
+	JACKYS.modalShow = function (selector) {
 
 		if(selector == 'video' && typeof yaCounter52326247 != 'undefined') {
 
@@ -72,22 +72,22 @@
 
 		}
 
-		PLATINENTAL.activeModal = modal.querySelector('.modal__item--' + selector);
+		JACKYS.activeModal = modal.querySelector('.modal__item--' + selector);
 
 		Array.prototype.forEach.call(items, function(el){
 
-			el.classList.toggle('modal__item--active', PLATINENTAL.activeModal == el);
+			el.classList.toggle('modal__item--active', JACKYS.activeModal == el);
 
 		});
 
-		PLATINENTAL.windowScrollOld = window.pageYOffset;
+		JACKYS.windowScrollOld = window.pageYOffset;
 
-		wrapper.style.top = -PLATINENTAL.windowScrollOld + 'px';
+		wrapper.style.top = -JACKYS.windowScrollOld + 'px';
 
-		PLATINENTAL.body.classList.add('modal-show');
+		JACKYS.body.classList.add('modal-show');
 		window.scrollTo(0,0);
 
-		PLATINENTAL.activeModal.focus();
+		JACKYS.activeModal.focus();
 
 
 	}
@@ -115,7 +115,7 @@
 
 			if (target.hasAttribute('data-modal')) {
 
-				PLATINENTAL.modalShow(target.getAttribute('data-modal'));
+				JACKYS.modalShow(target.getAttribute('data-modal'));
 
 				// modal Photo
 

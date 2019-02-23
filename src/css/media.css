@@ -1,18 +1,25 @@
 .visible-md,
 .visible-sm,
 .visible-xs {
+
 	display: none;
+
 }
+
 .visible-lg {
+
 	display: block;
+
 }
 
 
 .center {
+
 	margin: 0 auto;
-	width: 1080px;
+	width: 980px;
 	max-width: 100%;
 	position: relative;
+
 }
 
 @media ($desktop) {
@@ -29,30 +36,20 @@
 @media ($mdWidth) {
 
 	.hidden-md {
+
 		display: none !important;
+
 	}
 
 	.visible-md {
 
 		display: block;
 
-		span& {
-
-			display: inline;
-
-		}
-
 	}
 
 	.center {
-		width: 768px;
-		padding-left: 48px;
-		padding-right: 48px;
-	}
 
-	.br-md {
-
-		display: block;
+		width: 750px;
 
 	}
 
@@ -61,26 +58,20 @@
 @media ($smWidth) {
 
 	.hidden-sm {
+
 		display: none !important;
+
 	}
+
 	.visible-sm {
+
 		display: block;
+
 	}
+
 	.center {
+
 		width: 100%;
-		padding-left: 20px;
-		padding-right: 20px;
-	}
-
-	.br-md {
-
-		display: none;
-
-	}
-
-	.br-sm {
-
-		display: block;
 
 	}
 
@@ -89,19 +80,12 @@
 @media ($xsWidth) {
 
 	.hidden-xs {
+
 		display: none !important;
+
 	}
+
 	.visible-xs {
-		display: block;
-	}
-
-	.br-sm {
-
-		display: none;
-
-	}
-
-	.br-xs {
 
 		display: block;
 
