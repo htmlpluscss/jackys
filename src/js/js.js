@@ -40,6 +40,15 @@ var JACKYS = {};
 
 	});
 
+
+// footer__up
+
+	document.querySelector('.footer__up').addEventListener("click", function(){
+
+		animateScroll(JACKYS.body, 1000, 'linear');
+
+	});
+
 	// обработчик анимаций
 	JACKYS.cssAnimation = function(a){var b,c,d=document.createElement("cssanimation");switch(a){case'animation':b={"animation":"animationend","OAnimation":"oAnimationEnd","MozAnimation":"animationend","WebkitAnimation":"webkitAnimationEnd"};break;case'transition':b={"transition":"transitionend","OTransition":"oTransitionEnd","MozTransition":"transitionend","WebkitTransition":"webkitTransitionEnd"}}for(c in b)if(d.style[c]!==undefined)return b[c]}
 

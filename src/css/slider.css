@@ -1,7 +1,72 @@
 .slider {
 
-    position: relative;
-    height: 412px;
-    background-color: #000;
+	position: relative;
+	background-color: #000;
+	background-color: #7f7f7f;
+
+	text-align: center;
+	color: #fff;
+
+	&__item {
+
+		height: 412px;
+		position: relative;
+		display: flex;
+		align-items: center;
+
+	}
+
+	&__img {
+
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		overflow: hidden;
+
+		img {
+
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			object-fit: contain;
+
+		}
+
+	}
+
+	&__title {
+
+		font-size: 48px;
+		line-height: 56px;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 5px;
+
+		&::after {
+
+			width: 154px;
+			height: 1px;
+			display: block;
+			margin: 32px auto;
+			background-color: #fff;
+			content: '';
+
+		}
+
+	}
+
+	&__text {
+
+		font-size: 25px;
+		line-height: 30px;
+		max-width: 680px;
+		margin: auto;
+		letter-spacing: 2.5px;
+
+	}
 
 }

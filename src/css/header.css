@@ -57,17 +57,58 @@
 			line-height: 34px;
 			letter-spacing: 2.3px;
 			font-weight: 400;
+			cursor: text;
 
 		}
 
 	}
 
-	&__btn-search {
+	&__search {
 
 		width: 30px;
 		height: 30px;
-		outline:1px solid red;
-		background: url(/imgs/sprite.svg) -40px -40px;
+		position: relative;
+
+		&-btn {
+
+			width: 30px;
+			height: 30px;
+			background: url(/img/sprite.svg) -4px -3px;
+
+			&:hover {
+
+				background-position: -4px -103px;
+
+			}
+
+		}
+
+		&-input {
+
+			position: absolute;
+			width: 256px;
+			height: 32px;
+			top: -2px;
+			right: 0;
+			border: 1px solid #fff;
+			color: #fff;
+			padding-left: 12px;
+			padding-right: 36px;
+
+			visibility: hidden;
+			opacity: 0;
+
+			transition: opacity 0.3s 0s, visibility 0s 0.3s;
+
+			.form--open & {
+
+				opacity: 1;
+				visibility: visible;
+				transition: opacity 0.3s 0s;
+
+			}
+
+		}
 
 	}
 
@@ -86,8 +127,13 @@
 		color: transparent;
 		width: 30px;
 		height: 30px;
-		outline:1px solid red;
-		background: url(/imgs/sprite.svg) -40px -40px;
+		background: url(/img/sprite.svg) -50px -3px;
+
+		&:hover {
+
+			background-position: -50px -103px;
+
+		}
 
 	}
 

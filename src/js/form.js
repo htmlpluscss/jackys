@@ -7,18 +7,25 @@
 
 		var novalidate = false,
 			required = form.querySelectorAll('[required]'),
-			btnReset = form.querySelector('.form__btn-reset'),
 			btnSubmit = form.querySelector('.form__btn-submit'),
 			input = document.querySelectorAll('.input');
 
-		btnReset.addEventListener('click', function() {
-
-			form.classList.remove('form--submit');
-
-		});
-
 // отправка формы
 		form.addEventListener('submit', function(e) {
+
+			if(form.classList.contains('form--header')) {
+
+				if(!form.classList.contains('form--open')) {
+
+					e.preventDefault();
+					form.classList.add('form--open');
+					form.querySelector('.input').focus();
+
+				}
+
+				return true;
+
+			}
 
 			e.preventDefault();
 
@@ -59,8 +66,6 @@
 
 			if(!novalidate){
 
-				form.classList.add('form--submit');
-
 				var xhr = new XMLHttpRequest();
 
 				xhr.open("POST", form.getAttribute('action'));
@@ -74,7 +79,7 @@
 
 					if (xhr.readyState == 4) {
 
-					//	form.reset();
+						form.reset();
 
 					}
 

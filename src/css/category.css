@@ -24,6 +24,12 @@
 		text-transform: uppercase;
 		white-space: nowrap;
 
+		&:hover {
+
+			color: var(--blue);
+
+		}
+
 	}
 
 	figure {

@@ -14,21 +14,24 @@
 			toggleSwipe = null,
 			resetSwipe = null,
 			swipeNav = document.createElement('div'),
+			swipeBtns = document.createElement('div'),
 			swipeNext = document.createElement('button'),
 			swipePrev = document.createElement('button'),
 			count = swipe.querySelectorAll('.swiper-slide').length,
-			certificate = swipe.classList.contains('swiper-container--certificate');
+			home = swipe.classList.contains('swiper-container--home');
 
-		swipeNav.className = 'swiper-pagination';
+//		swipeNav.className = 'swiper-pagination';
+		swipeBtns.className = 'swiper-btns center';
 		swipePrev.className = 'swiper-button-prev button';
 		swipeNext.className = 'swiper-button-next button';
 
-		swipePrev.innerHTML = '<svg width="6" height="10" viewBox="0 0 6 10"><path d="M6 .788L5.183 0 0 5l5.183 5L6 9.212 1.633 5z"/></svg>';
-		swipeNext.innerHTML = '<svg width="6" height="10" viewBox="0 0 6 10"><path d="M0 .788L.817 0 6 5 .817 10 0 9.212 4.367 5z"/></svg>';
+		swipePrev.innerHTML = '<svg width="18" height="30" viewBox="0 0 6 10"><path d="M6 .788L5.183 0 0 5l5.183 5L6 9.212 1.633 5z"/></svg>';
+		swipeNext.innerHTML = '<svg width="18" height="30" viewBox="0 0 6 10"><path d="M0 .788L.817 0 6 5 .817 10 0 9.212 4.367 5z"/></svg>';
 
-		swipe.appendChild(swipeNav);
-		swipe.parentNode.appendChild(swipeNext);
-		swipe.parentNode.appendChild(swipePrev);
+//		swipe.appendChild(swipeNav);
+		swipeBtns.appendChild(swipeNext);
+		swipeBtns.appendChild(swipePrev);
+		swipe.parentNode.appendChild(swipeBtns);
 
 		resetSwipe = function(){
 
@@ -39,73 +42,55 @@
 
 			}
 
-			swipeNav.classList.add('hide');
+/*			swipeNav.classList.add('hide');
 			swipeNext.classList.add('hide');
 			swipePrev.classList.add('hide');
 
-			if (JACKYS.width < 768) {
+			if (JACKYS.width < 1200) {
 
 				swipeNav.classList.remove('hide');
 
 			}
-			else if (JACKYS.width < 1200) {
+			else {
 
 				swipeNext.classList.remove('hide');
 				swipePrev.classList.remove('hide');
 
 			}
-
+*/
 		}
 
 		resetSwipe();
 
-		if (certificate) {
+		if (home) {
 
 			toggleSwipe = function() {
-
+/*
 				resetSwipe();
 
-				if (JACKYS.width < 768) {
+				if (JACKYS.width < 1200) {
 
 					mySwipe = new Swiper(swipe, {
 						loop: true,
-						autoHeight: true,
 						pagination: {
 							el: swipeNav
 						}
 					});
 
 				}
-				else if (JACKYS.width < 1200) {
-
+				else {
+*/
 					mySwipe = new Swiper(swipe, {
 						loop: true,
-						autoHeight: true,
-						slidesPerView: 2,
+						effect: 'fade',
 						navigation: {
 							nextEl: swipeNext,
 							prevEl: swipePrev
 						}
 					});
 
-				}
-				else if ( count > 3 ) {
-
-					swipeNext.classList.remove('hide');
-					swipePrev.classList.remove('hide');
-
-					mySwipe = new Swiper(swipe, {
-						loop: true,
-						autoHeight: true,
-						slidesPerView: 3,
-						navigation: {
-							nextEl: swipeNext,
-							prevEl: swipePrev
-						}
-					});
-
-				}
-
+/*				}
+*/
 			}
 
 		}
@@ -144,7 +129,7 @@
 
 		script.type = 'text/javascript';
 		script.async = true;
-		script.src = 'js/swiper.min.js';
+		script.src = '/js/swiper.min.js';
 
 		script.onload = function () {
 
@@ -165,6 +150,6 @@
 
 		document.head.appendChild(script);
 
-	}, 3000);
+	}, 1000);
 
 })(document.querySelectorAll('.swiper-container'));
