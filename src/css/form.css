@@ -61,9 +61,8 @@
 			position: absolute;
 			width: 28px;
 			height: 28px;
-			top: 8px;
-			left: 22px;
-			outline:1px solid blue;
+			top: 6px;
+			left: 20px;
 			content: '';
 			background: url(/img/sprite.svg) -50px -3px;
 

@@ -40,18 +40,19 @@
 
 	&__title {
 
-		font-size: 48px;
+		font-size: 46px;
 		line-height: 56px;
 		font-weight: 700;
 		text-transform: uppercase;
 		letter-spacing: 5px;
+		word-spacing: 2px;
 
 		&::after {
 
 			width: 154px;
 			height: 1px;
 			display: block;
-			margin: 32px auto;
+			margin: 32px auto 30px;
 			background-color: #fff;
 			content: '';
 
@@ -61,11 +62,12 @@
 
 	&__text {
 
-		font-size: 25px;
+		font-size: 22px;
 		line-height: 30px;
-		max-width: 680px;
+		max-width: 640px;
 		margin: auto;
 		letter-spacing: 2.5px;
+		word-spacing: 3px;
 
 	}
 

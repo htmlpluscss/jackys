@@ -6,7 +6,6 @@
 	&__box {
 
 		padding: 52px 28px 58px;
-		letter-spacing: 1.4px;
 
 	}
 
@@ -14,7 +13,7 @@
 
 		float: left;
 		font-weight: 700;
-		font-size: 30px;
+		font-size: 26px;
 		line-height: 40px;
 		margin-right: 22px;
 		letter-spacing: 3px;
@@ -23,16 +22,13 @@
 
 	&__first {
 
-		font-size: 15px;
+		font-size: 14px;
 		line-height: 22px;
-		letter-spacing: 1.5px;
 		padding-bottom: 8px;
 
 		span {
 
 			display: block;
-			padding-top: 1px;
-			letter-spacing: .95px;
 
 		}
 
