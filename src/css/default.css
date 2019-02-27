@@ -32,13 +32,13 @@ body {
 
 	min-height: 100vh;
 	min-width: 320px;
-	font: 14px/20px 'Minion Pro', 'Times New Roman', Times;
+	font: 14px/20px 'PT Serif', 'Times New Roman', Times;
 	-webkit-text-size-adjust: none;
 	-webkit-overflow-scrolling: touch;
 	-ms-overflow-style: scrollbar;
 	overflow-y: scroll;
 	display: flex;
-	letter-spacing: 1.3px;
+	letter-spacing: .8px;
 	flex-direction: column;
 
 	/* IE10+ CSS styles go here */

@@ -39,6 +39,12 @@
 
 	}
 
+	&__link:hover &__img {
+
+		border-color: var(--blue);
+
+	}
+
 	&__img {
 
 		display: block;

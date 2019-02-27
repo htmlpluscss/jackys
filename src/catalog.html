@@ -1,0 +1,218 @@
+{% set title = "Посудомойки Jacky`s" %}
+{% set description = "What’s cooking at your place? With your choice of Everdure under bench, wall mounted ovens or freestanding combined cooker, cooking for your friends and family will be a joy. Whichever model you choose, our ovens have been designed for simple operation and stress – free cooking." %}
+
+{% extends "template/main.html" %}
+
+{% block content %}
+
+{% set breadcrumbs = ['Главная','Каталог','Посудомойки'] %}
+
+	<section class="cat-desc">
+
+		<div class="cat-desc__billboard">
+
+			<h1 class="cat-desc__h1">
+				Посудомойки
+			</h1>
+
+			<picture>
+
+				<source srcset="img/category/billboard@1x.webp 1x, img/category/billboard@2x.webp 2x" type="image/webp">
+
+				<source srcset="img/category/billboard@1x.png 1x, img/category/billboard@2x.png 2x">
+
+				<img src="img/category/billboard@1x.png" alt="Посудомойки Jacky`s">
+
+			</picture>
+
+		</div>
+
+{% include "_include/breadcrumbs.html" %}
+
+		<div class="center">
+
+			<h2 class="cat-desc__title">
+				Посудомойки
+			</h2>
+
+			<div class="cat-desc__box">
+
+				<div class="cat-desc__box-img">
+
+					<picture>
+
+						<source srcset="img/category/washing-machine@1x.webp 1x, img/category/washing-machine@2x.webp 2x" type="image/webp">
+
+						<source srcset="img/category/washing-machine@1x.png 1x, img/category/washing-machine@2x.png 2x">
+
+						<img src="img/category/washing-machine@1x.png" alt="Посудомойки Jacky`s" width="118" height="118">
+
+					</picture>
+
+				</div>
+
+				<p>
+					{{ description }}
+				</p>
+
+			</div>
+
+		</div>
+
+		<div class="cat-desc__list">
+
+			<div class="center">
+
+				<ul class="cat-desc__list-row">
+
+					<li class="cat-desc__list-item">
+
+						<div class="cat-desc__list-ico">
+
+						</div>
+
+						<strong class="cat-desc__list-name">
+							anti-flood stop device
+						</strong>
+
+						<p class="cat-desc__list-text">
+
+							Your appliance will never flood, when installed properly, safety is important to Everdure.
+
+						</p>
+
+					</li>
+
+					<li class="cat-desc__list-item">
+
+						<div class="cat-desc__list-ico">
+
+						</div>
+
+						<strong class="cat-desc__list-name">
+							14 piece setting
+						</strong>
+
+						<p class="cat-desc__list-text">
+
+							Enough room to fit all your pots and pans , so you don’t need to spend time washing dishes.
+
+						</p>
+
+					</li>
+
+					<li class="cat-desc__list-item">
+
+						<div class="cat-desc__list-ico">
+
+						</div>
+
+						<strong class="cat-desc__list-name">
+							6 washing Cylces
+						</strong>
+
+						<p class="cat-desc__list-text">
+
+							Different wash options to ensure your dishes are always nice and clean.
+
+						</p>
+
+					</li>
+
+					<li class="cat-desc__list-item">
+
+						<div class="cat-desc__list-ico">
+
+						</div>
+
+						<strong class="cat-desc__list-name">
+							6 washing Cylces
+						</strong>
+
+						<p class="cat-desc__list-text">
+
+							Different wash options to ensure your dishes are always nice and clean.
+
+						</p>
+
+					</li>
+
+				</ul>
+
+			</div>
+
+		</div>
+
+		<div class="cat-list">
+
+{% set available = [true,false,true,true] %}
+
+{% for item in available %}
+
+			<article class="cat-list__item">
+
+				<div class="cat-list__box center">
+
+					<div class="cat-list__desc">
+
+						<a href="product.html" class="cat-list__title">
+							60cm Cast Iron Trivets
+						</a>
+
+						<p class="cat-list__text">
+							это премиальный бренд, созданный группой талантливых разработчиков, имеющих опыт работы на ведущих заводах по производству бытовой техники в Европе.
+						</p>
+
+						<form action="/" class="cat-list__cart">
+
+							<div class="cat-list__price">
+								<span class="cat-list__price-value">258 000</span> ₽
+							</div>
+
+							<div class="cat-list__available{% if not item %} is-not{% endif %}">
+								{% if item %}В наличии{% else %}Нет в наличии{% endif %}
+							</div>
+
+							<div class="cat-list__btn">
+
+								<button class="btn btn--buy">
+									Купить
+								</button>
+
+							</div>
+
+						</form>
+
+					</div>
+
+					<div class="cat-list__img">
+
+						<a href="product.html">
+
+							<picture>
+
+								<source srcset="img/category/cat-list__product@1x.webp 1x, img/category/cat-list__product@2x.webp 2x" type="image/webp">
+
+								<source srcset="img/category/cat-list__product@1x.png 1x, img/category/cat-list__product@2x.png 2x">
+
+								<img src="img/category/cat-list__product@1x.png" alt="60cm Cast Iron Trivets">
+
+							</picture>
+
+						</a>
+
+					</div>
+
+				</div>
+
+			</article>
+
+{% endfor %}
+
+			<img class="cat-list__vensel" src="/img/vensel.png" alt="">
+
+		</div>
+
+	</section>
+
+{% endblock %}

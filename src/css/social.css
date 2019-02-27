@@ -15,9 +15,11 @@
 		width: 24px;
 		height: 24px;
 		border-radius: 50%;
+		overflow: hidden;
 		color: transparent;
 		font-size: 0;
 		fill: #fff;
+			outline:1px solid blue;
 
 		&:hover {
 

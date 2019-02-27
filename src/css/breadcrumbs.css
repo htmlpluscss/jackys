@@ -1,0 +1,42 @@
+.breadcrumbs {
+
+	display: flex;
+	flex-wrap: wrap;
+	padding: 48px 30px;
+
+	&__item {
+
+		display: flex;
+		align-items: center;
+
+		&::after {
+
+			width: 14px;
+			height: 12px;
+			content: '';
+			margin: 0 20px;
+			outline:1px solid blue;
+
+		}
+
+		&:last-child::after {
+
+			display: none;
+
+		}
+
+	}
+
+	&__link {
+
+		color: #676767;
+
+	}
+
+	&__text {
+
+		color: #000;
+
+	}
+
+}

@@ -22,6 +22,7 @@
 		display: block;
 		height: 183px;
 		width: 120px;
+		outline:1px solid red;
 
 	}
 
@@ -73,6 +74,7 @@
 
 			width: 30px;
 			height: 30px;
+			outline:1px solid blue;
 			background: url(/img/sprite.svg) -4px -3px;
 
 			&:hover {
@@ -127,6 +129,7 @@
 		color: transparent;
 		width: 30px;
 		height: 30px;
+		outline:1px solid blue;
 		background: url(/img/sprite.svg) -50px -3px;
 
 		&:hover {

@@ -16,11 +16,11 @@
 @import url(category.css);
 @import url(home.css);
 
-/*
-@import url(accordion.css);
-@import url(education.css);
+@import url(breadcrumbs.css);
+@import url(cat-desc.css);
+@import url(cat-list.css);
 
-@import url(certificate.css);
+/*
 @import url(icons-row.css);
 @import url(about.css);
 @import url(metodic.css);

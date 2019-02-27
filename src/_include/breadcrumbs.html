@@ -1,0 +1,31 @@
+	<ul class="breadcrumbs center" itemscope itemtype="https://schema.org/BreadcrumbList">
+
+{% for item in breadcrumbs %}
+
+		<li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+
+			{% if not loop.last %}
+
+			<a class="breadcrumbs__link" href="/" itemprop="item">
+
+				<span itemprop="name">{{ item }}</span>
+
+			</a>
+
+			{% else %}
+
+			<span class="breadcrumbs__text" itemprop="item" >
+
+				<span itemprop="name">{{ item }}</span>
+
+			</span>
+
+			{% endif %}
+
+			<meta itemprop="position" content="{{ loop.index }}" />
+
+		</li>
+
+{% endfor %}
+
+	</ul>

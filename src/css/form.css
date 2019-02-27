@@ -33,21 +33,41 @@
 	position: relative;
 	white-space: nowrap;
 
-	padding: 0 12px;
+	padding: 0 30px;
 
-	height: 36px;
-	font-size: 12px;
-	line-height: 36px;
-	letter-spacing: 0.5px;
+	height: 43px;
+	font-size: 20px;
+	font-weight: 700;
+	line-height: 43px;
 	text-align: center;
-	text-transform: uppercase;
+	color: #fff;
+	border-radius: 22px;
+	background-color: var(--blue);
 
 	&:hover {
 
-		color: #fff;
-		background-color: #000;
 		box-shadow: none;
 		transition: .15s ease;
+
+	}
+
+	&--buy {
+
+		padding-left: 60px;
+
+		&::before {
+
+
+			position: absolute;
+			width: 28px;
+			height: 28px;
+			top: 8px;
+			left: 22px;
+			outline:1px solid blue;
+			content: '';
+			background: url(/img/sprite.svg) -50px -3px;
+
+		}
 
 	}
 
