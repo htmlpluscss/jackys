@@ -2,15 +2,11 @@
 
 	--blue: #00698d;
 
-/* 	--bg: #fef9f3;
-
---medium: #808080;
---medium-light: #b0b0b0;
---light: #e0e0e0;
- */
 }
 
 $desktop: (min-width: 1200px);
 $mdWidth: (max-width: 1199px);
 $smWidth: (max-width: 767px);
 $xsWidth: (max-width: 349px);
+
+$retina: (min-resolution: 1.5dppx);

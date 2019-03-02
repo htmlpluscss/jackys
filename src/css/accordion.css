@@ -1,0 +1,111 @@
+.accordion {
+
+	&__head {
+
+		cursor: pointer;
+		display: block;
+		position: relative;
+
+		background-color: #e4e4e4;
+
+		h2 {
+
+			font-size: 20px;
+			line-height: 30px;
+			font-weight: 700;
+			text-transform: uppercase;
+			padding-left: 28px;
+			letter-spacing: 1.5px;
+			display: flex;
+			align-items: center;
+			height: 70px;
+
+			&::after,
+			&::before {
+
+				position: absolute;
+				width: 21px;
+				height: 4px;
+				top: 50%;
+				margin-top: -2px;
+				right: 35px;
+				content: '';
+				background-color: #000;
+				transition: .5s;
+
+			}
+
+			&::before {
+
+				transform: rotate(-90deg);
+
+			}
+
+		}
+
+		&:hover {
+
+			h2 {
+
+				color: var(--blue);
+
+				&::after,
+				&::before {
+
+					background-color: var(--blue);
+
+				}
+
+			}
+
+		}
+
+
+	}
+
+	&__body {
+
+		overflow: hidden;
+		position: relative;
+		height: 0;
+		opacity: 0;
+		transition: opacity 500ms cubic-bezier(0.215, 0.61, 0.355, 1), height 500ms cubic-bezier(0.645, 0.045, 0.355, 1);
+
+	}
+
+	&__inner {
+
+		position: relative;
+		padding: 20px 0;
+
+	}
+
+	&__item {
+
+		margin: 2px 0;
+
+		&--active {
+
+			.accordion__head {
+
+				h2::before {
+
+					transform: rotate(0);
+
+				}
+
+			}
+
+		}
+
+	}
+
+	&__item--active &__body {
+
+		height: auto;
+		opacity: 1;
+		transition: opacity 150ms cubic-bezier(0.215, 0.61, 0.355, 1) 250ms, height 300ms cubic-bezier(0.645, 0.045, 0.355, 1)
+
+	}
+
+}

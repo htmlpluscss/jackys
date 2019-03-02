@@ -8,7 +8,7 @@
 
 body0 {
 
-	background-image: url(/css/main.png);
+	background-image: url(/css/product-page.png);
 	background-position: center 0;
 
 	* {
@@ -141,6 +141,14 @@ time {
 	flex-grow: 1;
 
 }
+
+.vensel {
+
+	display: block;
+	margin: auto;
+
+}
+
 
 /* hidden
 -----------------------------------------------------------------------------*/

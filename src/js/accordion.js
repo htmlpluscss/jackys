@@ -3,13 +3,7 @@ JACKYS.accordion = function(elems){
 	Array.prototype.forEach.call(elems, function(elem){
 
 		var items = elem.querySelectorAll('.accordion__item'),
-			active = elem.querySelector('.accordion__item--active');
-
-		if(active) {
-
-			active.querySelector('.accordion__body').style.height = active.querySelector('.accordion__body').clientHeight + 'px';
-
-		}
+			active = null;
 
 		Array.prototype.forEach.call(items, function(item){
 

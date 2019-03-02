@@ -59,23 +59,23 @@
 
 		</div>
 
-		<div class="cat-desc__list">
+		<div class="technology technology--catalog">
 
 			<div class="center">
 
-				<ul class="cat-desc__list-row">
+				<ul class="technology__list">
 
-					<li class="cat-desc__list-item">
+					<li class="technology__item">
 
-						<div class="cat-desc__list-ico">
+						<div class="technology__ico">
 
 						</div>
 
-						<strong class="cat-desc__list-name">
+						<strong class="technology__name">
 							anti-flood stop device
 						</strong>
 
-						<p class="cat-desc__list-text">
+						<p class="technology__text">
 
 							Your appliance will never flood, when installed properly, safety is important to Everdure.
 
@@ -83,17 +83,17 @@
 
 					</li>
 
-					<li class="cat-desc__list-item">
+					<li class="technology__item">
 
-						<div class="cat-desc__list-ico">
+						<div class="technology__ico">
 
 						</div>
 
-						<strong class="cat-desc__list-name">
+						<strong class="technology__name">
 							14 piece setting
 						</strong>
 
-						<p class="cat-desc__list-text">
+						<p class="technology__text">
 
 							Enough room to fit all your pots and pans , so you don’t need to spend time washing dishes.
 
@@ -101,17 +101,17 @@
 
 					</li>
 
-					<li class="cat-desc__list-item">
+					<li class="technology__item">
 
-						<div class="cat-desc__list-ico">
+						<div class="technology__ico">
 
 						</div>
 
-						<strong class="cat-desc__list-name">
+						<strong class="technology__name">
 							6 washing Cylces
 						</strong>
 
-						<p class="cat-desc__list-text">
+						<p class="technology__text">
 
 							Different wash options to ensure your dishes are always nice and clean.
 
@@ -119,17 +119,17 @@
 
 					</li>
 
-					<li class="cat-desc__list-item">
+					<li class="technology__item">
 
-						<div class="cat-desc__list-ico">
+						<div class="technology__ico">
 
 						</div>
 
-						<strong class="cat-desc__list-name">
+						<strong class="technology__name">
 							6 washing Cylces
 						</strong>
 
-						<p class="cat-desc__list-text">
+						<p class="technology__text">
 
 							Different wash options to ensure your dishes are always nice and clean.
 
@@ -155,33 +155,37 @@
 
 					<div class="cat-list__desc">
 
-						<a href="product.html" class="cat-list__title">
-							60cm Cast Iron Trivets
-						</a>
+						<div class="buy-product">
 
-						<p class="cat-list__text">
-							это премиальный бренд, созданный группой талантливых разработчиков, имеющих опыт работы на ведущих заводах по производству бытовой техники в Европе.
-						</p>
+							<a href="product.html" class="buy-product__title">
+								60cm Cast Iron Trivets
+							</a>
 
-						<form action="/" class="cat-list__cart">
+							<p class="buy-product__text">
+								это премиальный бренд, созданный группой талантливых разработчиков, имеющих опыт работы на ведущих заводах по производству бытовой техники в Европе.
+							</p>
 
-							<div class="cat-list__price">
-								<span class="cat-list__price-value">258 000</span> ₽
-							</div>
+							<form action="/" class="buy-product__cart">
 
-							<div class="cat-list__available{% if not item %} is-not{% endif %}">
-								{% if item %}В наличии{% else %}Нет в наличии{% endif %}
-							</div>
+								<div class="buy-product__price">
+									<span class="buy-product__price-value">258 000</span> ₽
+								</div>
 
-							<div class="cat-list__btn">
+								<div class="buy-product__available{% if not item %} is-not{% endif %}">
+									{% if item %}В наличии{% else %}Нет в наличии{% endif %}
+								</div>
 
-								<button class="btn btn--buy">
-									Купить
-								</button>
+								<div class="buy-product__btn">
 
-							</div>
+									<button class="btn btn--buy">
+										Купить
+									</button>
 
-						</form>
+								</div>
+
+							</form>
+
+						</div>
 
 					</div>
 
@@ -209,7 +213,15 @@
 
 {% endfor %}
 
-			<img class="cat-list__vensel" src="/img/vensel.png" srcset="/img/vensel@2x.png 2x" alt="">
+			<picture>
+
+				<source srcset="/img/vensel.webp 1x, /img/vensel@2x.webp 2x" type="image/webp">
+
+				<source srcset="/img/vensel.png 1x, /img/vensel@2x.png 2x">
+
+				<img class="vensel" src="/img/vensel.png" alt="">
+
+			</picture>
 
 		</div>
 

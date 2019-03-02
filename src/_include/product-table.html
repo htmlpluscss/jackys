@@ -1,0 +1,39 @@
+	<div class="product-table">
+
+		<div class="center">
+
+			<table>
+
+				<tbody>
+
+{% set table = [
+	["Product Name","60cm, 6 program, 14 place setting, Freestanding Dishwasher, Stainless Steel"],
+	["Model No.","DWF146SC1"],
+	["Energy","3 star"],
+	["Dimensions H X W X D","845 x 598 x 620 mm"],
+	["Australian Warrantt","36 months"],
+	["Capacity","14 place settings"],
+	["Wels Rating","4 star WELS rating"],
+	["Colour Finish","Stainless Steel"]
+] %}
+
+{% for item in table %}
+
+					<tr>
+						<th>
+							{{ item[0] }}:
+						</th>
+						<td>
+							{{ item[1] }}
+						</td>
+					</tr>
+
+{% endfor %}
+
+				</tbody>
+
+			</table>
+
+		</div>
+
+	</div>

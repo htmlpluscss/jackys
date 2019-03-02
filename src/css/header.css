@@ -1,10 +1,16 @@
 .header {
 
 	background-color: #000;
-	background-image: url(/img/header@2x.png);
+	background-image: url(/img/header.png);
 	background-position: center top;
 	background-repeat: no-repeat;
 	background-size: 600px auto;
+
+	@media ($retina) {
+
+		background-image: url(/img/header@2x.png);
+
+	}
 
 	&__top {
 

@@ -8,7 +8,7 @@ https://github.com/htmlpluscss/
 
 */
 
-var JACKYS = {};
+var JACKYS = JACKYS || {};
 
 (function(){
 

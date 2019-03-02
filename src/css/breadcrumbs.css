@@ -11,11 +11,11 @@
 
 		&::after {
 
-			width: 14px;
+			width: 15px;
 			height: 12px;
 			content: '';
-			margin: 0 20px;
-			outline:1px solid blue;
+			margin: 2px 18px 0;
+			background: url(/img/sprite.svg) -86px -12px;
 
 		}
 
