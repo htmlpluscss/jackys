@@ -1,6 +1,11 @@
 {% set title = "60cm Cast Iron Trivets" %}
 {% set description = "это премиальный бренд, созданный группой талантливых разработчиков, имеющих опыт работы на ведущих заводах по производству бытовой техники в Европе." %}
 
+{% set urlCurrent = "product.html" %}
+{% set ogType = "product" %}
+{% set ogImage236 = "" %}
+{% set ogImage = "" %}
+
 {% extends "template/main.html" %}
 
 {% block content %}
@@ -10,6 +15,40 @@
 {% include "_include/breadcrumbs.html" %}
 
 	<article class="product">
+
+		<script type="application/ld+json">
+
+			[
+/*
+				{
+					"@context": "https://schema.org",
+					"@type": "BreadcrumbList",
+					"itemListElement":
+					[
+						{
+							"@type": "ListItem",
+							"position": "1",
+							"item":
+							{
+								"@id": "{{ url }}",
+								"name": "The Platinental"
+							}
+						},
+						{
+							"@type": "ListItem",
+							"position": "2",
+							"item":
+							{
+								"@id": "{{ url }}{{ link }}",
+								"name": "{{ title }}"
+							}
+						}
+					]
+				}*/
+
+			]
+
+		</script>
 
 		<div class="product__primary center">
 
@@ -83,6 +122,8 @@
 							src : '/img/header.png'
 						}
 					]
+
+/* тут указываем пути к большим фотографиям галереи */
 
 				</script>
 

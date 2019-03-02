@@ -31,6 +31,12 @@
 
 		color: #676767;
 
+		&:hover {
+
+			color: var(--blue);
+
+		}
+
 	}
 
 	&__text {
