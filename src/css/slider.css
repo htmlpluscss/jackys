@@ -78,6 +78,22 @@
 
 		}
 
+		@media ($smWidth) {
+
+			font-size: 30px;
+			line-height: 36px;
+			letter-spacing: 3px;
+			word-spacing: 1px;
+
+			&::after {
+
+				width: 128px;
+				margin: 20px auto;
+
+			}
+
+		}
+
 	}
 
 	&__text {
@@ -95,6 +111,15 @@
 			line-height: 28px;
 			letter-spacing: 2px;
 			word-spacing: 2px;
+
+		}
+
+		@media ($smWidth) {
+
+			font-size: 18px;
+			line-height: 24px;
+			letter-spacing: 1px;
+			word-spacing: 1px;
 
 		}
 

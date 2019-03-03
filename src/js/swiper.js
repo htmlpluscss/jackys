@@ -20,15 +20,15 @@
 			count = swipe.querySelectorAll('.swiper-slide').length,
 			home = swipe.classList.contains('swiper-container--home');
 
-//		swipeNav.className = 'swiper-pagination';
+		swipeNav.className = 'swiper-pagination';
 		swipeBtns.className = 'swiper-btns center';
-		swipePrev.className = 'swiper-button-prev button';
-		swipeNext.className = 'swiper-button-next button';
+		swipePrev.className = 'swiper-button-prev button hide';
+		swipeNext.className = 'swiper-button-next button hide';
 
 		swipePrev.innerHTML = '<svg width="18" height="30" viewBox="0 0 6 10"><path d="M6 .788L5.183 0 0 5l5.183 5L6 9.212 1.633 5z"/></svg>';
 		swipeNext.innerHTML = '<svg width="18" height="30" viewBox="0 0 6 10"><path d="M0 .788L.817 0 6 5 .817 10 0 9.212 4.367 5z"/></svg>';
 
-//		swipe.appendChild(swipeNav);
+		swipe.appendChild(swipeNav);
 		swipeBtns.appendChild(swipeNext);
 		swipeBtns.appendChild(swipePrev);
 		swipe.parentNode.appendChild(swipeBtns);
@@ -42,13 +42,10 @@
 
 			}
 
-/*			swipeNav.classList.add('hide');
-			swipeNext.classList.add('hide');
-			swipePrev.classList.add('hide');
+			if (JACKYS.width < 768) {
 
-			if (JACKYS.width < 1200) {
-
-				swipeNav.classList.remove('hide');
+				swipeNext.classList.add('hide');
+				swipePrev.classList.add('hide');
 
 			}
 			else {
@@ -57,7 +54,7 @@
 				swipePrev.classList.remove('hide');
 
 			}
-*/
+
 		}
 
 		resetSwipe();
@@ -65,32 +62,24 @@
 		if (home) {
 
 			toggleSwipe = function() {
-/*
+
 				resetSwipe();
 
-				if (JACKYS.width < 1200) {
+				var effect = JACKYS.width < 1200 ? 'slide' : 'fade';
 
-					mySwipe = new Swiper(swipe, {
-						loop: true,
-						pagination: {
-							el: swipeNav
-						}
-					});
+				mySwipe = new Swiper(swipe, {
+					loop: true,
+					effect: effect,
+					navigation: {
+						nextEl: swipeNext,
+						prevEl: swipePrev
+					},
+					pagination: {
+						el: swipeNav,
+						clickable: true
+					}
+				});
 
-				}
-				else {
-*/
-					mySwipe = new Swiper(swipe, {
-						loop: true,
-						effect: 'fade',
-						navigation: {
-							nextEl: swipeNext,
-							prevEl: swipePrev
-						}
-					});
-
-/*				}
-*/
 			}
 
 		}

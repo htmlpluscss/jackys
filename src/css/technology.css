@@ -19,12 +19,24 @@
 
 		padding: 28px 0 42px;
 
+		@media ($smWidth) {
+
+			padding: 10px 0 30px;
+
+		}
+
 	}
 
 	&__list {
 
 		display: flex;
 		justify-content: space-around;
+
+		@media ($smWidth) {
+
+			display: block;
+
+		}
 
 	}
 
@@ -47,6 +59,14 @@
 		align-items: center;
 		fill: #fff;
 		margin: 18px auto;
+
+		@media ($smWidth) {
+
+			width: 60px;
+			height: 60px;
+			margin: 20px auto 10px;
+
+		}
 
 		&::before {
 

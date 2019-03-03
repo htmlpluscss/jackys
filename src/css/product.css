@@ -2,6 +2,12 @@
 
 	padding-bottom: 60px;
 
+	@media ($smWidth) {
+
+		padding: 20px 0 40px;
+
+	}
+
 	&__primary {
 
 		display: flex;
@@ -11,6 +17,12 @@
 		@media ($mdWidth) {
 
 			padding: 10px 0 30px;
+
+		}
+
+		@media ($smWidth) {
+
+			padding: 0;
 
 		}
 
@@ -25,6 +37,12 @@
 		@media ($mdWidth) {
 
 			width: 400px;
+
+		}
+
+		@media ($smWidth) {
+
+			width: auto;
 
 		}
 
@@ -52,6 +70,12 @@
 
 		}
 
+		@media ($smWidth) {
+
+			padding-top: 20px;
+
+		}
+
 		img {
 
 			display: block;
@@ -76,6 +100,13 @@
 
 		}
 
+		@media ($smWidth) {
+
+			margin-top: 0;
+			max-width: 400px;
+
+		}
+
 		a {
 
 			color: #676767;
@@ -91,6 +122,12 @@
 					color: var(--blue);
 
 				}
+
+			}
+
+			@media ($xsWidth) {
+
+				font-size: 12px;
 
 			}
 
@@ -143,6 +180,12 @@
 
 		margin-bottom: 60px;
 
+		@media ($smWidth) {
+
+			margin-bottom: 30px;
+
+		}
+
 	}
 
 	&-table {
@@ -194,6 +237,22 @@
 
 		}
 
+		@media ($smWidth) {
+
+			table, tbody, tr, td, th {
+
+				display: block;
+				padding: 0;
+
+			}
+
+			tr {
+
+				padding: 10px 0;
+
+			}
+
+		}
 
 	}
 

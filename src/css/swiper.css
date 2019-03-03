@@ -110,9 +110,15 @@
 	height: 50px;
 	fill: #fff;
 	z-index: 2;
-	&:hover {
-		fill: var(--blue);
+
+	@media ($desktop) {
+
+		&:hover {
+			fill: var(--blue);
+		}
+
 	}
+
 }
 .swiper-button-prev {
 	left: -75px;
@@ -134,16 +140,19 @@
 	transform: translate3d(0, 0, 0);
 	z-index: 10;
 	display: flex;
-	margin: 27px 0 4px;
 	justify-content: center;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 20px;
 }
 .swiper-pagination-bullet {
 	border-radius: 50%;
-	width: 5px;
-	height: 5px;
+	width: 8px;
+	height: 8px;
 	opacity: 0.2;
 	margin: 0 6px;
-	background-color: #000;
+	background-color: #fff;
 	&-active {
 		opacity: 1;
 	}

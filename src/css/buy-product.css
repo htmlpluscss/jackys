@@ -28,6 +28,14 @@
 
 		}
 
+		@media ($smWidth) {
+
+			font-size: 22px;
+			line-height: 26px;
+			letter-spacing: 1px;
+
+		}
+
 	}
 
 	&__text {
@@ -51,6 +59,13 @@
 		flex-wrap: wrap;
 		margin-top: 32px;
 
+		@media ($smWidth) {
+
+			margin-top: 30px;
+			clear: left;
+
+		}
+
 	}
 
 	&__price {
@@ -73,6 +88,12 @@
 
 			font-size: 24px;
 			min-width: 200px;
+
+		}
+
+		@media ($smWidth) {
+
+			min-width: 0;
 
 		}
 

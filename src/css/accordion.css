@@ -27,6 +27,14 @@
 
 			}
 
+			@media ($smWidth) {
+
+				font-size: 16px;
+				line-height: 20px;
+				letter-spacing: 1.2px;
+
+			}
+
 			&::after,
 			&::before {
 
@@ -39,6 +47,15 @@
 				content: '';
 				background-color: #000;
 				transition: .5s;
+
+				@media ($smWidth) {
+
+					width: 18px;
+					height: 2px;
+					right: 0;
+					margin: 0;
+
+				}
 
 			}
 

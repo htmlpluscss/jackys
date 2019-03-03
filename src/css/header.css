@@ -18,6 +18,14 @@
 
 	}
 
+	@media ($smWidth) {
+
+		background-position: left;
+		background-size: auto 100%;
+		background-image: url(/img/header--200.png) !important;
+
+	}
+
 	&__top {
 
 		display: flex;
@@ -39,6 +47,14 @@
 		@media ($mdWidth) {
 
 			height: 140px;
+			width: 100px;
+
+		}
+
+		@media ($smWidth) {
+
+			height: 100px;
+			width: 70px;
 
 		}
 
@@ -48,6 +64,12 @@
 
 		order: 1;
 		width: 256px;
+
+		@media ($smWidth) {
+
+			width: auto;
+
+		}
 
 	}
 
@@ -61,6 +83,17 @@
 		padding-top: 20px;
 		margin-right: -4px;
 
+		@media ($smWidth) {
+
+			width: auto;
+			padding: 0;
+			margin: 0;
+			position: absolute;
+			top: 56px;
+			right: 0;
+
+		}
+
 	}
 
 	&__tel {
@@ -68,6 +101,14 @@
 		color: #999;
 		line-height: 22px;
 		white-space: nowrap;
+
+		@media ($smWidth) {
+
+			position: absolute;
+			top: 18px;
+			right: 0;
+
+		}
 
 		b {
 
@@ -150,15 +191,37 @@
 		color: transparent;
 		width: 30px;
 		height: 30px;
-		background: url(/img/sprite.svg) -50px -3px;
+		position: relative;
+
+		&::before {
+
+			position: absolute;
+			width: 30px;
+			height: 30px;
+			top: 0;
+			left: 0;
+			content: '';
+			background: url(/img/sprite.svg) -50px -3px;
+
+		}
 
 		@media ($desktop) {
 
-			&:hover {
+			&:hover::before {
 
 				background-position: -50px -103px;
 
 			}
+
+		}
+
+		@media ($smWidth) {
+
+			width: auto;
+			font-size: 16px;
+			color: #fff;
+			line-height: 30px;
+			padding-left: 40px;
 
 		}
 
