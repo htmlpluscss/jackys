@@ -12,6 +12,12 @@
 
 	}
 
+	@media ($mdWidth) {
+
+		background-size: 400px auto;
+
+	}
+
 	&__top {
 
 		display: flex;
@@ -29,6 +35,12 @@
 		display: block;
 		height: 183px;
 		width: 120px;
+
+		@media ($mdWidth) {
+
+			height: 140px;
+
+		}
 
 	}
 
@@ -82,9 +94,13 @@
 			height: 30px;
 			background: url(/img/sprite.svg) -4px -3px;
 
-			&:hover {
+			@media ($desktop) {
 
-				background-position: -4px -103px;
+				&:hover {
+
+					background-position: -4px -103px;
+
+				}
 
 			}
 
@@ -136,9 +152,13 @@
 		height: 30px;
 		background: url(/img/sprite.svg) -50px -3px;
 
-		&:hover {
+		@media ($desktop) {
 
-			background-position: -50px -103px;
+			&:hover {
+
+				background-position: -50px -103px;
+
+			}
 
 		}
 

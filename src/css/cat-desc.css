@@ -12,6 +12,13 @@
 		overflow: hidden;
 		background-color: #fff;
 
+		@media ($mdWidth) {
+
+			height: 200px;
+			padding: 20px;
+
+		}
+
 		img {
 
 			position: absolute;
@@ -47,6 +54,13 @@
 		letter-spacing: 8px;
 		text-shadow: 0 0 21px #000;
 
+		@media ($mdWidth) {
+
+			font-size: 34px;
+			line-height: 40px;
+
+		}
+
 	}
 
 	&__title {
@@ -67,6 +81,19 @@
 
 		}
 
+		@media ($mdWidth) {
+
+			margin-top: 10px;
+
+			&::after {
+
+				margin: 20px auto;
+				width: 123px;
+
+			}
+
+		}
+
 	}
 
 	&__box {
@@ -82,6 +109,13 @@
 
 			flex-shrink: 0;
 			width: 158px;
+
+		}
+
+		@media ($mdWidth) {
+
+			padding: 0;
+			margin-bottom: 50px;
 
 		}
 

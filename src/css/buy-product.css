@@ -9,9 +9,22 @@
 		word-spacing: 2px;
 		display: block;
 
-		&:hover {
+		@media ($desktop) {
 
-			color: var(--blue);
+			a&:hover {
+
+				color: var(--blue);
+
+			}
+
+		}
+
+		@media ($mdWidth) {
+
+			font-size: 24px;
+			line-height: 30px;
+			letter-spacing: 2px;
+			word-spacing: 1px;
 
 		}
 
@@ -22,6 +35,13 @@
 		font-size: 15px;
 		line-height: 22px;
 		margin: 20px 0;
+
+		@media ($mdWidth) {
+
+			font-size: 14px;
+			line-height: 20px;
+
+		}
 
 	}
 
@@ -46,6 +66,13 @@
 		&-value {
 
 			padding-right: 4px;
+
+		}
+
+		@media ($mdWidth) {
+
+			font-size: 24px;
+			min-width: 200px;
 
 		}
 
@@ -94,6 +121,12 @@
 
 		width: 100%;
 		margin: 40px 0 29px;
+
+		@media ($mdWidth) {
+
+			margin: 20px 0;
+
+		}
 
 	}
 

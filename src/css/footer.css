@@ -4,6 +4,12 @@
 	background-color: #000;
 	color: #fff;
 
+	@media ($mdWidth) {
+
+		padding: 36px 0 2px;
+
+	}
+
 	.center {
 
 		display: flex;
@@ -31,6 +37,12 @@
 	&__left {
 
 		padding-left: 124px;
+
+		@media ($mdWidth) {
+
+			padding: 0;
+
+		}
 
 	}
 

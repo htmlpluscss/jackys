@@ -18,35 +18,25 @@
 
 		<script type="application/ld+json">
 
-			[
-/*
-				{
-					"@context": "https://schema.org",
-					"@type": "BreadcrumbList",
-					"itemListElement":
-					[
-						{
-							"@type": "ListItem",
-							"position": "1",
-							"item":
-							{
-								"@id": "{{ url }}",
-								"name": "The Platinental"
-							}
-						},
-						{
-							"@type": "ListItem",
-							"position": "2",
-							"item":
-							{
-								"@id": "{{ url }}{{ link }}",
-								"name": "{{ title }}"
-							}
-						}
-					]
-				}*/
+			{
+				"@context": "http://schema.org",
+				"@type": "Product",
+				"name": "{{ title }}",
+				"description": "{{ description }}",
+				"image": "http://jackys.wonderbase.ru/img/product/img@1x.png",
+				"url": "http://jackys.wonderbase.ru/product.html",
+				"brand": "jacky`s",
+				"sku": "id",
+				"offers": {
+					"@type": "Offer",
+					"price": "258000",
+					"priceValidUntil": "2019-03-03",
+					"availability": "https://schema.org/InStock",
+					"priceCurrency": "RUB",
+					"url": "http://jackys.wonderbase.ru/product.html"
+				}
 
-			]
+			}
 
 		</script>
 

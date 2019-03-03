@@ -7,6 +7,6 @@
 $desktop: (min-width: 1200px);
 $mdWidth: (max-width: 1199px);
 $smWidth: (max-width: 767px);
-$xsWidth: (max-width: 349px);
+$xsWidth: (max-width: 359px);
 
 $retina: (min-resolution: 1.5dppx);

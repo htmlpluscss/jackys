@@ -14,6 +14,12 @@
 		display: flex;
 		align-items: center;
 
+		@media ($mdWidth) {
+
+			height: 365px;
+
+		}
+
 	}
 
 	&__img {
@@ -33,6 +39,12 @@
 			top: 0;
 			left: 0;
 			object-fit: contain;
+
+			@media ($mdWidth) {
+
+				object-fit: cover;
+
+			}
 
 		}
 
@@ -58,6 +70,14 @@
 
 		}
 
+		@media ($mdWidth) {
+
+			font-size: 36px;
+			line-height: 46px;
+			letter-spacing: 4px;
+
+		}
+
 	}
 
 	&__text {
@@ -68,6 +88,15 @@
 		margin: auto;
 		letter-spacing: 2.5px;
 		word-spacing: 3px;
+
+		@media ($mdWidth) {
+
+			font-size: 20px;
+			line-height: 28px;
+			letter-spacing: 2px;
+			word-spacing: 2px;
+
+		}
 
 	}
 

@@ -20,9 +20,13 @@
 		font-size: 0;
 		fill: #fff;
 
-		&:hover {
+		@media ($desktop) {
 
-			fill: var(--blue);
+			&:hover {
+
+				fill: var(--blue);
+
+			}
 
 		}
 

@@ -38,6 +38,12 @@
 		display: flex;
 		padding: 24px 30px 28px;
 
+		@media ($mdWidth) {
+
+			padding: 20px 0;
+
+		}
+
 	}
 
 	&__desc {

@@ -17,7 +17,6 @@
 
 	margin: 0 auto;
 	width: 980px;
-	max-width: 100%;
 	position: relative;
 
 }
@@ -49,7 +48,8 @@
 
 	.center {
 
-		width: 750px;
+		width: 90%;
+		max-width: 800px;
 
 	}
 

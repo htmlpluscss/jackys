@@ -20,6 +20,13 @@
 			align-items: center;
 			height: 70px;
 
+			@media ($mdWidth) {
+
+				padding: 0;
+				height: 60px;
+
+			}
+
 			&::after,
 			&::before {
 
@@ -43,23 +50,26 @@
 
 		}
 
-		&:hover {
+		@media ($desktop) {
 
-			h2 {
+			&:hover {
 
-				color: var(--blue);
+				h2 {
 
-				&::after,
-				&::before {
+					color: var(--blue);
 
-					background-color: var(--blue);
+					&::after,
+					&::before {
+
+						background-color: var(--blue);
+
+					}
 
 				}
 
 			}
 
 		}
-
 
 	}
 

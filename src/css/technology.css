@@ -7,6 +7,12 @@
 
 		background-color: #f1f1f1;
 
+		@media ($mdWidth) {
+
+			padding: 30px 0;
+
+		}
+
 	}
 
 	&--product {
@@ -70,6 +76,12 @@
 		color: #818181;
 		font-size: 14px;
 		line-height: 17px;
+
+		@media ($mdWidth) {
+
+			margin: 12px 0;
+
+		}
 
 	}
 

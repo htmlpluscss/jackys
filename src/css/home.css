@@ -71,17 +71,35 @@
 
 				margin-left: 172px;
 
+				@media ($mdWidth) {
+
+					margin-left: 157px;
+
+				}
+
 			}
 
 			&:nth-child(3) {
 
 				margin-left: 223px;
 
+				@media ($mdWidth) {
+
+					margin-left: 187px;
+
+				}
+
 			}
 
 			&:nth-child(4) {
 
 				margin-left: 260px;
+
+				@media ($mdWidth) {
+
+					margin-left: 217px;
+
+				}
 
 			}
 

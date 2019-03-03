@@ -30,15 +30,26 @@
 		color: inherit;
 		letter-spacing: 1.4px;
 
-		&:hover {
 
-			color: var(--blue);
+		@media ($desktop) {
 
-			&::after {
+			&:hover {
 
-				border-top-color: var(--blue) !important;
+				color: var(--blue);
+
+				&::after {
+
+					border-top-color: var(--blue) !important;
+
+				}
 
 			}
+
+		}
+
+		@media ($mdWidth) {
+
+			padding: 0 20px;
 
 		}
 
@@ -115,6 +126,12 @@
 
 			padding: 30px 110px 20px 36px;
 			white-space: nowrap;
+
+			@media ($mdWidth) {
+
+				padding: 30px 40px;
+
+			}
 
 		}
 

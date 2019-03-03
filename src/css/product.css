@@ -8,6 +8,12 @@
 		padding: 0 0 40px 30px;
 		justify-content: space-between;
 
+		@media ($mdWidth) {
+
+			padding: 10px 0 30px;
+
+		}
+
 	}
 
 	&__desc {
@@ -16,11 +22,21 @@
 		display: flex;
 		flex-direction: column;
 
+		@media ($mdWidth) {
+
+			width: 400px;
+
+		}
+
 	}
 
-	.buy-product__cart {
+	@media ($desktop) {
 
-		margin-top: 40px;
+		.buy-product__cart {
+
+			margin-top: 40px;
+
+		}
 
 	}
 
@@ -29,6 +45,12 @@
 		flex-shrink: 0;
 		width: 400px;
 		padding-top: 10px;
+
+		@media ($mdWidth) {
+
+			width: 256px;
+
+		}
 
 		img {
 
@@ -48,6 +70,12 @@
 		border: 1px solid #d7d7d7;
 		border-radius: 20px;
 
+		@media ($mdWidth) {
+
+			margin: 20px 0;
+
+		}
+
 		a {
 
 			color: #676767;
@@ -56,9 +84,13 @@
 			text-align: center;
 			position: relative;
 
-			&:hover {
+			@media ($desktop) {
 
-				color: var(--blue);
+				&:hover {
+
+					color: var(--blue);
+
+				}
 
 			}
 
@@ -118,6 +150,12 @@
 		.center {
 
 			padding: 22px 30px;
+
+			@media ($mdWidth) {
+
+				padding: 0;
+
+			}
 
 		}
 
