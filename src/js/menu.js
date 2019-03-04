@@ -27,3 +27,13 @@
 	});
 
 })(document.querySelector('.menu__btn-toggle'));
+
+Array.prototype.forEach.call(document.querySelectorAll('.menu__item--parent .menu__link'), function(parentLink){
+
+	parentLink.addEventListener('click', function(e){
+
+		e.preventDefault();
+
+	});
+
+});

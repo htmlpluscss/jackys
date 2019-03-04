@@ -45,7 +45,7 @@ var JACKYS = JACKYS || {};
 
 	document.querySelector('.footer__up').addEventListener("click", function(){
 
-		animateScroll(JACKYS.body, 1000, 'linear');
+		animateScroll(JACKYS.body, 500, 'linear');
 
 	});
 

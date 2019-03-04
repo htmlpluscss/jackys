@@ -1,10 +1,10 @@
 .cat-list {
 
-	margin: 30px 0 58px;
+	padding: 30px 0 58px;
 
 	@media ($smWidth) {
 
-		margin: 10px 0 40px;
+		padding: 10px 0 40px;
 
 	}
 
