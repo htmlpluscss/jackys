@@ -3,8 +3,7 @@
 
 {% set urlCurrent = "product.html" %}
 {% set ogType = "product" %}
-{% set ogImage236 = "" %}
-{% set ogImage = "" %}
+{% set ogImage = "img/product/img@1x.png" %}
 
 {% extends "template/main.html" %}
 
@@ -23,8 +22,8 @@
 				"@type": "Product",
 				"name": "{{ title }}",
 				"description": "{{ description }}",
-				"image": "http://jackys.wonderbase.ru/img/product/img@1x.png",
-				"url": "http://jackys.wonderbase.ru/product.html",
+				"image": "{{ url }}{{ ogImage }}",
+				"url": "{{ url }}{{ urlCurrent }}",
 				"brand": "jacky`s",
 				"sku": "id",
 				"offers": {
@@ -33,7 +32,7 @@
 					"priceValidUntil": "2019-03-03",
 					"availability": "https://schema.org/InStock",
 					"priceCurrency": "RUB",
-					"url": "http://jackys.wonderbase.ru/product.html"
+					"url": "{{ url }}{{ urlCurrent }}"
 				}
 
 			}
@@ -52,15 +51,15 @@
 
 					<div class="product__img visible-sm">
 
-						<a href="img/product/img@big.jpg" class="gallery">
+						<a href="/img/product/img@big.jpg" class="gallery">
 
 							<picture>
 
-								<source srcset="img/product/img@1x.webp 1x, img/product/img@2x.webp 2x" type="image/webp">
+								<source srcset="/img/product/img@1x.webp 1x, /img/product/img@2x.webp 2x" type="image/webp">
 
-								<source srcset="img/product/img@1x.png 1x, img/product/img@2x.png 2x">
+								<source srcset="/img/product/img@1x.png 1x, /img/product/img@2x.png 2x">
 
-								<img src="img/product/img@1x.png" alt="60cm Cast Iron Trivets">
+								<img src="/img/product/img@1x.png" alt="60cm Cast Iron Trivets">
 
 							</picture>
 
@@ -76,7 +75,7 @@
 						<div class="product__btns">
 							<a href="https://webbackend.shriro.com.au/images/upload/files/CBIE622.pdf" target="_blank" rel="nofollow">Характеристики</a>
 							<a href="https://webbackend.shriro.com.au/images/upload/files/CBIE622.pdf" target="_blank" rel="nofollow">Инструкция</a>
-							<a href="img/product/img@big.png" class="gallery">Галерея</a>
+							<a href="/img/product/img@big.png" class="gallery">Галерея</a>
 						</div>
 
 					</div>
@@ -106,22 +105,22 @@
 				<div class="product__btns hidden-sm">
 					<a href="https://webbackend.shriro.com.au/images/upload/files/CBIE622.pdf" target="_blank" rel="nofollow">Характеристики</a>
 					<a href="https://webbackend.shriro.com.au/images/upload/files/CBIE622.pdf" target="_blank" rel="nofollow">Инструкция</a>
-					<a href="img/product/img@big.png" class="gallery">Галерея</a>
+					<a href="/img/product/img@big.png" class="gallery">Галерея</a>
 				</div>
 
 			</div>
 
 			<div class="product__img hidden-sm">
 
-				<a href="img/product/img@big.jpg" class="gallery">
+				<a href="/img/product/img@big.jpg" class="gallery">
 
 					<picture>
 
-						<source srcset="img/product/img@1x.webp 1x, img/product/img@2x.webp 2x" type="image/webp">
+						<source srcset="/img/product/img@1x.webp 1x, /img/product/img@2x.webp 2x" type="image/webp">
 
-						<source srcset="img/product/img@1x.png 1x, img/product/img@2x.png 2x">
+						<source srcset="/img/product/img@1x.png 1x, /img/product/img@2x.png 2x">
 
-						<img src="img/product/img@1x.png" alt="60cm Cast Iron Trivets">
+						<img src="/img/product/img@1x.png" alt="60cm Cast Iron Trivets">
 
 					</picture>
 
