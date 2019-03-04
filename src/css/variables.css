@@ -5,6 +5,7 @@
 }
 
 $desktop: (min-width: 1200px);
+$tablet: (min-width: 768px);
 $mdWidth: (max-width: 1199px);
 $smWidth: (max-width: 767px);
 $xsWidth: (max-width: 359px);

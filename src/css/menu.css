@@ -59,13 +59,13 @@
 
 			display: block;
 			padding-bottom: 12px;
-			transition: opacity .3s;
+			transition: opacity .1s;
 			opacity: 0;
 
 			.menu-show & {
 
 				opacity: 1;
-				transition-delay: .3s:
+				transition-delay: .3s;
 
 			}
 
@@ -135,7 +135,7 @@
 
 	}
 
-	@media ($desktop) {
+	@media ($tablet) {
 
 		&__item--parent &__link {
 
@@ -184,6 +184,7 @@
 			transform: translateY(0);
 			visibility: visible;
 			transition: opacity 0.3s 0s, transform 0.3s 0s;
+			z-index: 9;
 
 		}
 
@@ -196,7 +197,7 @@
 			background-color: var(--blue);
 			display: flex;
 			text-align: left;
-			z-index: 9;
+			z-index: -1;
 
 			visibility: hidden;
 			opacity: 0;
