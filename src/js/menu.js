@@ -26,4 +26,4 @@
 
 	});
 
-})(document.querySelector('.header__btn-menu-toggle'));
+})(document.querySelector('.menu__btn-toggle'));
