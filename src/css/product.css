@@ -228,6 +228,7 @@
 			padding-right: 18px;
 			letter-spacing: 1.5px;
 			white-space: nowrap;
+			width: 50%;
 
 		}
 
@@ -251,6 +252,24 @@
 				padding: 10px 0;
 
 			}
+
+		}
+
+	}
+
+	&__text {
+
+		margin: 10px 30px;
+
+		p {
+
+			margin: 10px 0;
+
+		}
+
+		b {
+
+			color: var(--blue);
 
 		}
 
