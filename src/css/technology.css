@@ -66,14 +66,11 @@
 			height: 60px;
 			margin: 20px auto 10px;
 
-		}
+			svg {
 
-		&::before {
+				transform: scale(.8);
 
-			width: 66px;
-			height: 66px;
-			content: '';
-			outline:1px solid blue;
+			}
 
 		}
 
