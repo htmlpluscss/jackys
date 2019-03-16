@@ -1,0 +1,508 @@
+{% set title = "Оформление заказа в интернет-магазине Asko-Home.ru" %}
+{% set description = "Оформление заказа в интернет-магазине Asko-Home.ru" %}
+
+{% extends "template/main.html" %}
+
+{% block content %}
+
+{% set breadcrumbs = ['Главная','Ваш заказ'] %}
+
+{% include "_include/breadcrumbs.html" %}
+
+	<article class="cart center">
+
+		<h1 class="cart__title">
+			Оформление заказа
+		</h1>
+
+		<form action="/cart/" novalidate="novalidate" class="cart__list">
+
+			<input type="hidden" name="save_before_order" value="123456789">
+
+			<table>
+
+				<thead class="hidden-md">
+					<tr>
+						<td class="cart__col-1"></td>
+						<td class="cart__col-2">Наименование</td>
+						<td class="cart__col-3">Количество</td>
+						<td class="cart__col-4">Цена, руб.</td>
+						<td class="cart__col-5">Сумма, руб.</td>
+						<td class="cart__col-6"></td>
+					</tr>
+				</thead>
+
+				<tbody>
+
+					<tr class="cart__item">
+						<td class="cart__col-1">
+							<a href="/" target="_blank">
+								<img src="/img/product/img@1x.png" alt="">
+							</a>
+						</td>
+						<td class="cart__col-2">
+							<a class="link" href="/" target="_blank">
+								Отдельностоящая стиральная машина Asko Эксклюзивная коллекция ASKO x ALENA AKHMADULLINA: 4 единиц техники (сушильный шкаф, стиральная и сушильная машина и Hidden Helpers)
+							</a>
+							<div class="buy-product">
+								<div class="buy-product__available">
+									В наличии
+								</div>
+							</div>
+						</td>
+						<td class="cart__col-3">
+							<span class="quantity">
+								<button class="quantity__btn quantity__btn--down button" type="button">
+									уменьшить на одну штуку
+								</button>
+								<input type="tel" name="goods[364]" value="2" class="quantity__count input" maxlength="3">
+								<input type="hidden" value="390000" class="quantity__price">
+								<button class="quantity__btn quantity__btn--up button" type="button">
+									увеличить на одну штуку
+								</button>
+							</span>
+						</td>
+						<td class="cart__col-4" data-pref="+">
+							<div class="cart__item-price">
+								390 000
+							</div>
+						</td>
+						<td class="cart__col-5" data-pref="=">
+							<div class="cart__item-price cart__item-price--total">
+								780 000
+							</div>
+						</td>
+						<td class="cart__col-6">
+							<button class="cart__item-remove button" type="button">
+								удалить товар из корзины
+							</button>
+						</td>
+					</tr>
+
+					<tr class="cart__item">
+						<td class="cart__col-1">
+							<a href="/" target="_blank">
+								<img src="/img/product/img@1x.png" alt="">
+							</a>
+						</td>
+						<td class="cart__col-2">
+							<a class="link" href="/" target="_blank">
+								Варочная стеклокерамическая панель HiLight Asko HC1643G
+							</a>
+							<div class="buy-product">
+								<div class="buy-product__available is-not">
+									под заказ от 2-х дней
+								</div>
+							</div>
+						</td>
+						<td class="cart__col-3">
+							<span class="quantity">
+								<button class="quantity__btn quantity__btn--down button" type="button">
+									уменьшить на одну штуку
+								</button>
+								<input type="tel" name="goods[141]" value="1" class="quantity__count input" maxlength="3">
+								<input type="hidden" value="29900" class="quantity__price">
+								<button class="quantity__btn quantity__btn--up button" type="button">
+									увеличить на одну штуку
+								</button>
+							</span>
+						</td>
+						<td class="cart__col-4" data-pref="+">
+							<div class="cart__item-price">
+								29 900
+							</div>
+						</td>
+						<td class="cart__col-5" data-pref="=">
+							<div class="cart__item-price cart__item-price--total">
+								29 900
+							</div>
+						</td>
+						<td class="cart__col-6">
+							<button class="cart__item-remove button" type="button">
+								удалить товар из корзины
+							</button>
+						</td>
+					</tr>
+
+				</tbody>
+
+				<tfoot>
+					<tr>
+						<td colspan="6" class="cart__col-foot">
+							Итого:
+							<div class="cart__col-foot-bold">
+								<span class="cart__items-price">
+									809 900
+								</span>
+								рублей
+							</div>
+						</td>
+					</tr>
+				</tfoot>
+
+			</table>
+
+		</form>
+
+		<form action="/order/" novalidate="novalidate" class="cart__order form" data-redirect="/done/">
+
+			<input type="hidden" name="save_before_order" value="123456789">
+
+			<div class="tabs">
+
+				<fieldset class="tabs__item">
+
+					<legend class="tabs__btn">
+						Полный заказ
+					</legend>
+
+					<div class="input-row input-row--required">
+						<label for="CName" class="input-row__label">
+							Ваше ФИО
+						</label>
+						<span class="input-row__input" data-error="Пожалуйста, укажите Ваше имя">
+							<input class="input" required="required" name="client[Name]" id="CName" data-mirror="QName">
+						</span>
+					</div>
+
+					<div class="input-row input-row--required">
+						<label for="CPhone" class="input-row__label">
+							Ваш Телефон
+						</label>
+						<span class="input-row__input" data-error="Пожалуйста, укажите контактный телефон">
+							<input class="input" required="required" name="client[Phone]" id="CPhone" type="tel" data-mirror="QPhone">
+						</span>
+					</div>
+
+					<div class="input-row">
+						<label for="email" class="input-row__label">
+							Ваш e-mail
+						</label>
+						<span class="input-row__input">
+							<input class="input" name="client[Mail]" type="email" id="email">
+						</span>
+					</div>
+
+					<div class="input-row">
+						<label for="CAddr" class="input-row__label">
+							Адрес доставки
+						</label>
+						<span class="input-row__input">
+							<input class="input" name="client[Address]" id="CAddr">
+						</span>
+					</div>
+
+					<div class="input-row">
+						<label for="metro" class="input-row__label">
+							Метро
+						</label>
+						<span class="input-row__input">
+							<span class="select">
+								<select name="order[Atr2][S]" id="metro">
+									<option value="699">-</option>
+									<option value="410">Авиамоторная</option>
+									<option value="411">Автозаводская</option>
+									<option value="412">Адмирала Ушакова</option>
+									<option value="414">Академическая</option>
+									<option value="415">Александровский сад</option>
+									<option value="416">Алексеевская</option>
+									<option value="417">Алма-Атинская</option>
+									<option value="418">Алтуфьево</option>
+									<option value="419">Аннино</option>
+									<option value="420">Арбатская</option>
+									<option value="421">Аэропорт</option>
+									<option value="422">Бабушкинская</option>
+									<option value="423">Багратионовская</option>
+									<option value="424">Баррикадная</option>
+									<option value="425">Бауманская</option>
+									<option value="426">Беговая</option>
+									<option value="427">Белорусская</option>
+									<option value="428">Беляево</option>
+									<option value="429">Бибирево</option>
+									<option value="430">Библиотека им.Ленина</option>
+									<option value="431">Битцевский парк</option>
+									<option value="432">Борисово</option>
+									<option value="433">Боровицкая</option>
+									<option value="434">Ботанический сад</option>
+									<option value="435">Братеево</option>
+									<option value="436">Братиславская</option>
+									<option value="437">Бульвар Адм. Ушакова</option>
+									<option value="438">Бульвар Дм. Донского</option>
+									<option value="594">Бульвар Рокоссовског</option>
+									<option value="439">Бунинская аллея</option>
+									<option value="440">Бутово</option>
+									<option value="441">Варшавская</option>
+									<option value="442">ВДНХ</option>
+									<option value="443">Владыкино</option>
+									<option value="444">Водный стадион</option>
+									<option value="445">Войковская</option>
+									<option value="446">Волгоградский пр-т</option>
+									<option value="447">Волжская</option>
+									<option value="448">Волоколамская</option>
+									<option value="450">Воробьевы горы</option>
+									<option value="451">Выставочная</option>
+									<option value="452">Выхино</option>
+									<option value="453">Деловой центр</option>
+									<option value="454">Динамо</option>
+									<option value="455">Дмитровская</option>
+									<option value="456">Добрынинская</option>
+									<option value="457">Домодедовская</option>
+									<option value="458">Достоевская</option>
+									<option value="459">Дубровка</option>
+									<option value="460">Жулебино</option>
+									<option value="461">Зябликово</option>
+									<option value="462">Измайловская</option>
+									<option value="463">Измайловский парк</option>
+									<option value="464">Калужская</option>
+									<option value="465">Кантемировская</option>
+									<option value="466">Каховская</option>
+									<option value="467">Каширская</option>
+									<option value="468">Киевская</option>
+									<option value="469">Китай-город</option>
+									<option value="470">Кожуховская</option>
+									<option value="471">Коломенская</option>
+									<option value="472">Комсомольская</option>
+									<option value="473">Коньково</option>
+									<option value="474">Красногвардейская</option>
+									<option value="475">Краснопресненская</option>
+									<option value="476">Красносельская</option>
+									<option value="477">Красные ворота</option>
+									<option value="478">Крестьянская застава</option>
+									<option value="479">Кропоткинская</option>
+									<option value="480">Крылатское</option>
+									<option value="481">Кузнецкий мост</option>
+									<option value="482">Кузьминки</option>
+									<option value="483">Кунцевская</option>
+									<option value="484">Курская</option>
+									<option value="485">Кутузовская</option>
+									<option value="486">Ленинский проспект</option>
+									<option value="487">Лермонтовский проспе</option>
+									<option value="488">Лубянка</option>
+									<option value="489">Люблино</option>
+									<option value="490">Марксистская</option>
+									<option value="491">Марьина Роща</option>
+									<option value="492">Марьино</option>
+									<option value="493">Маяковская</option>
+									<option value="494">Медведково</option>
+									<option value="495">Международная</option>
+									<option value="496">Менделеевская</option>
+									<option value="497">Митино</option>
+									<option value="498">Молодежная</option>
+									<option value="499">Мякинино</option>
+									<option value="500">Нагатинская</option>
+									<option value="501">Нагорная</option>
+									<option value="502">Нахимовский проспект</option>
+									<option value="503">Новогиреево</option>
+									<option value="504">Новокосино</option>
+									<option value="505">Новокузнецкая</option>
+									<option value="506">Новослободская</option>
+									<option value="507">Новоясеневская</option>
+									<option value="508">Новые черемушки</option>
+									<option value="509">Октябрьская</option>
+									<option value="510">Октябрьское поле</option>
+									<option value="511">Орехово</option>
+									<option value="512">Отрадное</option>
+									<option value="513">Охотный ряд</option>
+									<option value="514">Павелецкая</option>
+									<option value="515">Парк культуры</option>
+									<option value="516">Парк Победы</option>
+									<option value="517">Партизанская</option>
+									<option value="518">Первомайская</option>
+									<option value="519">Перово</option>
+									<option value="520">Петровско-Разумовск.</option>
+									<option value="521">Печатники</option>
+									<option value="522">Пионерская</option>
+									<option value="523">Планерная</option>
+									<option value="524">Площадь Ильича</option>
+									<option value="525">Площадь революции</option>
+									<option value="526">Полежаевская</option>
+									<option value="527">Полянка</option>
+									<option value="528">Пражская</option>
+									<option value="529">Преображенская пл.</option>
+									<option value="530">Пролетарская</option>
+									<option value="531">Проспект Вернадского</option>
+									<option value="532">Проспект Мира</option>
+									<option value="533">Профсоюзная</option>
+									<option value="534">Пушкинская</option>
+									<option value="535">Пятницкое шоссе</option>
+									<option value="536">Речной вокзал</option>
+									<option value="537">Рижская</option>
+									<option value="538">Римская</option>
+									<option value="539">Рязанский проспект</option>
+									<option value="540">Савеловская</option>
+									<option value="541">Свиблово</option>
+									<option value="542">Севастопольская</option>
+									<option value="543">Семеновская</option>
+									<option value="544">Серпуховская</option>
+									<option value="545">Скобелевская</option>
+									<option value="546">Славянский бульвар</option>
+									<option value="547">Смоленская</option>
+									<option value="548">Сокол</option>
+									<option value="549">Сокольники</option>
+									<option value="550">Спортивная</option>
+									<option value="551">Строгино</option>
+									<option value="552">Студенческая</option>
+									<option value="553">Сухаревская</option>
+									<option value="554">Сходненская</option>
+									<option value="555">Таганская</option>
+									<option value="556">Тверская</option>
+									<option value="557">Театральная</option>
+									<option value="558">Текстильщики</option>
+									<option value="559">Теплый стан</option>
+									<option value="560">Тимирязевская</option>
+									<option value="561">Третьяковская</option>
+									<option value="562">Трубная</option>
+									<option value="563">Тульская</option>
+									<option value="564">Тургеневская</option>
+									<option value="565">Тушинская</option>
+									<option value="566">Улица 1905 года</option>
+									<option value="567">Улица акад. Янгеля</option>
+									<option value="568">Улица Горчакова</option>
+									<option value="569">Улица Подбельского</option>
+									<option value="570">Улица Скобелевская</option>
+									<option value="571">Университет</option>
+									<option value="572">Ушакова</option>
+									<option value="573">Филевский парк</option>
+									<option value="574">Фили</option>
+									<option value="575">Фрунзенская</option>
+									<option value="576">Царицыно</option>
+									<option value="577">Цветной бульвар</option>
+									<option value="578">Черкизовская</option>
+									<option value="579">Чертановская</option>
+									<option value="580">Чеховская</option>
+									<option value="581">Чистые пруды</option>
+									<option value="582">Чкаловская</option>
+									<option value="583">Шаболовская</option>
+									<option value="713">Шелепиха</option>
+									<option value="584">Шипиловская</option>
+									<option value="585">Шоссе энтузиастов</option>
+									<option value="586">Щелковская</option>
+									<option value="587">Щукинская</option>
+									<option value="588">Электрозаводская</option>
+									<option value="589">Юго-Западная</option>
+									<option value="590">Южная</option>
+									<option value="591">Ясенево</option>
+								</select>
+							</span>
+						</span>
+					</div>
+
+					<div class="input-row">
+						<label for="v_598" class="input-row__label input-row__label--checkbox">
+							Лифт
+						</label>
+						<span class="input-row__input">
+							<label class="checkbox">
+								<input class="checkbox__input visuallyhidden" type="radio" name="order[Atr3][S]" value="598" id="v_598">
+								<span class="checkbox__label">
+									Нет
+								</span>
+							</label>
+							<label class="checkbox">
+								<input class="checkbox__input visuallyhidden" type="radio" name="order[Atr3][S]" value="599" id="v_599">
+								<span class="checkbox__label">
+									Грузовой
+								</span>
+							</label>
+							<label class="checkbox">
+								<input class="checkbox__input visuallyhidden" type="radio" name="order[Atr3][S]" value="600" id="v_600">
+								<span class="checkbox__label">
+									Пассажирский
+								</span>
+							</label>
+						</span>
+					</div>
+
+					<div class="input-row">
+						<label for="DDate" class="input-row__label">
+							Дата доставки
+						</label>
+						<span class="input-row__input">
+							<input class="input" name="order[DeliveryDate]" id="DDate" type="date" min="2019-03-25" value="2019-03-25">
+						</span>
+					</div>
+
+					<div class="input-row">
+						<label for="v_408" class="input-row__label input-row__label--checkbox">
+							Способ оплаты
+						</label>
+						<span class="input-row__input">
+							<label class="checkbox">
+								<input class="checkbox__input visuallyhidden" type="radio" name="order[Atr1][S]" value="408" id="v_408">
+								<span class="checkbox__label">
+									Наличными
+								</span>
+							</label>
+							<label class="checkbox">
+								<input class="checkbox__input visuallyhidden" type="radio" name="order[Atr1][S]" value="597" id="v_597">
+								<span class="checkbox__label">
+									Банковской картой
+								</span>
+							</label>
+							<label class="checkbox">
+								<input class="checkbox__input visuallyhidden" type="radio" name="order[Atr1][S]" value="698" id="v_698">
+								<span class="checkbox__label">
+									Безналичный расчет
+								</span>
+							</label>
+							<label class="checkbox">
+								<input class="checkbox__input visuallyhidden" type="radio" name="order[Atr1][S]" value="697" id="v_697">
+								<span class="checkbox__label">
+									on-line (картой)
+								</span>
+							</label>
+						</span>
+					</div>
+
+					<div class="input-row">
+						<label for="textarea" class="input-row__label">
+							Дополнительная информация
+						</label>
+						<span class="input-row__input">
+							<textarea class="input" name="order[Memo]" id="textarea"></textarea>
+						</span>
+					</div>
+
+				</fieldset>
+
+				<fieldset class="tabs__item">
+
+					<legend class="tabs__btn">
+						Быстрый заказ
+					</legend>
+
+					<div class="input-row input-row--required">
+						<label for="QName" class="input-row__label">
+							Ваше ФИО
+						</label>
+						<span class="input-row__input" data-error="Пожалуйста, укажите Ваше имя">
+							<input class="input" required="required" name="client[QName]" id="QName" data-mirror="CName">
+						</span>
+					</div>
+
+					<div class="input-row input-row--required">
+						<label for="QPhone" class="input-row__label">
+							Ваш Телефон
+						</label>
+						<span class="input-row__input" data-error="Пожалуйста, укажите контактный телефон">
+							<input class="input" required="required" name="client[QPhone]" id="QPhone" type="tel" data-mirror="CPhone">
+						</span>
+					</div>
+
+				</fieldset>
+
+			</div>
+
+			<p class="cart__info-required">
+				<sup>*</sup> - поля обязательны для заполнения
+			</p>
+
+			<button class="btn cart__submit form__btn-submit">
+				Оформить заказ
+			</button>
+
+		</form>
+
+	</article>
+
+{% endblock %}

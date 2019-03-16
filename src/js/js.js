@@ -58,4 +58,16 @@ var JACKYS = JACKYS || {};
 		return (rect.top >= 0 && rect.bottom <= JACKYS.height);
 	}
 
+	// отделяем тысячи
+	JACKYS.sepNumber = function(str){
+		str = str.toString();
+		str = str.replace(/\s+/g,'');
+		return str.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
+	}
+
+	// склеиваем тысячи
+	JACKYS.strToNumber = function(n){
+		return parseInt(n.replace(/\s+/g,''), 10);
+	}
+
 })();

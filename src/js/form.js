@@ -5,10 +5,9 @@
 
 	Array.prototype.forEach.call(forms, function(form){
 
-		var novalidate = false,
-			required = form.querySelectorAll('[required]'),
-			btnSubmit = form.querySelector('.form__btn-submit'),
-			input = document.querySelectorAll('.input');
+		var required = form.querySelectorAll('[required]'),
+			redirect = form.getAttribute('data-redirect'),
+			btnSubmit = form.querySelector('.form__btn-submit');
 
 // отправка формы
 		form.addEventListener('submit', function(e) {
@@ -33,6 +32,12 @@
 				formData = new FormData(form);
 
 			Array.prototype.forEach.call(required, function(input){
+
+				if(input.offsetParent === null) {
+
+					return;
+
+				}
 
 				if(input.getAttribute('type') == 'checkbox') {
 
@@ -81,6 +86,12 @@
 
 						form.reset();
 
+						if(redirect) {
+
+							window.location.assign(redirect);
+
+						}
+
 					}
 
 					if (xhr.status != 200) {
@@ -90,6 +101,23 @@
 					}
 
 					btnSubmit.disabled = false;
+
+				}
+
+			}
+			else {
+
+				var inputError = form.querySelector('.input-row__input--error');
+
+				if(!JACKYS.isInViewport(inputError)){
+
+					animateScroll(inputError, 500, 'linear', 20);
+
+				}
+
+				if(inputError){
+
+					inputError.querySelector('.input--error').focus();
 
 				}
 
@@ -109,7 +137,7 @@
 		if(el.value) {
 
 			el.classList.remove('input--error');
-			el.parentNode.classList.remove('input-box--error');
+			el.parentNode.classList.remove('input-row__input--error');
 
 		}
 		else {
@@ -117,7 +145,7 @@
 			if(el.getAttribute('required')) {
 
 				el.classList.add('input--error');
-				el.parentNode.classList.add('input-box--error');
+				el.parentNode.classList.add('input-row__input--error');
 
 			}
 

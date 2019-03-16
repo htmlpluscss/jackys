@@ -6,28 +6,6 @@
 
 }
 
-body0 {
-
-	background-image: url(/css/product-page.png);
-	background-position: center 0;
-
-	* {
-
-		color: red !important;
-		background-color: transparent !important;
-
-	}
-
-	img {
-
-		outline:1px solid red;
-		left: 10px;
-		opacity: .5;
-
-	}
-
-}
-
 body {
 
 	min-height: 100vh;
