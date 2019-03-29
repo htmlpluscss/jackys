@@ -1,14 +1,26 @@
 .header {
 
 	background-color: #000;
-	background-image: url(/img/header.png);
+	background-image: url(/img/header.webp);
 	background-position: center top;
 	background-repeat: no-repeat;
 	background-size: 600px auto;
 
+	.no-webp & {
+
+		background-image: url(/img/header.png);
+
+	}
+
 	@media ($retina) {
 
-		background-image: url(/img/header@2x.png);
+		background-image: url(/img/header@2x.webp);
+
+		.no-webp & {
+
+			background-image: url(/img/header@2x.png);
+
+		}
 
 	}
 
@@ -22,7 +34,13 @@
 
 		background-position: left top;
 		background-size: auto 100px;
-		background-image: url(/img/header--mobile.png) !important;
+		background-image: url(/img/header--mobile.webp) !important;
+
+		.no-webp & {
+
+			background-image: url(/img/header--mobile.png) !important;
+
+		}
 
 	}
 

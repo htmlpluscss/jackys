@@ -70,4 +70,18 @@ var JACKYS = JACKYS || {};
 		return parseInt(n.replace(/\s+/g,''), 10);
 	}
 
+	// webp
+	;(function() {
+		var img = new Image();
+		img.onload = function(){
+			if(!(img.height > 0 && img.width > 0)){
+				JACKYS.body.classList.add('no-webp');
+			};
+		};
+		img.onerror = function(){
+			JACKYS.body.classList.add('no-webp');
+		};
+		img.src = "data:image/webp;base64,UklGRi4AAABXRUJQVlA4TCEAAAAvAUAAEB8wAiMwAgSSNtse/cXjxyCCmrYNWPwmHRH9jwMA";
+	})();
+
 })();

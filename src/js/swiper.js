@@ -130,8 +130,8 @@
 			}
 			else {
 
-				event = document.createEvent('resize');
-				event.initEvent('submit', true, true);
+				event = document.createEvent('Event');
+				event.initEvent('resize', true, true);
 
 			}
 
