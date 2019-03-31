@@ -66,6 +66,21 @@
 
 		}
 
+		&.in-cart .btn {
+
+			font-size: 0;
+			color: transparent;
+
+			&::after {
+
+				content: attr(data-buy);
+				font-size: 20px;
+				color: #fff;
+
+			}
+
+		}
+
 	}
 
 	&__price {

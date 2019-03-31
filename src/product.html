@@ -61,6 +61,37 @@
 
 								<img src="/img/product/img@1x.png" alt="60cm Cast Iron Trivets">
 
+<!--
+
+в теге <img src="/img/product/img@1x.png" alt="60cm Cast Iron Trivets">
+указывается изображения товара, в формате png или jpg,
+допустим размер этого фото /img/product/img@1x.png равен 100х200.
+
+тег img оборачивается тегом picture и в нем пишутся последовательно ресурсы для разных устройств, разных разрешений и разных форматов.
+
+первым идет ресурс (source) для webp формата (type="image/webp" - объявляем что формат webp)
+
+в атрибут srcset записываем два знпачения через запятую:
+/img/product/img@1x.webp 1x
+и
+/img/product/img@2x.webp 2x
+где:
+/img/product/img@1x.webp это фото /img/product/img@1x.png конвертируемое в формат webp
+а
+/img/product/img@2x.webp это фото размеров в два раза больше.
+
+далее идет ресурс (source) для браузекров не поддерживающие webp формат
+
+в атрибут srcset записываем два знпачения через запятую:
+/img/product/img@1x.png 1x (можно и jpg)
+и
+/img/product/img@2x.png 2x (можно и jpg)
+где:
+/img/product/img@1x.png это фото аналогичное фото в img /img/product/img@1x.png
+а
+/img/product/img@2x.png это фото размеров в два раза больше, а именно 200х400
+
+ -->
 							</picture>
 
 						</a>
@@ -80,7 +111,16 @@
 
 					</div>
 
-					<form action="/" class="buy-product__cart">
+					<form action="/" class="buy-product__cart in-cart">
+
+						<input type="hidden" name="product" value="123456789">
+						<input type="hidden" name="buy" value="1">
+
+<!--
+
+класс in-cart если товар уже лежит в корзине
+
+ -->
 
 						<div class="buy-product__price">
 							<span class="buy-product__price-value">258 000</span> ₽
@@ -92,7 +132,7 @@
 
 						<div class="buy-product__btn">
 
-							<button class="btn btn--buy">
+							<button class="btn btn--buy" data-buy="В корзине">
 								Купить
 							</button>
 

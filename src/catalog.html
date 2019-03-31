@@ -149,9 +149,26 @@
 
 		<div class="cat-list">
 
-{% set available = [true,false,true,true] %}
+{% set list = [
+	{
+		available : true,
+		buy : true
+	},
+	{
+		available : false,
+		buy : false
+	},
+	{
+		available : true,
+		buy : false
+	},
+	{
+		available : true,
+		buy : false
+	}
+] %}
 
-{% for item in available %}
+{% for item in list %}
 
 			<article class="cat-list__item">
 
@@ -191,19 +208,34 @@
 								это премиальный бренд, созданный группой талантливых разработчиков, имеющих опыт работы на ведущих заводах по производству бытовой техники в Европе.
 							</p>
 
-							<form action="/" class="buy-product__cart">
+							<form action="/" class="buy-product__cart{% if item.buy %} in-cart{% endif %}">
+
+								<input type="hidden" name="product" value="123456789">
+								<input type="hidden" name="buy" value="1">
+
+<!--
+
+name="product" - отправится какой продут добавить в корзину
+name="buy" - отправится добавить или удалить из корзины
+1  - добавить
+-1 - удалить
+
+! соответственно, если в корзине есть товар, то при перезагрузке(загрузке) страницы
+форме необходимо добавить класс in-cart
+
+ -->
 
 								<div class="buy-product__price">
 									<span class="buy-product__price-value">258 000</span> ₽
 								</div>
 
-								<div class="buy-product__available{% if not item %} is-not{% endif %}">
-									{% if item %}В наличии{% else %}Нет в наличии{% endif %}
+								<div class="buy-product__available{% if not item.available %} is-not{% endif %}">
+									{% if item.available %}В наличии{% else %}Нет в наличии{% endif %}
 								</div>
 
 								<div class="buy-product__btn">
 
-									<button class="btn btn--buy">
+									<button class="btn btn--buy" data-buy="В корзине">
 										Купить
 									</button>
 
