@@ -35,3 +35,65 @@
        url('/fonts/pt-serif-v10-cyrillic-ext_latin_cyrillic-700italic.woff') format('woff');
 }
 
+@font-face {
+  font-family: 'Montserrat';
+  font-display: swap;
+  font-style: normal;
+  font-weight: 300;
+  src: url('/fonts/montserrat-v14-latin_cyrillic-ext-300.woff2') format('woff2'),
+       url('/fonts/montserrat-v14-latin_cyrillic-ext-300.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-display: swap;
+  font-style: italic;
+  font-weight: 400;
+  src: url('/fonts/montserrat-v14-latin_cyrillic-ext-italic.woff2') format('woff2'),
+       url('/fonts/montserrat-v14-latin_cyrillic-ext-italic.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/montserrat-v14-latin_cyrillic-ext-regular.woff2') format('woff2'),
+       url('/fonts/montserrat-v14-latin_cyrillic-ext-regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-display: swap;
+  font-style: normal;
+  font-weight: 500;
+  src: url('/fonts/montserrat-v14-latin_cyrillic-ext-500.woff2') format('woff2'),
+       url('/fonts/montserrat-v14-latin_cyrillic-ext-500.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-display: swap;
+  font-style: normal;
+  font-weight: 600;
+  src: url('/fonts/montserrat-v14-latin_cyrillic-ext-600.woff2') format('woff2'),
+       url('/fonts/montserrat-v14-latin_cyrillic-ext-600.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-display: swap;
+  font-style: normal;
+  font-weight: 700;
+  src: url('/fonts/montserrat-v14-latin_cyrillic-ext-700.woff2') format('woff2'),
+       url('/fonts/montserrat-v14-latin_cyrillic-ext-700.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-display: swap;
+  font-style: italic;
+  font-weight: 700;
+  src: url('/fonts/montserrat-v14-latin_cyrillic-ext-700italic.woff2') format('woff2'),
+       url('/fonts/montserrat-v14-latin_cyrillic-ext-700italic.woff') format('woff');
+}

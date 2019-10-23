@@ -11,6 +11,7 @@ body {
 	min-height: 100vh;
 	min-width: 320px;
 	font: 14px/20px 'PT Serif', 'Times New Roman', Times;
+	/* font-family: 'Montserrat', sans-serif; */
 	-webkit-text-size-adjust: none;
 	-webkit-overflow-scrolling: touch;
 	-ms-overflow-style: scrollbar;

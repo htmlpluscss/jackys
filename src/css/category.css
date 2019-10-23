@@ -1,7 +1,7 @@
 .category {
 
 	background-color: #b7b7b7;
-	border-bottom: 1px solid #a7a7a7;
+	padding: 1px 0;
 
 	@media ($mdWidth) {
 
@@ -22,18 +22,20 @@
 
 	&__item {
 
-		width: 25%;
+		width: calc(25% - 2px);
 		height: 200px;
+		margin: 1px;
 
 		@media ($mdWidth) {
 
-			width: 50%;
+			width: calc(50% - 2px);
 			height: 128px;
 
 		}
 
 		@media ($smWidth) {
 
+			margin: 1px 0;
 			width: 100%;
 
 		}
@@ -47,19 +49,6 @@
 		left: 0;
 		right: 0;
 		bottom: 0;
-
-		&::before {
-
-			position: absolute;
-			width: 1px;
-			top: 0;
-			left: 0;
-			bottom: 0;
-			content: '';
-			background-color: var(--red);
-			z-index: 2;
-
-		}
 
 		&::after {
 
