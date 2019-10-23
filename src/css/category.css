@@ -57,7 +57,7 @@
 
 			&:hover {
 
-				color: var(--blue);
+				color: var(--red);
 
 			}
 
@@ -82,7 +82,7 @@
 
 		&__link:hover &__img {
 
-			border-color: var(--blue);
+			border-color: var(--red);
 
 		}
 

@@ -46,7 +46,7 @@ a {
 ::selection {
 
 	color: #fff;
-	background: var(--blue);
+	background: var(--red);
 
 }
 
@@ -97,7 +97,7 @@ hr {
 	border: 0;
 	height: 1px;
 	position: relative;
-	background-color: #1f1f1f;
+	background-color: var(--red);
 
 }
 

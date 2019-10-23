@@ -8,10 +8,9 @@
 		align-items: center;
 		color: #fff;
 		padding: 30px 20px 20px;
-		height: 250px;
+		height: 450px;
 		overflow: hidden;
 		background-color: #fff;
-		text-align: center;
 
 		@media ($mdWidth) {
 
@@ -91,7 +90,7 @@
 			width: 154px;
 			height: 1px;
 			content: '';
-			background-color: #000;
+			background-color: var(--red);
 			margin: 32px auto 5px;
 			display: block;
 
@@ -115,6 +114,7 @@
 	&__box {
 
 		display: flex;
+		text-align: justify;
 		align-items: center;
 		padding: 0 30px;
 		font-size: 15px;
