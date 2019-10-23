@@ -63,6 +63,7 @@
 		flex-shrink: 0;
 		width: 400px;
 		padding-top: 10px;
+		position: relative;
 
 		@media ($mdWidth) {
 
@@ -81,6 +82,25 @@
 			display: block;
 			margin: auto;
 			max-width: 100%;
+
+		}
+
+	}
+
+	&__gift {
+
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		color: var(--red);
+		text-align: center;
+		white-space: nowrap;
+
+		svg {
+
+			display: block;
+			fill: var(--red);
+			margin: auto;
 
 		}
 
@@ -119,7 +139,7 @@
 
 				&:hover {
 
-					color: var(--blue);
+					color: var(--red);
 
 				}
 
@@ -269,7 +289,7 @@
 
 		b {
 
-			color: var(--blue);
+			color: var(--red);
 
 		}
 

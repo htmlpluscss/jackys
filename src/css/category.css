@@ -12,7 +12,8 @@
 
 		@media ($mdWidth) {
 
-			padding: 36px 0;
+			flex-wrap: wrap;
+			padding: 20px 0;
 
 		}
 
@@ -33,6 +34,7 @@
 		@media ($mdWidth) {
 
 			width: 50%;
+			margin: 16px 0;
 
 		}
 
