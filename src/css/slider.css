@@ -1,8 +1,6 @@
 .slider {
 
 	position: relative;
-	background-color: #7f7f7f;
-
 	text-align: center;
 	color: #fff;
 
@@ -34,7 +32,7 @@
 			bottom: 0;
 			content: '';
 			pointer-events: none;
-			background-color: color(#7f7f7f a(50%));
+			background-color: color(#000 a(50%));
 
 		}
 
@@ -53,57 +51,8 @@
 		left: 0;
 		right: 0;
 		bottom: 0;
-		width: 1100px;
-		max-width: 100%;
 		overflow: hidden;
-		margin: auto;
 		pointer-events: none;
-
-		@media ($mdWidth) {
-
-			width: 900px;
-
-		}
-
-		@media ($smWidth) {
-
-			width: 100%;
-
-		}
-
-		&::after,
-		&::before {
-
-			position: absolute;
-			width: 100px;
-			top: 0;
-			left: 0;
-			bottom: 0;
-			content: '';
-			z-index: 1;
-			background-image: linear-gradient(to right, color(#7f7f7f a(100%)), color(#7f7f7f a(0)));
-
-			@media ($mdWidth) {
-
-				width: 40px;
-
-			}
-
-			@media ($smWidth) {
-
-				display: none;
-
-			}
-
-		}
-
-		&::after {
-
-			left: auto;
-			right: 0;
-			transform: rotate(180deg);
-
-		}
 
 		img {
 
@@ -112,13 +61,7 @@
 			height: 100%;
 			top: 0;
 			left: 0;
-			object-fit: contain;
-
-			@media ($mdWidth) {
-
-				object-fit: cover;
-
-			}
+			object-fit: cover;
 
 		}
 
@@ -148,16 +91,16 @@
 
 		@media ($mdWidth) {
 
-			font-size: 36px;
-			line-height: 46px;
+			font-size: 32px;
+			line-height: 40px;
 			letter-spacing: 4px;
 
 		}
 
 		@media ($smWidth) {
 
-			font-size: 30px;
-			line-height: 36px;
+			font-size: 26px;
+			line-height: 32px;
 			letter-spacing: 3px;
 			word-spacing: 1px;
 
@@ -182,15 +125,6 @@
 		word-spacing: 3px;
 
 		@media ($mdWidth) {
-
-			font-size: 20px;
-			line-height: 28px;
-			letter-spacing: 2px;
-			word-spacing: 2px;
-
-		}
-
-		@media ($smWidth) {
 
 			font-size: 18px;
 			line-height: 24px;

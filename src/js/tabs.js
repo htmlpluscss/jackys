@@ -1,31 +1,17 @@
-JACKYS.tabs = function(elems){
+( tabs => {
 
-	Array.prototype.forEach.call(elems, function(tab){
+	if ( tabs.length > 0 ) {
 
-		var btn = tab.querySelectorAll('.tabs__btn'),
-			item = tab.querySelectorAll('.tabs__item'),
-			nav = document.createElement('div');
+		[...tabs].forEach( tab => {
 
-		Array.prototype.forEach.call(btn, function(el,index){
+			const nav = tab.querySelectorAll('.tabs__btn'),
+				  item = tab.querySelectorAll('.tabs__item');
 
-			var _btn = document.createElement('button');
+			[...nav].forEach( btn => {
 
-			_btn.setAttribute('type','button');
+				btn.addEventListener('change', () => {
 
-			_btn.className = 'button tabs__nav-btn';
-
-			_btn.innerHTML = el.innerHTML;
-
-			nav.appendChild(_btn);
-
-			el.classList.add('hide');
-
-			_btn.addEventListener('click',function(){
-
-				Array.prototype.forEach.call(item, function(elem,inx){
-
-					btn[inx].classList.toggle('tabs__nav-btn--active', inx == index);
-					elem.classList.toggle('tabs__item--active', inx == index);
+					[...item].forEach( el => el.classList.toggle('visuallyhidden', el.getAttribute('data-tab') !== btn.value) );
 
 				});
 
@@ -33,22 +19,6 @@ JACKYS.tabs = function(elems){
 
 		});
 
-		nav.classList.add('tabs__nav');
+	}
 
-		tab.insertBefore(nav, item[0]);
-
-		btn = nav.querySelectorAll('.tabs__nav-btn');
-
-		item[0].classList.add('tabs__item--active');
-		btn[0].classList.add('tabs__nav-btn--active');
-
-	});
-
-};
-
-
-if(document.querySelectorAll('.tabs').length) {
-
-	JACKYS.tabs(document.querySelectorAll('.tabs'));
-
-}
+})(document.querySelectorAll('.tabs'));

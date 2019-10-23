@@ -6,21 +6,9 @@
 	background-repeat: no-repeat;
 	background-size: 600px auto;
 
-	.no-webp & {
-
-		background-image: url(/img/header.png);
-
-	}
-
 	@media ($retina) {
 
 		background-image: url(/img/header@2x.webp);
-
-		.no-webp & {
-
-			background-image: url(/img/header@2x.png);
-
-		}
 
 	}
 
@@ -35,12 +23,6 @@
 		background-position: left top;
 		background-size: auto 100px;
 		background-image: url(/img/header--mobile.webp) !important;
-
-		.no-webp & {
-
-			background-image: url(/img/header--mobile.png) !important;
-
-		}
 
 	}
 

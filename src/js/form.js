@@ -1,193 +1,70 @@
+( forms => {
 
-(function(){
+	if(forms.length){
 
-	var forms = document.querySelectorAll('.form');
+		const modalDone = document.querySelector('.modal-done');
 
-	Array.prototype.forEach.call(forms, function(form){
+		[...forms].forEach( form => {
 
-		var required = form.querySelectorAll('[required]'),
-			redirect = form.getAttribute('data-redirect'),
-			btnSubmit = form.querySelector('.form__btn-submit');
+			const btnSubmit = form.querySelector('[type="submit"]');
 
-// отправка формы
-		form.addEventListener('submit', function(e) {
+			form.addEventListener('submit', async (e) => {
 
-			if(form.classList.contains('form--header')) {
+				e.preventDefault();
 
-				if(!form.classList.contains('form--open')) {
+				btnSubmit.disabled = true;
+				btnSubmit.classList.add('is-loading');
 
-					e.preventDefault();
-					form.classList.add('form--open');
-					form.querySelector('.input').focus();
+				let data = {};
 
-				}
-
-				return true;
-
-			}
-
-			e.preventDefault();
-
-			var novalidate = false,
-				formData = new FormData(form);
-
-			Array.prototype.forEach.call(required, function(input){
-
-				if(input.offsetParent === null) {
-
-					return;
-
-				}
-
-				if(input.getAttribute('type') == 'checkbox') {
-
-					if(input.checked){
-
-						input.parentNode.classList.remove('checkbox--error');
-
+				[...form.elements].forEach( item => {
+					if (item.name) {
+						data[item.name] = item.value;
 					}
-					else {
+				});
 
-						input.parentNode.classList.add('checkbox--error');
-						novalidate = true;
+				data.lang = document.documentElement.lang;
 
+				const response = await fetch(form.action, {
+					method: form.method, // *GET, POST, PUT, DELETE, etc.
+					mode: 'cors', // no-cors, *cors, same-origin
+					cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+					credentials: 'same-origin', // include, *same-origin, omit
+					headers: {
+						'Content-Type': 'application/json',
+						'X-CSRF-TOKEN': form.elements.csrf.value
+						// 'Content-Type': 'application/x-www-form-urlencoded',
+					},
+					redirect: 'follow', // manual, *follow, error
+					referrerPolicy: 'no-referrer', // no-referrer, *client
+					body: JSON.stringify(data) // body data type must match "Content-Type" header
+				});
+
+				let req_response = await response.json();
+
+				console.log(req_response);
+
+				modalDone.classList.toggle('is-ok',req_response.status === 'ok');
+				modalDone.querySelector('.modal-done__title').innerHTML = req_response.title;
+				modalDone.querySelector('.modal-done__text').innerHTML = req_response.text;
+				modalDone.querySelector('.modal__close').innerHTML = req_response.button;
+
+				const eventModalShow = new CustomEvent("modalShow", {
+					detail: {
+						selector: "done"
 					}
+				});
 
-				}
+				window.modal.dispatchEvent(eventModalShow);
 
-				else {
-
-					inputChange(input);
-
-					if(!input.value){
-
-						novalidate = true;
-
-					}
-
-				}
+				form.reset();
+				btnSubmit.disabled = false;
+				btnSubmit.classList.remove('is-loading');
 
 			});
 
-			if(!novalidate){
-
-				var xhr = new XMLHttpRequest();
-
-				xhr.open("POST", form.getAttribute('action'));
-				xhr.send(formData);
-
-				// reset
-
-				btnSubmit.disabled = true;
-
-				xhr.onreadystatechange = function() {
-
-					if (xhr.readyState == 4) {
-
-						form.reset();
-
-						if(redirect) {
-
-							window.location.assign(redirect);
-
-						}
-
-					}
-
-					if (xhr.status != 200) {
-
-						alert('ошибка ' + xhr.status);
-
-					}
-
-					btnSubmit.disabled = false;
-
-				}
-
-			}
-			else {
-
-				var inputError = form.querySelector('.input-row__input--error');
-
-				if(!JACKYS.isInViewport(inputError)){
-
-					animateScroll(inputError, 500, 'linear', 20);
-
-				}
-
-				if(inputError){
-
-					inputError.querySelector('.input--error').focus();
-
-				}
-
-			}
-
 		});
-
-	});
-
-
-// input-label
-
-	var input = document.querySelectorAll('.input');
-
-	function inputChange(el) {
-
-		if(el.value) {
-
-			el.classList.remove('input--error');
-			el.parentNode.classList.remove('input-row__input--error');
-
-		}
-		else {
-
-			if(el.getAttribute('required')) {
-
-				el.classList.add('input--error');
-				el.parentNode.classList.add('input-row__input--error');
-
-			}
-
-		}
 
 	}
 
-	Array.prototype.forEach.call(input, function(el){
-
-		el.addEventListener('keyup', function() {
-
-			inputChange(el);
-
-		});
-
-		el.addEventListener('blur', function() {
-
-			inputChange(el);
-
-		});
-
-	});
-
-
-// checked
-
-	var checkbox = document.querySelectorAll('.checkbox');
-
-	Array.prototype.forEach.call(checkbox, function(el){
-
-		var input = el.querySelector('input');
-
-		input.addEventListener('change', function() {
-
-			if(input.checked) {
-
-				el.classList.remove('checkbox--error');
-
-			}
-
-		});
-
-	});
-
-})();
+})(document.querySelectorAll('[data-send="fetch"]'));

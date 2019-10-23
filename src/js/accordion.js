@@ -1,44 +1,52 @@
-JACKYS.accordion = function(elems){
+( items => {
 
-	Array.prototype.forEach.call(elems, function(elem){
+	if(!items.length) {
 
-		var items = elem.querySelectorAll('.accordion__item'),
-			active = null;
+		return;
 
-		Array.prototype.forEach.call(items, function(item){
+	}
 
-			var btn = item.querySelector('.accordion__btn') || item.querySelector('.accordion__head'),
-				body = item.querySelector('.accordion__body'),
-				inner = item.querySelector('.accordion__inner');
+	[...items].forEach( accordion => {
 
-			btn.addEventListener('click', function(){
+		let animateOn = false,
+			activeItem = null;
 
-				var h = item.classList.contains('accordion__item--active') ? 0 : inner.clientHeight;
-				body.style.height = h + 'px';
-				item.classList.toggle('accordion__item--active');
+		const items = accordion.querySelectorAll('.accordion__item');
 
-				active = item;
+		[...items].forEach( item => {
 
-				Array.prototype.forEach.call(items, function(el){
+			const btn = item.querySelector('.accordion__btn'),
+				  head = item.querySelector('.accordion__head'),
+				  body = item.querySelector('.accordion__body');
 
-					if(el !== active){
+			btn.addEventListener('click', () => {
 
-						el.querySelector('.accordion__body').style.height = 0;
-						el.classList.remove('accordion__item--active');
+				animateOn = true;
 
-					}
+				if( item === activeItem ){
 
-				});
+					item.classList.remove('is-open');
+					activeItem = null;
+
+				} else {
+
+					activeItem = item;
+
+					[...items].forEach( el => el.classList.toggle('is-open', el === item) );
+
+				}
 
 			});
 
-			body.addEventListener(JACKYS.cssAnimation('transition'),function(){
+			body.addEventListener(window.cssAnimation('transition'), () => {
 
-				if(!JACKYS.isInViewport(active.querySelector('.accordion__head'))){
+				if(animateOn && activeItem === item && !window.isInViewport(head)){
 
-					animateScroll(active, 500, 'linear');
+					head.scrollIntoView({ behavior: 'smooth' });
 
 				}
+
+				animateOn = false;
 
 			});
 
@@ -46,11 +54,4 @@ JACKYS.accordion = function(elems){
 
 	});
 
-};
-
-
-if(document.querySelectorAll('.accordion').length) {
-
-	JACKYS.accordion(document.querySelectorAll('.accordion'));
-
-}
+})(document.querySelectorAll('.accordion'));

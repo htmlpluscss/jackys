@@ -1,175 +1,290 @@
 /**
- * Swiper 4.4.5
+ * Swiper 7.0.8
  * Most modern mobile touch slider and framework with hardware accelerated transitions
- * http://www.idangero.us/swiper/
+ * https://swiperjs.com
  *
- * Copyright 2014-2018 Vladimir Kharlampidi
+ * Copyright 2014-2021 Vladimir Kharlampidi
  *
  * Released under the MIT License
  *
- * Released on: December 14, 2018
+ * Released on: October 4, 2021
  */
-.swiper-container {
-	margin: 0 auto;
-	position: relative;
+
+.swiper-box {
+
 	overflow: hidden;
-	list-style: none;
-	padding: 0;
-	z-index: 1;
-/*
-	&::after,
-	&::before {
+
+}
+
+.swiper-container-style {
+
+	position: relative;
+
+	.swiper-container-counter {
 
 		position: absolute;
-		width: 50px;
+		right: var(--gap);
+		bottom: var(--gap);
+		line-height: 24px;
+		background-color: rgba(22, 22, 22, 0.6);
+		border: 1px solid var(--color);
+		border-radius: 2px;
+		padding: 4px 8px;
+		display: flex;
+		font-weight: 500;
+		font-size: 13px;
+		line-height: 18px;
+		z-index: 1;
+		pointer-events: none;
+
+		&__sep {
+
+			margin: 0 5px;
+			color: var(--text);
+
+		}
+
+		&__total {
+
+			color: var(--text);
+
+		}
+
+	}
+
+	.swiper-container {
+
+		margin: 0 auto;
+		position: relative;
+		overflow: hidden;
+		list-style: none;
+		padding: 0;
+		z-index: 1;
+
+	}
+
+	.swiper-container-no-flexbox .swiper-slide {
+
+		float: left;
+
+	}
+
+	.swiper-wrapper {
+
+		position: relative;
+		width: 100%;
+		display: flex;
+		justify-content: flex-start;
+		transition-property: transform;
+
+	}
+
+	.swiper-container-android .swiper-slide,
+	.swiper-wrapper {
+
+		transform: translate3d(0, 0, 0);
+
+	}
+
+	.swiper-slide {
+
+		flex-shrink: 0;
+		width: 100%;
+		position: relative;
+		transition-property: transform;
+
+	}
+
+	.swiper-controls {
+
+		position: absolute;
 		top: 0;
 		left: 0;
-		bottom: 0;
-		content: '';
-		z-index: 2;
-		background-image: linear-gradient(to right, color(#000 a(100%)), color(#000 a(0%)));
-
-		@media ($mdWidth) {
-
-			width: 35px;
-
-		}
-
-		@media ($smWidth) {
-
-			width: 20px;
-
-		}
-
-	}
-
-	&::after {
-
-		left: auto;
 		right: 0;
-		transform: rotate(180deg);
+		bottom: 0;
+		pointer-events: none;
+		z-index: 3;
 
 	}
 
- */}
-.swiper-container-no-flexbox .swiper-slide {
-	float: left;
-}
-.swiper-wrapper {
-	position: relative;
-	width: 100%;
-	height: 100%;
-	z-index: 1;
-	display: flex;
-	transition-property: transform;
-}
-.swiper-container-android .swiper-slide,
-.swiper-wrapper {
-	transform: translate3d(0px, 0, 0);
-}
-.swiper-slide {
-	flex-shrink: 0;
-	width: 100%;
-	height: 100%;
-	position: relative;
-	transition-property: transform;
-}
-.swiper-slide-invisible-blank {
-	visibility: hidden;
-}
-/* Auto Height
-.swiper-container-autoheight,
-.swiper-container-autoheight .swiper-slide {
-	height: auto;
-}
-.swiper-container-autoheight .swiper-wrapper {
-	align-items: flex-start;
-	transition-property: transform, height;
-}
- */
-/* IE10 Windows Phone 8 Fixes */
-.swiper-container-wp8-horizontal,
-.swiper-container-wp8-horizontal > .swiper-wrapper {
-	touch-action: pan-y;
-}
+	.swiper-navigation {
 
-.swiper-btns {
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	margin: auto;
-}
-.swiper-button-prev,
-.swiper-button-next {
-	position: absolute;
-	top: 50%;
-	margin-top: -25px;
-	width: 40px;
-	height: 50px;
-	fill: #fff;
-	z-index: 2;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
 
-	@media ($desktop) {
+	}
 
-		&:hover {
-			fill: var(--red);
+	.swiper-button {
+
+		&-prev,
+		&-next {
+
+			z-index: 2;
+			position: relative;
+			pointer-events: auto;
+
+			width: 36px;
+			height: 36px;
+			background-color: #2d2c2b;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			@media ($desktop) {
+
+				&:hover {
+
+					background-color: #433D38;
+
+				}
+
+			}
+
+			@media ($smWidth) {
+
+				width: 32px;
+				height: 32px;
+
+			}
+
+			.thema-light & {
+
+				svg {
+
+					fill: #f9f5e9;
+
+				}
+
+			}
+
+		}
+
+		&-prev {
+
+		}
+
+		&-next {
+
+		}
+
+		&-disabled {
+
+			opacity: 0;
+			pointer-events: none;
+
 		}
 
 	}
 
-}
-.swiper-button-prev {
-	left: -75px;
-	right: auto;
-	@media ($mdWidth) {
-		left: -24px;
-	}
-}
-.swiper-button-next {
-	right: -75px;
-	left: auto;
-	@media ($mdWidth) {
-		right: -24px;
-	}
-}
+	.swiper-pagination {
 
-.swiper-pagination {
-	transition: 300ms opacity;
-	transform: translate3d(0, 0, 0);
-	z-index: 10;
-	display: flex;
-	justify-content: center;
-	position: absolute;
-	left: 0;
-	right: 0;
-	bottom: 20px;
-}
-.swiper-pagination-bullet {
-	border-radius: 50%;
-	width: 8px;
-	height: 8px;
-	opacity: 0.2;
-	margin: 0 6px;
-	background-color: #fff;
-	&-active {
-		opacity: 1;
+		transition: 300ms opacity;
+		transform: translate3d(0, 0, 0);
+		z-index: 4;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		.button {
+
+			height: 8px;
+			width: 8px;
+			flex-shrink: 0;
+			border-radius: 50%;
+			transition: var(--transitionDefault);
+			pointer-events: auto;
+			margin: 0 6px;
+			opacity: .2;
+			background-color: #c4c4c4;
+
+			&.is-active {
+
+				background-color: var(--color);
+				opacity: 1;
+
+			}
+
+		}
+
 	}
-}
-button.swiper-pagination-bullet {
-	border: none;
-	box-shadow: none;
-	appearance: none;
-}
 
-.swiper-container-fade .swiper-slide {
-	pointer-events: none;
-	opacity: 0 !important;
-	transition-property: opacity;
+	.swiper-notification {
 
-	&-active {
-		opacity: 1 !important;
+		position: absolute;
+		left: 0;
+		top: 0;
+		pointer-events: none;
+		opacity: 0;
+		z-index: -1000;
+
+	}
+
+	/* Auto Height */
+	.swiper-autoheight,
+	.swiper-autoheight .swiper-slide {
+
+		height: auto;
+
+	}
+
+	.swiper-autoheight .swiper-wrapper {
+
+		align-items: flex-start;
+		transition-property: transform, height;
+
+	}
+
+	/* fade*/
+
+	.swiper-fade .swiper-slide {
+
+		pointer-events: none;
+		transition-property: opacity;
+
+	}
+
+	.swiper-fade .swiper-slide-active {
+
 		pointer-events: auto;
+		z-index: 1;
+
 	}
+
+	/* vertical */
+
+	.swiper-vertical .swiper-controls {
+
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+
+	}
+
+	.swiper-vertical > .swiper-wrapper {
+
+		flex-direction: column;
+		height: 100%;
+
+	}
+
+	.swiper-container-pointer-events.swiper-vertical {
+
+		touch-action: pan-x;
+
+	}
+
+	.swiper-vertical.swiper-container-css-mode > .swiper-wrapper {
+
+		scroll-snap-type: y mandatory;
+
+	}
+
 }

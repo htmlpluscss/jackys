@@ -1,39 +1,48 @@
-(function(swiperContainer){
+( elems => {
 
-	if(!swiperContainer.length) {
+	if(!elems.length) {
 
 		return;
 
 	}
 
-	Array.prototype.forEach.call(swiperContainer, function(swipe){
+	[...elems].forEach( swipe => {
 
-		var mySwipe = null,
-			resizeTimeout = null,
-			windowWidthOLd = null,
+		let mySwipe = null,
 			toggleSwipe = null,
-			resetSwipe = null,
-			swipeNav = document.createElement('div'),
-			swipeBtns = document.createElement('div'),
-			swipeNext = document.createElement('button'),
-			swipePrev = document.createElement('button'),
-			count = swipe.querySelectorAll('.swiper-slide').length,
-			home = swipe.classList.contains('swiper-container--home');
+			resetSwipe = null;
+
+		const swipeControls = document.createElement('div'),
+			  swipeNav = document.createElement('div'),
+			  swipeBtns = document.createElement('div'),
+			  swipeNext = document.createElement('button'),
+			  swipePrev = document.createElement('button'),
+			  items = swipe.querySelectorAll('.swiper-slide'),
+			  count = items.length,
+			  standart = swipe.classList.contains('swiper-container--standart'),
+			  realty = swipe.classList.contains('swiper-container--realty'),
+			  gallery = swipe.classList.contains('swiper-container--gallery'),
+			  related = swipe.classList.contains('swiper-container--related');
 
 		swipeNav.className = 'swiper-pagination';
-		swipeBtns.className = 'swiper-btns center';
-		swipePrev.className = 'swiper-button-prev button hide';
-		swipeNext.className = 'swiper-button-next button hide';
+		swipeControls.className = 'swiper-controls';
 
-		swipePrev.innerHTML = '<svg width="18" height="30" viewBox="0 0 6 10"><path d="M6 .788L5.183 0 0 5l5.183 5L6 9.212 1.633 5z"/></svg>';
-		swipeNext.innerHTML = '<svg width="18" height="30" viewBox="0 0 6 10"><path d="M0 .788L.817 0 6 5 .817 10 0 9.212 4.367 5z"/></svg>';
+		swipeBtns.className = 'swiper-navigation';
+		swipePrev.className = 'swiper-button-prev button';
+		swipeNext.className = 'swiper-button-next button';
 
-		swipe.appendChild(swipeNav);
-		swipeBtns.appendChild(swipeNext);
+		swipePrev.setAttribute('aria-label','Previous slide');
+		swipeNext.setAttribute('aria-label','Next slide');
+
+		swipePrev.innerHTML = '<svg width="16" height="16" viewBox="0 0 16 16"><path d="m5.22 7.33 3.57-3.57-.94-.95L2.67 8l5.18 5.19.94-.95-3.57-3.57h8.11V7.33H5.22Z"/></svg>';
+		swipeNext.innerHTML = '<svg width="16" height="16" viewBox="0 0 16 16"><path d="M10.78 7.33 7.21 3.76l.94-.95L13.33 8l-5.18 5.19-.94-.95 3.57-3.57H2.67V7.33h8.11Z"/></svg>';
+
 		swipeBtns.appendChild(swipePrev);
-		swipe.parentNode.appendChild(swipeBtns);
+		swipeBtns.appendChild(swipeNext);
+		swipeControls.appendChild(swipeBtns);
+		swipeControls.appendChild(swipeNav);
 
-		resetSwipe = function(){
+		resetSwipe = () => {
 
 			if(mySwipe) {
 
@@ -42,41 +51,36 @@
 
 			}
 
-			if (JACKYS.width < 768) {
+			swipeNav.classList.add('hide');
+			swipeBtns.classList.add('hide');
+			swipeControls.classList.add('hide');
 
-				swipeNext.classList.add('hide');
-				swipePrev.classList.add('hide');
+			if ( swipe.closest('.swiper-container-style') ) {
 
-			}
-			else {
-
-				swipeNext.classList.remove('hide');
-				swipePrev.classList.remove('hide');
+				swipe.closest('.swiper-container-style').classList.remove('swiper-container-style');
 
 			}
 
 		}
 
-		resetSwipe();
+		if (standart) {
 
-		if (home) {
+			swipeBtns.remove();
 
-			toggleSwipe = function() {
+			toggleSwipe = () => {
 
-				resetSwipe();
+				toggleSwipe = false;
 
-				var effect = JACKYS.width < 1200 ? 'slide' : 'fade';
-
-				mySwipe = new Swiper(swipe, {
+				new Swiper(swipe, {
 					loop: true,
-					effect: effect,
-					navigation: {
-						nextEl: swipeNext,
-						prevEl: swipePrev
+					autoplay: {
+						delay: 3000
 					},
 					pagination: {
 						el: swipeNav,
-						clickable: true
+						clickable: true,
+						bulletClass: 'button',
+						bulletActiveClass: 'is-active'
 					}
 				});
 
@@ -84,61 +88,234 @@
 
 		}
 
-		window.addEventListener("resize", function(){
+		if (related) {
 
-			window.requestAnimationFrame(function(){
+			toggleSwipe = () => {
 
-				if (window.Swiper && !resizeTimeout) {
+				resetSwipe();
 
-					resizeTimeout = setTimeout(function() {
+				if ( window.innerWidth < 768 ) {
 
-						resizeTimeout = null;
+					swipe.parentNode.classList.add('swiper-container-style');
+					swipeBtns.classList.remove('hide');
+					swipeControls.classList.remove('hide');
 
-						if(JACKYS.width != windowWidthOLd){
-
-							windowWidthOLd = JACKYS.width;
-
-							toggleSwipe();
-
+					mySwipe = new Swiper(swipe, {
+						loop: true,
+						navigation: {
+							nextEl: swipeNext,
+							prevEl: swipePrev
 						}
-
-					}, 1000);
+					});
 
 				}
 
+			}
+
+			swipe.addEventListener('swiperResize', toggleSwipe);
+
+		}
+
+		if (realty) {
+
+			swipeNav.remove();
+
+			toggleSwipe = () => {
+
+				toggleSwipe = false;
+
+				swipe.parentNode.parentNode.classList.add('swiper-container-style');
+				swipe.parentNode.appendChild(swipeControls);
+
+				new Swiper(swipe, {
+					loop: true,
+					slidesPerView: 3,
+					slidesPerGroup: 1,
+					spaceBetween: 36,
+					navigation: {
+						nextEl: swipeNext,
+						prevEl: swipePrev
+					},
+					breakpoints: {
+						320: {
+							slidesPerView: 1
+						},
+						768: {
+							slidesPerView: 2,
+							spaceBetween: 24
+						},
+						1200: {
+							slidesPerView: 3,
+							spaceBetween: 36
+						}
+					}
+				});
+
+			}
+
+		}
+
+		if (gallery) {
+
+			const current = swipe.querySelector('.swiper-container-counter__current')
+				  modalBox = document.querySelector('#modal-gallery'),
+				  desktopBox = document.querySelector('#desktop-gallery');
+
+			swipeNav.remove();
+
+			toggleSwipe = () => {
+
+				if ( window.innerWidth < 768 ) {
+
+					desktopBox.appendChild(swipe.parentNode);
+
+				} else {
+
+					modalBox.appendChild(swipe.parentNode);
+
+				}
+
+				if ( mySwipe === null ) {
+
+					mySwipe = new Swiper(swipe, {
+						loop: true,
+						navigation: {
+							nextEl: swipeNext,
+							prevEl: swipePrev
+						},
+						on: {
+							slideChange: () => {
+								current.textContent = swipe.swiper.realIndex + 1;
+							}
+						}
+					});
+
+				}
+
+			}
+
+			swipe.addEventListener('swiperResize', toggleSwipe);
+
+			modalBox.addEventListener('setSlides', event => {
+
+				console.log(event.detail.index);
+
+				mySwipe.slideTo(event.detail.index + 1, 0);
+				current.textContent = event.detail.index + 1;
+
 			});
+
+		}
+
+		swipe.addEventListener('swiperJsLoad', () => {
+
+			swipe.appendChild(swipeControls);
+
+			// eager
+			[...swipe.querySelectorAll('[loading="lazy"]')].forEach( img => img.setAttribute('loading','eager') );
+
+			// hide
+			[...items].forEach( el => el.classList.remove('hide') );
+
+			toggleSwipe();
 
 		});
 
 	});
 
-	setTimeout(function(){
+	let resizeTimeout = null,
+		windowWidthOLd = window.innerWidth;
 
-		var script = document.createElement('script');
+	window.addEventListener("resize", () => {
 
-		script.type = 'text/javascript';
-		script.async = true;
-		script.src = '/js/swiper.min.js';
+		window.requestAnimationFrame( () => {
 
-		script.onload = function () {
+			if (resizeTimeout === null) {
 
-			if (typeof window.CustomEvent === 'function') {
+				resizeTimeout = setTimeout( () => {
 
-				var event = new Event('resize');
-				window.dispatchEvent(event);
+					resizeTimeout = null;
+
+					if(windowWidthOLd !== window.innerWidth) {
+
+						windowWidthOLd = window.innerWidth;
+
+						if (window.Swiper) {
+
+							[...elems].forEach( swipe => swipe.dispatchEvent(new Event("swiperResize")) );
+
+						}
+
+					}
+
+				}, 1000);
+
+			}
+
+		});
+
+	});
+
+	const script = document.createElement('script');
+
+	script.src = '/js/swiper.min.js';
+
+	script.onload = () => [...elems].forEach( swipe => swipe.dispatchEvent(new Event("swiperJsLoad")) );
+
+
+	// fastLoadScript
+
+	if ( localStorage.getItem('fastLoadScript') ) {
+
+		document.head.appendChild(script);
+
+	}
+	else {
+
+		let fastLoadScriptTimeout = true;
+
+		const appendScript = () => {
+
+			if ( fastLoadScriptTimeout ) {
+
+				fastLoadScriptTimeout = null;
+				document.head.append(script);
+
+			}
+
+			window.removeEventListener('fastLoadScript',appendScript);
+
+		}
+
+		const observer = new IntersectionObserver((entries, observer) => {
+
+			let isInViewport = false;
+
+			isInViewport = [...entries].some( entry => {
+
+				observer.unobserve(entry.target);
+
+				return entry.isIntersecting;
+
+			});
+
+			if ( isInViewport ) {
+
+				appendScript();
 
 			}
 			else {
 
-				event = document.createEvent('Event');
-				event.initEvent('resize', true, true);
+				fastLoadScriptTimeout = setTimeout( appendScript, 30000);
 
 			}
 
-		};
+		});
 
-		document.head.appendChild(script);
+		[...elems].forEach( el => observer.observe(el) );
 
-	}, 1000);
+		window.addEventListener('fastLoadScript',appendScript);
+
+	}
 
 })(document.querySelectorAll('.swiper-container'));

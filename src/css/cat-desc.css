@@ -6,6 +6,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		text-align: center;
 		color: #fff;
 		padding: 30px 20px 20px;
 		height: 450px;
@@ -91,7 +92,7 @@
 			height: 1px;
 			content: '';
 			background-color: var(--red);
-			margin: 32px auto 5px;
+			margin: 32px auto;
 			display: block;
 
 		}
@@ -120,13 +121,6 @@
 		font-size: 15px;
 		line-height: 22px;
 		margin-bottom: 60px;
-
-		&-img {
-
-			flex-shrink: 0;
-			width: 158px;
-
-		}
 
 		@media ($mdWidth) {
 

@@ -1,137 +1,52 @@
 .accordion {
 
-	&__head {
-
-		cursor: pointer;
-		display: block;
-		position: relative;
-
-		background-color: #e4e4e4;
-
-		h2 {
-
-			font-size: 20px;
-			line-height: 30px;
-			font-weight: 700;
-			text-transform: uppercase;
-			padding-left: 28px;
-			letter-spacing: 1.5px;
-			display: flex;
-			align-items: center;
-			height: 70px;
-
-			@media ($mdWidth) {
-
-				padding: 0;
-				height: 60px;
-
-			}
-
-			@media ($smWidth) {
-
-				font-size: 16px;
-				line-height: 20px;
-				letter-spacing: 1.2px;
-
-			}
-
-			&::after,
-			&::before {
-
-				position: absolute;
-				width: 21px;
-				height: 4px;
-				top: 50%;
-				margin-top: -2px;
-				right: 35px;
-				content: '';
-				background-color: #000;
-				transition: .5s;
-
-				@media ($smWidth) {
-
-					width: 18px;
-					height: 2px;
-					right: 0;
-					margin: 0;
-
-				}
-
-			}
-
-			&::before {
-
-				transform: rotate(-90deg);
-
-			}
-
-		}
-
-		@media ($desktop) {
-
-			&:hover {
-
-				h2 {
-
-					color: var(--red);
-
-					&::after,
-					&::before {
-
-						background-color: var(--red);
-
-					}
-
-				}
-
-			}
-
-		}
-
-	}
+	position: relative;
 
 	&__body {
 
 		overflow: hidden;
 		position: relative;
-		height: 0;
+		max-height: 0;
 		opacity: 0;
-		transition: opacity 500ms cubic-bezier(0.215, 0.61, 0.355, 1), height 500ms cubic-bezier(0.645, 0.045, 0.355, 1);
+		transition: opacity var(--transitionDefault);
 
 	}
 
-	&__inner {
+	&__item.is-open &__body {
 
-		position: relative;
-		padding: 20px 0;
+		overflow: visible;
+		max-height: 90000px;
+		opacity: 1;
+		transform: translateY(-12px);
 
-	}
+		@media ($smWidth) {
 
-	&__item {
-
-		margin: 2px 0;
-
-		&--active {
-
-			.accordion__head {
-
-				h2::before {
-
-					transform: rotate(0);
-
-				}
-
-			}
+			transform: translateY(-10px);
 
 		}
 
 	}
 
-	&__item--active &__body {
+	&__item.is-open &__btn {
 
-		height: auto;
-		opacity: 1;
-		transition: opacity 150ms cubic-bezier(0.215, 0.61, 0.355, 1) 250ms, height 300ms cubic-bezier(0.645, 0.045, 0.355, 1)
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='2' viewBox='0 0 12 2'%3E%3Cpath fill='%23161616' d='M.25 1.75V.25h12v1.5h-12Z'/%3E%3C/svg%3E");
+
+	}
+
+	&__btn {
+
+		cursor: pointer;
+		user-select: none;
+		position: relative;
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23161616' d='M5.5 12H7V6.75h5.25v-1.5H7V0H5.5v5.25H.25v1.5H5.5V12Z'/%3E%3C/svg%3E");
+		background-position: right;
+		background-repeat: no-repeat;
+
+		@media ($smWidth) {
+
+			background-size: 10px auto;
+
+		}
 
 	}
 

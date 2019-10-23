@@ -8,29 +8,35 @@ https://github.com/htmlpluscss/
 
 */
 
-var JACKYS = JACKYS || {};
+( () => {
 
-(function(){
+	let resizeTimeout = null,
+		windowWidthOLd = window.innerWidth;
 
-	var resizeTimeout = null;
 
-	JACKYS.body = document.body;
-	JACKYS.width = window.innerWidth,
-	JACKYS.height = window.innerHeight;
+// footer__up
 
-// resize
+	document.querySelector('.footer__up').addEventListener("click", ()=> {
 
-	window.addEventListener("resize", function(){
+		window.scrollIntoView({ behavior: 'smooth' });
 
-		window.requestAnimationFrame(function(){
+	});
 
-			if (!resizeTimeout) {
+	window.addEventListener("resize", event => {
 
-				resizeTimeout = setTimeout(function() {
+		window.requestAnimationFrame( () => {
+
+			if (resizeTimeout === null) {
+
+				resizeTimeout = setTimeout( () => {
 
 					resizeTimeout = null;
-					JACKYS.width = window.innerWidth;
-					JACKYS.height = window.innerHeight;
+
+					if( windowWidthOLd !== window.innerWidth || event.isTrusted === false ) {
+
+						windowWidthOLd = window.innerWidth;
+
+					}
 
 				}, 100);
 
@@ -40,48 +46,39 @@ var JACKYS = JACKYS || {};
 
 	});
 
+	window.addEventListener("load", () => {
 
-// footer__up
+		localStorage.setItem('fastLoadScript', true);
 
-	document.querySelector('.footer__up').addEventListener("click", function(){
-
-		animateScroll(JACKYS.body, 500, 'linear');
+		document.documentElement.style.setProperty('--transitionDefault', '.3s');
 
 	});
 
+	// fastLoadScript
+
+	if ( localStorage.getItem('fastLoadScript') === null ) {
+
+		const fastLoadScript = ()=> {
+
+			window.dispatchEvent(new Event("fastLoadScript"));
+
+			window.removeEventListener("click", fastLoadScript);
+			window.removeEventListener("scroll", fastLoadScript);
+
+		}
+
+		window.addEventListener("click", fastLoadScript);
+		window.addEventListener("scroll", fastLoadScript);
+
+	}
+
 	// обработчик анимаций
-	JACKYS.cssAnimation = function(a){var b,c,d=document.createElement("cssanimation");switch(a){case'animation':b={"animation":"animationend","OAnimation":"oAnimationEnd","MozAnimation":"animationend","WebkitAnimation":"webkitAnimationEnd"};break;case'transition':b={"transition":"transitionend","OTransition":"oTransitionEnd","MozTransition":"transitionend","WebkitTransition":"webkitTransitionEnd"}}for(c in b)if(d.style[c]!==undefined)return b[c]}
+	window.cssAnimation = a=>{let b,c,d=document.createElement("cssanimation");switch(a){case'animation':b={"animation":"animationend","OAnimation":"oAnimationEnd","MozAnimation":"animationend","WebkitAnimation":"webkitAnimationEnd"};break;case'transition':b={"transition":"transitionend","OTransition":"oTransitionEnd","MozTransition":"transitionend","WebkitTransition":"webkitTransitionEnd"}}for(c in b)if(d.style[c]!==undefined)return b[c]}
 
 	// Determine if an element is in the visible viewport
-	JACKYS.isInViewport = function(element) {
-		var rect = element.getBoundingClientRect();
-		return (rect.top >= 0 && rect.bottom <= JACKYS.height);
+	window.isInViewport = el => {
+		const rect = el.getBoundingClientRect();
+		return (rect.top >= 0 && rect.bottom <= window.innerHeight);
 	}
-
-	// отделяем тысячи
-	JACKYS.sepNumber = function(str){
-		str = str.toString();
-		str = str.replace(/\s+/g,'');
-		return str.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
-	}
-
-	// склеиваем тысячи
-	JACKYS.strToNumber = function(n){
-		return parseInt(n.replace(/\s+/g,''), 10);
-	}
-
-	// webp
-	;(function() {
-		var img = new Image();
-		img.onload = function(){
-			if(!(img.height > 0 && img.width > 0)){
-				JACKYS.body.classList.add('no-webp');
-			};
-		};
-		img.onerror = function(){
-			JACKYS.body.classList.add('no-webp');
-		};
-		img.src = "data:image/webp;base64,UklGRi4AAABXRUJQVlA4TCEAAAAvAUAAEB8wAiMwAgSSNtse/cXjxyCCmrYNWPwmHRH9jwMA";
-	})();
 
 })();

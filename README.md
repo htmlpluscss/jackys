@@ -1,8 +1,8 @@
-# Jacky's
-[build](http://jackys.wonderbase.ru/)
+# Cosmogid
+[build](https://dedietrich.htmlpluscss.website/)
 
 ## support browsers:
-**Android >= 4.4**
+**Android >= 5**
 
 ### Working hours:
 00:00
