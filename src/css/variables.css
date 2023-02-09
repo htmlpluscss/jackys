@@ -6,12 +6,12 @@
 
 	--error: #f50;
 
+	--transitionDefault: 0.3s;
+
 }
 
 $desktop: (min-width: 1200px);
-$tablet: (min-width: 768px);
+$tablet: (min-width: 768px) and (max-width: 1199px);
 $mdWidth: (max-width: 1199px);
 $smWidth: (max-width: 767px);
 $xsWidth: (max-width: 359px);
-
-$retina: (min-resolution: 1.5dppx);

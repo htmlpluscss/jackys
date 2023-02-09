@@ -6,11 +6,6 @@
 	background-repeat: no-repeat;
 	background-size: 600px auto;
 
-	@media ($retina) {
-
-		background-image: url(/img/header@2x.webp);
-
-	}
 
 	@media ($mdWidth) {
 

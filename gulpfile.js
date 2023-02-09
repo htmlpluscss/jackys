@@ -42,7 +42,7 @@ const w3cjs            = require('gulp-w3cjs');
 let config             = null;
 
 const site             = 'dedietrich-russia.ru';
-const domain           = 'dedietrich.htmlpluscss.website';
+const domain           = 'dedietrich.htmlpluscss.site';
 
 try {
 
