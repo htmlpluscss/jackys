@@ -37,6 +37,12 @@ body {
 	flex-direction: column;
 	position: relative;
 
+	.with-fancybox & {
+
+		font-family: sans-serif;
+
+	}
+
 }
 
 a {
@@ -50,8 +56,8 @@ a {
 
 ::selection {
 
-	color: var(--bg);
-	background-color: var(--color);
+	color: #fff;
+	background-color: var(--gold);
 
 }
 
@@ -105,13 +111,12 @@ hr {
 
 .h2 {
 
-	font-weight: 600;
-	font-size: 34px;
-	line-height: 48px;
-
-	@media $mdWidth {
-
-	}
+	font-weight: 500;
+	font-size: 32px;
+	line-height: 1.2;
+	text-align: center;
+	font-family: 'Revista';
+	color: var(--grey);
 
 }
 
@@ -120,6 +125,36 @@ hr {
 	font-weight: 600;
 	font-size: 24px;
 	text-align: center;
+
+}
+
+.intro {
+
+	max-width: 720px;
+	margin: 48px auto;
+
+	p {
+
+		margin: auto;
+		font-size: 13px;
+		line-height: 20px;
+		text-align: center;
+		color: var(--grey);
+
+		&::before {
+
+			display: block;
+			width: 8px;
+			height: 8px;
+			content: '';
+			margin: 12px auto 24px;
+			border: 1px solid var(--grey);
+			border-radius: 2px;
+			transform: rotate(45deg);
+
+		}
+
+	}
 
 }
 

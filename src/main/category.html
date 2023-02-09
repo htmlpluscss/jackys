@@ -1,0 +1,117 @@
+{% set category = [
+	{
+		name : "Our exceptional pieces",
+		img  : "article_table_sensor",
+		head : "Hob With Probe",
+		desc : "Perfect Sensor Induction hob with probe"
+	},
+	{
+		name : "Our exceptional pieces",
+		img  : "coal_black_zoom_table",
+		head : "Induction hob",
+		desc : "Discover our new induction hob with it's integrated hood"
+	},
+	{
+		name : "Chef's Secrets",
+		img  : "pierre_gagnaire",
+		head : "Portrait",
+		desc : "Meeting Pierre Gagnaire"
+	},
+	{
+		name : "Chef's Secrets",
+		img  : "visuel-videopagedaccueil",
+		head : "Scallops in their shell",
+		desc : "Scallops in their shell by Pierre Gagnaire"
+	},
+	{
+		name : "Our Exceptional Pieces",
+		img  : "four_perfect_sensor_zoom",
+		head : "Perfect Sensor",
+		desc : "A Perfect cooking"
+	},
+	{
+		name : "Chef's Secrets",
+		img  : "recette-signature",
+		head : "Recipe signature",
+		desc : "Discover the chocolate soufflé biscuit of Pierre Gagnaire"
+	},
+	{
+		name : "Our Exceptional Pieces",
+		img  : "art-de-vivre",
+		head : "Art of living",
+		desc : "Horizone Play, the discovery of a new way of cooking"
+	},
+	{
+		name : "La Maison De Dietrich",
+		img  : "maison-de-dietrich-video",
+		head : "La Maison De Dietrich",
+		desc : "More than three hundreds years of history..."
+	},
+	{
+		name : "Fascination Collection",
+		img  : "ambiance_coal_black",
+		head : "Inspiration",
+		desc : "Let your culinary brilliance shine through with De Dietrich’s precision technology"
+	},
+	{
+		name : "Chef's Secrets",
+		img  : "dinde",
+		head : "The Chef's secrets",
+		desc : "How do I contise a chicken?"
+	}
+] %}
+
+	<div class="category">
+
+		<div class="center">
+
+			<ul class="category__list">
+
+{% for item in category %}
+
+				<li class="category__item">
+
+					<a class="category__link" href="/catalog/list/">
+
+						<p class="category__name">
+							{{ item.name }}
+						</p>
+
+						<picture>
+
+							<source srcset="/img/category/{{ item.img }}.webp" type="image/webp">
+							<source srcset="/img/category/{{ item.img }}.jpg">
+
+							<img class="category__img" src="/img/category/{{ item.img }}.jpg" alt="{{ item.head }}" width="310" height="310" loading="lazy">
+
+						</picture>
+
+						<p class="category__caption">
+
+							<b>
+								{{ item.head }}
+							</b>
+
+							{{ item.desc }}
+
+						</p>
+
+						<svg width="76" height="76" viewBox="0 0 68 68">
+							<g fill="none" stroke="#fff">
+								<path d="m34 0 34 34L34 68.0.0 34z"/>
+								<path d="M14 34h40M34 14v40"/>
+							</g>
+						</svg>
+
+					</a>
+
+				</li>
+
+{% endfor %}
+
+
+			</ul>
+
+		</div>
+
+	</div>

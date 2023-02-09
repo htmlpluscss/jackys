@@ -47,7 +47,7 @@
 })(document.querySelector('.menu'));
 
 
-
+/*
 (function(btn){
 
 	btn.addEventListener('click', function () {
@@ -85,4 +85,4 @@ Array.prototype.forEach.call(document.querySelectorAll('.menu__item--parent .men
 
 	});
 
-});
+});*/

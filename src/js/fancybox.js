@@ -1,54 +1,69 @@
-/*(function(){
+( fancybox => {
 
-	if(JACKYS.gallery) {
+	if(fancybox) {
 
-		Array.prototype.forEach.call(document.querySelectorAll('.gallery'), function(btn){
+		const script = document.createElement('script');
 
-			btn.addEventListener('click', function(e){
+		script.src = '/js/fancybox.min.js';
 
-				e.preventDefault();
+		// fastLoadScript
 
-				$.fancybox.open(JACKYS.gallery, {
-					loop : true
+		if ( localStorage.getItem('fastLoadScript') ) {
+
+			document.head.appendChild(script);
+
+		}
+		else {
+
+			let fastLoadScriptTimeout = true;
+
+			const appendScript = () => {
+
+				if ( fastLoadScriptTimeout ) {
+
+					fastLoadScriptTimeout = null;
+					document.head.append(script);
+
+				}
+
+				window.removeEventListener('fastLoadScript',appendScript);
+
+			}
+
+			let openFancybox = null;
+
+			script.onload = () => {
+
+				if ( openFancybox ) {
+
+					openFancybox.dispatchEvent(new Event("click", { bubbles: true }));
+
+				}
+
+			};
+
+			[...fancybox].forEach( el => {
+
+				el.addEventListener('click', event => {
+
+					if ( window.Fancybox === undefined ) {
+
+						event.preventDefault();
+
+						openFancybox = el;
+
+					}
+
 				});
 
 			});
 
-		});
+			fastLoadScriptTimeout = setTimeout( appendScript, 30000);
 
-		setTimeout(function(){
+			window.addEventListener('fastLoadScript',appendScript);
 
-			if(!window.jQuery) {
-
-				var script = document.createElement('script');
-
-				script.type = 'text/javascript';
-				script.async = true;
-				script.src = '/js/jquery-3.3.1.min.js';
-
-				script.onload = function () {
-
-					var script = document.createElement('script');
-
-					script.type = 'text/javascript';
-					script.async = true;
-					script.src = '/js/jquery.fancybox.min.js';
-
-					script.onload = function () {
-
-
-					};
-
-					document.head.appendChild(script);
-
-				};
-
-				document.head.appendChild(script);
-
-			}
-
-		}, 1000);
+		}
 
 	}
 
-})();*/
+})(document.querySelectorAll('[data-fancybox]'));

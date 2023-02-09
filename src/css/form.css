@@ -92,7 +92,7 @@ legend {
 
 	}
 
-	@media ($desktop) {
+	@media $desktop {
 
 		&:hover {
 
@@ -113,7 +113,7 @@ legend {
 
 		}
 
-		@media ($desktop) {
+		@media $desktop {
 
 			&:hover {
 
@@ -136,7 +136,7 @@ legend {
 
 		}
 
-		@media ($desktop) {
+		@media $desktop {
 
 			&:hover {
 
@@ -160,7 +160,7 @@ legend {
 
 		}
 
-		@media ($desktop) {
+		@media $desktop {
 
 			&:hover {
 
@@ -173,7 +173,7 @@ legend {
 
 	}
 
-	@media ($smWidth) {
+	@media $smWidth {
 
 		padding: 0 8px;
 		height: 40px;
@@ -188,7 +188,7 @@ legend {
 		padding: 0 12px;
 		gap: 6px;
 
-		@media ($smWidth) {
+		@media $smWidth {
 
 			padding: 0 8px;
 			height: 32px;
@@ -202,7 +202,7 @@ legend {
 
 		padding: 0 24px;
 
-		@media ($smWidth) {
+		@media $smWidth {
 
 			padding: 0 8px;
 			height: 32px;
@@ -219,7 +219,7 @@ legend {
 		line-height: 60px;
 		height: 60px;
 
-		@media ($smWidth) {
+		@media $smWidth {
 
 			padding: 0 12px;
 			height: 40px;
@@ -269,7 +269,7 @@ legend {
 		border: 1px solid rgba(249, 245, 233, 0.3);
 		border-radius: 18px;
 
-		@media ($smWidth) {
+		@media $smWidth {
 
 			font-size: 10px;
 			padding: 0 10px;
@@ -287,7 +287,7 @@ legend {
 		letter-spacing: 0.014em;
 		text-transform: uppercase;
 
-		@media ($smWidth) {
+		@media $smWidth {
 
 			font-size: 12px;
 			line-height: 1.5;
@@ -375,7 +375,7 @@ legend {
 	border: 0;
 	border-radius: 2px;
 
-	@media ($smWidth) {
+	@media $smWidth {
 
 		height: 40px;
 		padding: 10px;
@@ -409,7 +409,7 @@ legend {
 
 	}
 
-	@media ($desktop) {
+	@media $desktop {
 
 
 	}
@@ -419,7 +419,7 @@ legend {
 		opacity: .4;
 		color: var(--color);
 
-		@media ($smWidth) {
+		@media $smWidth {
 
 			font-size: 14px;
 
@@ -514,7 +514,7 @@ legend {
 
 	}
 
-	@media ($desktop) {
+	@media $desktop {
 
 	}
 
@@ -545,7 +545,7 @@ legend {
 
 	display: flex;
 
-	@media ($smWidth) {
+	@media $smWidth {
 
 		--gap: 10px;
 
@@ -578,7 +578,7 @@ legend {
 		padding: 6px 12px;
 		cursor: pointer;
 
-		@media ($desktop) {
+		@media $desktop {
 
 			&:hover {
 
@@ -671,7 +671,7 @@ legend {
 		pointer-events: auto;
 		transform: translate3d(0, 12px, 0);
 
-		@media ($smWidth) {
+		@media $smWidth {
 
 			transform: translate3d(0, 10px, 0);
 
@@ -688,7 +688,7 @@ legend {
 		cursor: pointer;
 		color: rgba(22, 22, 22, .5);
 
-		@media ($desktop) {
+		@media $desktop {
 
 			&:hover {
 
@@ -728,7 +728,7 @@ legend {
 		padding: 6px 12px;
 		cursor: pointer;
 
-		@media ($desktop) {
+		@media $desktop {
 
 			&:hover {
 
@@ -791,7 +791,7 @@ legend {
 		pointer-events: auto;
 		transform: translate3d(0, 12px, 0);
 
-		@media ($smWidth) {
+		@media $smWidth {
 
 			transform: translate3d(0, 10px, 0);
 
@@ -812,7 +812,7 @@ legend {
 		padding: 6px 12px;
 		color: var(--text);
 
-		@media ($desktop) {
+		@media $desktop {
 
 			&:hover {
 
@@ -855,7 +855,7 @@ legend {
 		gap: 7px;
 		padding: 0 5px 0 10px;
 
-		@media ($smWidth) {
+		@media $smWidth {
 
 			top: 0;
 			left: 0;
@@ -863,7 +863,7 @@ legend {
 
 		}
 
-		@media ($desktop) {
+		@media $desktop {
 
 			&:hover {
 
@@ -891,7 +891,7 @@ legend {
 
 		padding-left: 60px;
 
-		@media ($smWidth) {
+		@media $smWidth {
 
 			padding-left: 54px;
 
@@ -948,7 +948,7 @@ legend {
 		white-space: nowrap;
 		transition: var(--transitionDefault);
 
-		@media ($smWidth) {
+		@media $smWidth {
 
 			line-height: 30px;
 
@@ -956,7 +956,7 @@ legend {
 
 	}
 
-	@media ($desktop) {
+	@media $desktop {
 
 		&__btn:hover &__label {
 
@@ -989,7 +989,7 @@ legend {
 
 	}
 
-	@media ($desktop) {
+	@media $desktop {
 
 		&__btn:hover &__label {
 

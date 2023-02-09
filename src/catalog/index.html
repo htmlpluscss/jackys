@@ -1,72 +1,29 @@
-{% set title = "Посудомойки Jacky`s" %}
+{% set title = "Каталог товаров " + site %}
 {% set description = "What’s cooking at your place? With your choice of Everdure under bench, wall mounted ovens or freestanding combined cooker, cooking for your friends and family will be a joy. Whichever model you choose, our ovens have been designed for simple operation and stress – free cooking." %}
 
-{% set urlCurrent = "catalog.html" %}
-{% set ogType = "product" %}
+{% set urlCurrent = "catalog" %}
 {% set ogImage = "img/category/billboard@1x.png" %}
 
 {% extends "template/base.html" %}
 
 {% block content %}
 
-{% set breadcrumbs = ['Главная','Каталог','Посудомойки'] %}
+{% set breadcrumbs = ['Главная','Каталог'] %}
 
 	<section class="cat-desc">
 
 		<div class="cat-desc__billboard">
 
-			<h1 class="cat-desc__h1">
-				Посудомойки
+			<h1 class="cat-desc__h1 h1">
+				Товаровы {{ site }}
 			</h1>
 
 			<picture>
 
-				<source srcset="/img/category/billboard@1x.webp 1x, /img/category/billboard@2x.webp 2x" type="image/webp">
+				<source srcset="/img/home/pure_white.webp" type="image/webp">
+				<source srcset="/img/home/pure_white.jpg">
 
-				<source srcset="/img/category/billboard@1x.png 1x, /img/category/billboard@2x.png 2x">
-
-				<img src="/img/category/billboard@1x.png" alt="Посудомойки Jacky`s">
-
-			</picture>
-
-		</div>
-
-		<div class="cat-desc__billboard">
-
-			<h1 class="cat-desc__h1">
-				Стиральные машины
-			</h1>
-
-			<picture>
-
-				<source srcset="/img/category/stirka.webp" type="image/webp">
-
-<!--
-				<source srcset="/img/category/stirka@1x.webp 1x, /img/category/stirka@2x.webp 2x" type="image/webp">
-
-				<source srcset="/img/category/stirka@1x.jpg 1x, /img/category/stirka@2x.jpg 2x"> -->
-
-				<img src="/img/category/stirka.jpg" alt="Стиральные машины Jacky`s">
-
-			</picture>
-
-		</div>
-
-		<div class="cat-desc__billboard">
-
-			<h1 class="cat-desc__h1">
-				Холодильники
-			</h1>
-
-			<picture>
-
-				<source srcset="/img/category/holodilnik.webp" type="image/webp">
-<!--
-				<source srcset="/img/category/holodilnik@1x.webp 1x, /img/category/holodilnik@2x.webp 2x" type="image/webp">
-
-				<source srcset="/img/category/holodilnik@1x.jpg 1x, /img/category/holodilnik@2x.jpg 2x"> -->
-
-				<img src="/img/category/holodilnik.jpg" alt="Холодильники Jacky`s">
+				<img class="slider__img" src="/img/home/pure_white.jpg" alt="" loading="lazy" width="1980" height="600">
 
 			</picture>
 
@@ -76,11 +33,11 @@
 
 		<div class="center hidden-sm">
 
-			<h2 class="cat-desc__title">
-				Посудомойки
-			</h2>
+			<div class="intro">
 
-			<div class="cat-desc__box">
+				<h2 class="h2">
+					{{ title }}
+				</h2>
 
 				<p>
 					{{ description }}
@@ -90,225 +47,7 @@
 
 		</div>
 
-		<div class="technology technology--catalog hidden-sm">
-
-			<div class="center">
-
-				<ul class="technology__list">
-
-					<li class="technology__item">
-
-						<div class="technology__ico">
-
-						</div>
-
-						<strong class="technology__name">
-							anti-flood stop device
-						</strong>
-
-						<p class="technology__text">
-
-							Your appliance will never flood, when installed properly, safety is important to Everdure.
-
-						</p>
-
-					</li>
-
-					<li class="technology__item">
-
-						<div class="technology__ico">
-
-						</div>
-
-						<strong class="technology__name">
-							14 piece setting
-						</strong>
-
-						<p class="technology__text">
-
-							Enough room to fit all your pots and pans , so you don’t need to spend time washing dishes.
-
-						</p>
-
-					</li>
-
-					<li class="technology__item">
-
-						<div class="technology__ico">
-
-						</div>
-
-						<strong class="technology__name">
-							6 washing Cylces
-						</strong>
-
-						<p class="technology__text">
-
-							Different wash options to ensure your dishes are always nice and clean.
-
-						</p>
-
-					</li>
-
-					<li class="technology__item">
-
-						<div class="technology__ico">
-
-						</div>
-
-						<strong class="technology__name">
-							6 washing Cylces
-						</strong>
-
-						<p class="technology__text">
-
-							Different wash options to ensure your dishes are always nice and clean.
-
-						</p>
-
-					</li>
-
-				</ul>
-
-			</div>
-
-		</div>
-
-		<div class="cat-list">
-
-{% set list = [
-	{
-		available : true,
-		buy : true
-	},
-	{
-		available : false,
-		buy : false
-	},
-	{
-		available : true,
-		buy : false
-	},
-	{
-		available : true,
-		buy : false
-	}
-] %}
-
-{% for item in list %}
-
-			<article class="cat-list__item">
-
-				<div class="cat-list__box center">
-
-					<div class="cat-list__desc">
-
-						<div class="buy-product">
-
-							<a href="/product.html" class="buy-product__title">
-								60cm Cast Iron Trivets
-							</a>
-
-							<div class="visible-sm">
-
-								<div class="cat-list__img">
-
-									<a href="product.html">
-
-										<picture>
-
-											<source srcset="/img/category/cat-list__product@1x.webp 1x, /img/category/cat-list__product@2x.webp 2x" type="image/webp">
-
-											<source srcset="/img/category/cat-list__product@1x.png 1x, /img/category/cat-list__product@2x.png 2x">
-
-											<img src="/img/category/cat-list__product@1x.png" alt="60cm Cast Iron Trivets">
-
-										</picture>
-
-									</a>
-
-								</div>
-
-							</div>
-
-							<p class="buy-product__text">
-								это премиальный бренд, созданный группой талантливых разработчиков, имеющих опыт работы на ведущих заводах по производству бытовой техники в Европе.
-							</p>
-
-							<form action="/" class="buy-product__cart{% if item.buy %} in-cart{% endif %}">
-
-								<input type="hidden" name="product" value="123456789">
-								<input type="hidden" name="buy" value="1">
-
-<!--
-
-name="product" - отправится какой продут добавить в корзину
-name="buy" - отправится добавить или удалить из корзины
-1  - добавить
--1 - удалить
-
-! соответственно, если в корзине есть товар, то при перезагрузке(загрузке) страницы
-форме необходимо добавить класс in-cart
-
- -->
-
-								<div class="buy-product__price">
-									<span class="buy-product__price-value">258 000</span> ₽
-								</div>
-
-								<div class="buy-product__available{% if not item.available %} is-not{% endif %}">
-									{% if item.available %}В наличии{% else %}Нет в наличии{% endif %}
-								</div>
-
-								<div class="buy-product__btn">
-
-									<button class="btn btn--buy" data-buy="В корзине">
-										Купить
-									</button>
-
-								</div>
-
-							</form>
-
-						</div>
-
-					</div>
-
-					<div class="cat-list__img hidden-sm">
-
-						<a href="product.html">
-
-							<picture>
-
-								<source srcset="/img/category/cat-list__product@1x.webp 1x, /img/category/cat-list__product@2x.webp 2x" type="image/webp">
-
-								<source srcset="/img/category/cat-list__product@1x.png 1x, /img/category/cat-list__product@2x.png 2x">
-
-								<img src="/img/category/cat-list__product@1x.png" alt="60cm Cast Iron Trivets">
-
-							</picture>
-
-						</a>
-
-					</div>
-
-				</div>
-
-			</article>
-
-{% endfor %}
-
-			<picture>
-
-				<source srcset="/img/vensel.webp 1x, /img/vensel@2x.webp 2x" type="image/webp">
-
-				<source srcset="/img/vensel.png 1x, /img/vensel@2x.png 2x">
-
-				<img class="vensel" src="/img/vensel.png" alt="">
-
-			</picture>
-
-		</div>
+{% include "main/category.html" %}
 
 	</section>
 

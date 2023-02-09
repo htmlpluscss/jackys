@@ -1,54 +1,25 @@
 .category {
 
-	background-color: #b7b7b7;
-	padding: 1px 0;
-
-	@media ($mdWidth) {
-
-		.center {
-
-			width: 100%;
-
-		}
-
-	}
-
 	&__list {
 
-		display: flex;
-		flex-wrap: wrap;
+		column-count: 3;
+		column-gap: 24px;
 
 	}
 
 	&__item {
 
-		width: calc(25% - 2px);
-		height: 200px;
-		margin: 1px;
-
-		@media ($mdWidth) {
-
-			width: calc(50% - 2px);
-			height: 128px;
-
-		}
-
-		@media ($smWidth) {
-
-			margin: 1px 0;
-			width: 100%;
-
-		}
+		overflow: hidden;
+		break-inside: avoid;
 
 	}
 
 	&__link {
 
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
+		display: block;
+		margin-bottom: 20px;
+		position: relative;
+		background-color: var(--color);
 
 		&::after {
 
@@ -58,26 +29,47 @@
 			right: 0;
 			bottom: 0;
 			content: '';
-			background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+			background-color: var(--color);
+			opacity: 0;
+			transition: var(--transitionDefault);
 
 		}
 
-		@media ($desktop) {
+		svg {
 
-			letter-spacing: 1.4px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			margin: auto;
+			z-index: 1;
+			opacity: 0;
+			transform: translateY(-50%);
+			transition-property: opacity;
+
+		}
+
+		@media $desktop {
 
 			&:hover {
 
+				background-color: var(--gold);
+
 				&::after {
 
-					display: none;
+					opacity: .5;
 
 				}
 
-				figcaption {
+				.category__caption {
 
-					color: var(--red);
-					background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75) 25%, rgba(255, 255, 255, 0.75) 75%, rgba(255, 255, 255, 0));
+					background-color: #d89872;
+
+				}
+
+				svg {
+
+					opacity: 1;
 
 				}
 
@@ -87,55 +79,56 @@
 
 	}
 
-	figure {
+	&__name {
 
-		figcaption {
-
-			position: absolute;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			padding: 20px;
-			font-weight: 700;
-			font-size: 18px;
-			line-height: 22px;
-			text-transform: uppercase;
-			z-index: 1;
-			color: #fff;
-
-			@media ($mdWidth) {
-
-				top: 0;
-				display: flex;
-				align-items: center;
-				text-align: center;
-				justify-content: center;
-
-			}
-
-
-		}
-
-	}
-
-	@media ($desktop) {
-
-		&__link:hover &__img {
-
-			border-color: var(--red);
-
-		}
+		display: block;
+		line-height: 20px;
+		border-bottom: solid 1px #b2b1b1;
+		padding: 0 10px;
+		color: #fff;
+		text-transform: uppercase;
+		font-size: 10px;
+		line-height: 20px;
+		font-weight: 500;
+		position: relative;
+		z-index: 1;
+		letter-spacing: 1px;
 
 	}
 
 	&__img {
 
-		position: absolute;
 		width: 100%;
-		height: 100%;
-		top: 0;
+		height: auto;
+
+	}
+
+	&__caption {
+
+		position: absolute;
 		left: 0;
-		object-fit: cover;
+		right: 0;
+		bottom: 0;
+		background-color: rgba(255,255,255,0.7);
+		transition: var(--transitionDefault);
+		padding: 5px 10px;
+		color: #000;
+		font-size: 18px;
+		font-family: 'Bodini','Bodini-Moda';
+		font-style: italic;
+		z-index: 1;
+
+		b {
+
+			font-size: 40px;
+			display: block;
+			text-transform: uppercase;
+			font-family: 'Revista';
+			font-style: normal;
+			line-height: 1;
+			font-weight: 400;
+
+		}
 
 	}
 

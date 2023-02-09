@@ -2,7 +2,7 @@
 
 	padding-bottom: 60px;
 
-	@media ($smWidth) {
+	@media $smWidth {
 
 		padding: 20px 0 40px;
 
@@ -14,13 +14,13 @@
 		padding: 0 0 40px 30px;
 		justify-content: space-between;
 
-		@media ($mdWidth) {
+		@media $mdWidth {
 
 			padding: 10px 0 30px;
 
 		}
 
-		@media ($smWidth) {
+		@media $smWidth {
 
 			padding: 0;
 
@@ -34,13 +34,13 @@
 		display: flex;
 		flex-direction: column;
 
-		@media ($mdWidth) {
+		@media $mdWidth {
 
 			width: 400px;
 
 		}
 
-		@media ($smWidth) {
+		@media $smWidth {
 
 			width: auto;
 
@@ -48,7 +48,7 @@
 
 	}
 
-	@media ($desktop) {
+	@media $desktop {
 
 		.buy-product__cart {
 
@@ -65,13 +65,13 @@
 		padding-top: 10px;
 		position: relative;
 
-		@media ($mdWidth) {
+		@media $mdWidth {
 
 			width: 256px;
 
 		}
 
-		@media ($smWidth) {
+		@media $smWidth {
 
 			padding-top: 20px;
 
@@ -114,13 +114,13 @@
 		border: 1px solid #d7d7d7;
 		border-radius: 20px;
 
-		@media ($mdWidth) {
+		@media $mdWidth {
 
 			margin: 20px 0;
 
 		}
 
-		@media ($smWidth) {
+		@media $smWidth {
 
 			margin-top: 0;
 			max-width: 400px;
@@ -135,7 +135,7 @@
 			text-align: center;
 			position: relative;
 
-			@media ($desktop) {
+			@media $desktop {
 
 				&:hover {
 
@@ -200,7 +200,7 @@
 
 		margin-bottom: 60px;
 
-		@media ($smWidth) {
+		@media $smWidth {
 
 			margin-bottom: 30px;
 
@@ -214,7 +214,7 @@
 
 			padding: 22px 30px;
 
-			@media ($mdWidth) {
+			@media $mdWidth {
 
 				padding: 0;
 
@@ -258,7 +258,7 @@
 
 		}
 
-		@media ($smWidth) {
+		@media $smWidth {
 
 			table, tbody, tr, td, th {
 

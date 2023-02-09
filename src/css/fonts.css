@@ -1,4 +1,19 @@
 @font-face {
+	font-family: 'Bodini-Moda';
+	font-display: swap;
+	src: url('/fonts/Bodini-Moda.woff2');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Bodini-Moda';
+	font-display: swap;
+	src: url('/fonts/Bodini-ModaItalic.woff2');
+	font-weight: normal;
+	font-style: italic;
+}
+
+@font-face {
 	font-family: 'Revista';
 	font-display: swap;
 	src: url('/fonts/Revista-Regular.woff2');

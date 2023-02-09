@@ -9,7 +9,7 @@
 		word-spacing: 2px;
 		display: block;
 
-		@media ($desktop) {
+		@media $desktop {
 
 			a&:hover {
 
@@ -19,7 +19,7 @@
 
 		}
 
-		@media ($mdWidth) {
+		@media $mdWidth {
 
 			font-size: 24px;
 			line-height: 30px;
@@ -28,7 +28,7 @@
 
 		}
 
-		@media ($smWidth) {
+		@media $smWidth {
 
 			font-size: 22px;
 			line-height: 26px;
@@ -45,7 +45,7 @@
 		text-align: justify;
 		margin: 20px 0;
 
-		@media ($mdWidth) {
+		@media $mdWidth {
 
 			font-size: 14px;
 			line-height: 20px;
@@ -60,7 +60,7 @@
 		flex-wrap: wrap;
 		margin-top: 32px;
 
-		@media ($smWidth) {
+		@media $smWidth {
 
 			margin-top: 30px;
 			clear: left;
@@ -100,14 +100,14 @@
 
 		}
 
-		@media ($mdWidth) {
+		@media $mdWidth {
 
 			font-size: 24px;
 			min-width: 200px;
 
 		}
 
-		@media ($smWidth) {
+		@media $smWidth {
 
 			min-width: 0;
 
@@ -159,7 +159,7 @@
 		width: 100%;
 		margin: 40px 0 29px;
 
-		@media ($mdWidth) {
+		@media $mdWidth {
 
 			margin: 20px 0;
 
