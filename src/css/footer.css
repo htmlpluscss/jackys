@@ -1,25 +1,41 @@
 .footer {
 
-	padding: 52px 0 2px;
-	background-color: #000;
-	color: #fff;
+	margin-top: 64px;
+
+	&__logo {
+
+		border-bottom: 1px solid var(--line);
+		padding: 12px 0;
+		margin: 24px 0;
+		text-align: center;
+		font-size: 12px;
+		line-height: 3;
+		text-transform: uppercase;
+		color: var(--grey);
+
+		img {
+
+			margin: auto;
+
+		}
+
+	}
 
 	@media ($mdWidth) {
 
-		padding: 36px 0 2px;
 
 	}
 
 	@media ($smWidth) {
 
-		padding: 20px 0 0;
 
 	}
 
-	.center {
+	&__flex {
 
 		display: flex;
-		justify-content: space-between;
+		gap: 64px;
+		justify-content: center;
 
 		@media ($smWidth) {
 
@@ -29,43 +45,25 @@
 
 	}
 
-	.h3 {
+	&__col {
 
-		color: var(--red);
+		min-width: 256px;
+
+	}
+
+	&__head {
+
+		color: var(--grey);
+		font-weight: 500;
 
 		&::after {
 
 			width: 58px;
 			height: 1px;
 			display: block;
-			background-color: #303030;
-			margin: 10px 0 14px;
+			background-color: var(--gold);
+			margin: 12px 0;
 			content: '';
-
-		}
-
-	}
-
-	&__left {
-
-		padding-left: 124px;
-
-		@media ($mdWidth) {
-
-			padding: 0;
-
-		}
-
-	}
-
-	&__right {
-
-		width: 474px;
-
-		@media ($smWidth) {
-
-			width: auto;
-			margin-top: 20px;
 
 		}
 
@@ -73,21 +71,16 @@
 
 	&__menu {
 
-		li {
-
-			line-height: 30px;
-
-		}
+		font-size: 14px;
+		line-height: 2;
 
 		a {
 
-			color: #fff;
 			text-transform: uppercase;
-			letter-spacing: 1.4px;
 
 			&:hover {
 
-				color: var(--red);
+				color: var(--gold);
 
 			}
 
@@ -97,18 +90,6 @@
 
 	&__address {
 
-		color: #fff;
-		line-height: 30px;
-		margin-bottom: 6px;
-		text-transform: uppercase;
-		letter-spacing: 1.4px;
-
-		@media ($smWidth) {
-
-			line-height: 24px;
-			letter-spacing: 1px;
-
-		}
 
 	}
 
@@ -121,93 +102,38 @@
 
 		a {
 
-			color: #fff;
-			cursor: text;
-
-			& + a {
-
-				margin-left: 40px;
-
-				@media ($smWidth) {
-
-					margin-left: 20px;
-
-				}
-
-			}
-
 		}
 
 	}
 
 	&__mail {
 
-		font-size: 15px;
-
-		a:hover {
-
-			cursor: pointer;
-			color: var(--red);
-
-		}
-
 	}
 
 	hr {
 
-		margin-top: 51px;
-
-		@media ($smWidth) {
-
-			margin-top: 30px;
-
-		}
+		margin-top: 36px;
 
 	}
 
 	&__copyright {
 
-		color: #989898;
 		text-align: center;
-		padding: 28px 0;
+		padding: 24px 0;
+		font-size: 14px;
 
 	}
 
 	&__time-social {
 
 		display: flex;
-		align-items: center;
-
-		@media ($smWidth) {
-
-			display: block;
-
-		}
 
 	}
 
 	&__time {
 
-		padding: 13px 34px 13px 25px;
-		border: 1px solid #303030;
-		margin: 9px 20px 9px -3px;
-		white-space: nowrap;
-		line-height: 26px;
-
-		@media ($smWidth) {
-
-			padding: 0;
-			border: 0;
-			margin: 0 0 30px;
-
-		}
-
-		span {
-
-			text-transform: uppercase;
-			padding-right: 18px;
-
-		}
+		padding: 14px 36px 14px 24px;
+		border: 1px solid var(--line);
 
 	}
 

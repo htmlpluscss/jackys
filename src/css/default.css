@@ -81,31 +81,23 @@ li {
 
 hr {
 
-	opacity: 0.1;
 	border: 0;
 	height: 1px;
-	background-color: var(--color);
+	background-color: var(--line);
 
 }
 
 .h1 {
 
 	font-weight: 500;
-	font-size: 60px;
+	font-size: 40px;
 	line-height: 1.2;
 	text-align: center;
+	font-family: 'Revista';
+	color: var(--grey);
 
 	@media $mdWidth {
 
-		font-size: 48px;
-		line-height: 1.25;
-
-	}
-
-	@media $mdWidth {
-
-		font-size: 34px;
-		line-height: 40px;
 
 	}
 
@@ -118,9 +110,6 @@ hr {
 	line-height: 48px;
 
 	@media $mdWidth {
-
-		font-size: 26px;
-		line-height: 32px;
 
 	}
 

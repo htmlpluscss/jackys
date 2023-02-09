@@ -12,6 +12,13 @@
 	font-weight: normal;
 	font-style: italic;
 }
+@font-face {
+	font-family: 'Revista';
+	font-display: swap;
+	src: url('/fonts/Revista-Black.woff2');
+	font-weight: 900;
+	font-style: normal;
+}
 
 @font-face {
 	font-family: 'Gotham';

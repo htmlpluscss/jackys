@@ -11,6 +11,12 @@
 		top: -28px;
 		left: 0;
 
+		.header--fixed & {
+
+			top: 5px;
+
+		}
+
 	}
 
 	&__flex {
@@ -249,10 +255,9 @@
 		&__item--parent:hover &__sub {
 
 			opacity: 1;
+			pointer-events: auto;
 			transform: translateY(0);
-			visibility: visible;
 			transition: opacity 0.3s 0s, transform 0.3s 0s;
-			z-index: 9;
 
 		}
 
@@ -265,12 +270,15 @@
 			background-color: var(--color);
 			display: flex;
 			text-align: left;
-			z-index: -1;
+			border-left: 1px solid var(--gold);
+			border-right: 1px solid var(--gold);
+			border-bottom: 1px solid var(--gold);
+			z-index: 9;
 
-			visibility: hidden;
 			opacity: 0;
+			pointer-events: none;
 
-			transform: translateY(30px);
+			transform: translateY(-5px);
 			transition: opacity 0.3s 0s, visibility 0s 0.3s, transform 0.3s 0s;
 
 			&-col {

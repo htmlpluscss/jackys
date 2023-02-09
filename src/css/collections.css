@@ -1,0 +1,106 @@
+.collections {
+
+	margin-top: 64px;
+
+	&__intro {
+
+		max-width: 480px;
+		margin: 12px auto 48px;
+		font-size: 13px;
+		line-height: 20px;
+		text-align: center;
+		color: var(--grey);
+
+		&::before {
+
+			display: block;
+			width: 8px;
+			height: 8px;
+			content: '';
+			margin: 0 auto 24px;
+			border: 1px solid var(--grey);
+			border-radius: 2px;
+			transform: rotate(45deg);
+
+		}
+
+	}
+
+	&__item {
+
+		width: 965px;
+		margin: 30px auto 0;
+
+	}
+
+	&__link {
+
+		display: block;
+		height: 313px;
+		position: relative;
+
+		&:hover::after {
+
+			opacity: .7;
+
+		}
+
+		&::after {
+
+			background-color: #fff;
+			opacity: 0;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			content: '';
+			transition: var(--transitionDefault);
+
+		}
+
+	}
+
+	&__romb {
+
+		position: absolute;
+		width: 221px;
+		height: 221px;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		content: '';
+		margin: auto;
+		transform: rotate(45deg);
+		z-index: 1;
+
+	}
+
+	&__name {
+
+		position: absolute;
+		width: 300px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto;
+		font: 39px/40px "Revista";
+		text-align: center;
+		z-index: 1;
+
+		b {
+
+			display: block;
+			font-weight: 900;
+
+		}
+
+	}
+
+}

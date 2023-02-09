@@ -68,7 +68,6 @@ const html = (files, since = {}, folder = '') => {
 			},
 			path: 'src/'
 		}))
-		.pipe(replace('	', '  '))
 		.pipe(w3cjs({
 			url : 'https://validator.w3.org/nu/'
 		}))
@@ -79,7 +78,7 @@ const html = (files, since = {}, folder = '') => {
 
 gulp.task('html', () => html('src/**/index.html', {since: gulp.lastRun('html')}));
 gulp.task('html:touch', () => html('src/**/index.html'));
-gulp.task('html:main', () => html('src/main/**/index.html', {}, '/main'));
+gulp.task('html:main', () => html('src/index.html', {}, '/'));
 
 gulp.task('css', () => {
 

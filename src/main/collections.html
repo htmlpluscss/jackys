@@ -1,0 +1,69 @@
+	<article class="collections">
+
+		<div class="center">
+
+			<h1 class="h1">
+				Inspiration
+			</h1>
+
+			<p class="collections__intro">
+				Let your culinary brilliance shine through with our precision technology. <br>
+				It is thanks to this perfect control that every nuance of flavour will be wrought from your very finest dishes, provoking the purest, most intense culinary pleasure.
+			</p>
+
+			<ul class="collections__list">
+
+{% for item in [
+	{
+		img  : "noir_absolu",
+		name : "Absolute <b>black</b>",
+		bg   : "070707"
+	},
+	{
+		img  : "blanc_pur",
+		name : "Pure <b>White</b>",
+		bg   : "fff",
+		color : "8d9399"
+	},
+	{
+		img  : "gris_acier",
+		name : "Iron <b>grey</b>",
+		bg   : "53565a"
+	},
+	{
+		img  : "inox",
+		name : "Platinum",
+		bg   : "939496"
+	},
+	{
+		img  : "coalblack",
+		name : "Coal <b>Black</b>",
+		bg   : "070707"
+	}
+] %}
+
+				<li class="collections__item">
+
+					<a href="/" class="collections__link">
+
+						<img src="/img/collections/{{ item.img }}.jpg" width="965" height="313" loading="lazy" alt="{{ item.name | striptags }}">
+
+						<span class="collections__romb" style="background-color: #{{ item.bg }}"></span>
+
+						<span class="collections__name" style="color: #{{ item.color | default('fff') }}">
+
+							{{ item.name | safe }}
+
+						</span>
+
+					</a>
+
+				</li>
+
+{% endfor %}
+
+			</ul>
+
+		</div>
+
+	</article>

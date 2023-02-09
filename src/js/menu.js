@@ -29,6 +29,21 @@
 
 	});
 
+	// scroll
+
+	const header = document.querySelector('.header');
+
+	window.addEventListener("scroll", () => {
+
+		window.requestAnimationFrame( () => {
+
+			header.classList.toggle('header--fixed', window.pageYOffset > 0);
+
+		});
+
+	});
+
+
 })(document.querySelector('.menu'));
 
 
