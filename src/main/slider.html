@@ -1,0 +1,58 @@
+			<aside class="slider">
+
+				<div class="swiper-container-style">
+
+					<div class="swiper-container swiper-container--home">
+
+						<ul class="swiper-wrapper slider__list">
+
+{% for img in ["coalblack","absolut_black","inox","grey","pure_white"] %}
+
+							<li class="swiper-slide slider__item">
+
+								<a href="/" class="slider__link">
+
+									<picture>
+
+										<source srcset="/img/home/{{ img }}.webp" type="image/webp">
+										<source srcset="/img/home/{{ img }}.jpg">
+
+										<img class="slider__img" src="/img/home/{{ img }}.jpg" alt="" loading="lazy" width="1980" height="600">
+
+									</picture>
+
+									<span class="slider__content">
+
+										<img src="/img/logo.svg" width="40" height="40" alt="{{ site }}">
+
+										<b class="slider__head">
+											Créateur d'émotions depuis 1684
+										</b>
+
+										<span class="slider__desc">
+											Discover The Latest Creations From <br>
+											la Maison De Dietrich
+										</span>
+
+										<svg width="25" height="25" viewBox="0 0 68 68">
+											<g fill="none" stroke="#fff">
+												<path d="m34 0 34 34L34 68.0.0 34z"/>
+												<path d="M14 34h40M34 14v40"/>
+											</g>
+										</svg>
+
+									</span>
+
+								</a>
+
+							</li>
+
+{% endfor %}
+
+						</ul>
+
+					</div>
+
+				</div>
+
+			</aside>

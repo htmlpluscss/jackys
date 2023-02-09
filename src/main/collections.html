@@ -46,7 +46,14 @@
 
 					<a href="/" class="collections__link">
 
-						<img src="/img/collections/{{ item.img }}.jpg" width="965" height="313" loading="lazy" alt="{{ item.name | striptags }}">
+						<picture>
+
+							<source srcset="/img/collections/{{ item.img }}.webp" type="image/webp">
+							<source srcset="/img/collections/{{ item.img }}.jpg">
+
+							<img src="/img/collections/{{ item.img }}.jpg" width="965" height="313" loading="lazy" alt="{{ item.name | striptags }}">
+
+						</picture>
 
 						<span class="collections__romb" style="background-color: #{{ item.bg }}"></span>
 

@@ -19,7 +19,7 @@
 			  swipePrev = document.createElement('button'),
 			  items = swipe.querySelectorAll('.swiper-slide'),
 			  count = items.length,
-			  standart = swipe.classList.contains('swiper-container--standart'),
+			  home = swipe.classList.contains('swiper-container--home'),
 			  realty = swipe.classList.contains('swiper-container--realty'),
 			  gallery = swipe.classList.contains('swiper-container--gallery'),
 			  related = swipe.classList.contains('swiper-container--related');
@@ -63,7 +63,7 @@
 
 		}
 
-		if (standart) {
+		if (home) {
 
 			swipeBtns.remove();
 
@@ -74,8 +74,9 @@
 				new Swiper(swipe, {
 					loop: true,
 					autoplay: {
-						delay: 3000
+						delay: 5000
 					},
+					speed : 700,
 					pagination: {
 						el: swipeNav,
 						clickable: true,
@@ -318,4 +319,4 @@
 
 	}
 
-})(document.querySelectorAll('.swiper-container0'));
+})(document.querySelectorAll('.swiper-container'));
