@@ -1,3 +1,37 @@
+( menu => {
+
+	// search
+
+	const search = menu.querySelector('.menu__search');
+		  input = search.querySelector('.menu__search-input');
+
+	search.addEventListener('submit', event => {
+
+		if( input.offsetParent === null ) {
+
+			event.preventDefault();
+
+			document.body.classList.add('menu-search-show');
+
+			window.requestAnimationFrame( () => input.focus() );
+
+		}
+
+	});
+
+	window.addEventListener("click", event => {
+
+		if ( event.target !== document && event.target.closest('.menu__search') === null ) {
+
+			document.body.classList.remove('menu-search-show');
+
+		}
+
+	});
+
+})(document.querySelector('.menu'));
+
+
 
 (function(btn){
 

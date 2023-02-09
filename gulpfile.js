@@ -41,7 +41,7 @@ const w3cjs            = require('gulp-w3cjs');
 
 let config             = null;
 
-const site             = 'dedietrich-russia.ru';
+const site             = 'De Dietrich';
 const domain           = 'dedietrich.htmlpluscss.site';
 
 try {
@@ -63,7 +63,7 @@ const html = (files, since = {}, folder = '') => {
 		.pipe(debug({title: 'html:'}))
 		.pipe(nunjucksRender({
 			data: {
-				url: 'https://' + site,
+				url: 'https://dedietrich-russia.ru',
 				site: site
 			},
 			path: 'src/'
@@ -178,7 +178,7 @@ gulp.task('ftp', () => {
 	return gulp.src('build/**/*', {since: gulp.lastRun('ftp')} )
 		.pipe(debug({title: 'ftp:'}))
 		.pipe(f)
-		.pipe(replace('"https://' + site, '"https://' + domain))
+		.pipe(replace('"https://dedietrich-russia.ru', '"https://' + domain))
 		.pipe(replace('css/styles.css', 'css/styles.css?' + Date.now()))
 		.pipe(replace('js/scripts.js', 'js/scripts.js?' + Date.now()))
 		.pipe(f.restore)

@@ -318,4 +318,4 @@
 
 	}
 
-})(document.querySelectorAll('.swiper-container'));
+})(document.querySelectorAll('.swiper-container0'));

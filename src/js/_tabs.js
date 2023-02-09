@@ -1,4 +1,4 @@
-JACKYS.tabs = function(elems){
+/*JACKYS.tabs = function(elems){
 
 	Array.prototype.forEach.call(elems, function(tab){
 
@@ -51,4 +51,4 @@ if(document.querySelectorAll('.tabs').length) {
 
 	JACKYS.tabs(document.querySelectorAll('.tabs'));
 
-}
+}*/

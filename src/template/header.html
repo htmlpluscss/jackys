@@ -3,7 +3,7 @@
 		<div class="header__top center">
 
 			<a class="header__logo" href="/">
-				На главную Jacky`s
+				На главную {{ site }}
 			</a>
 
 			<div class="header__left">
@@ -15,43 +15,36 @@
 
 			</div>
 
-			<div class="header__right">
-
-				<form class="header__search form form--header hidden-sm" action="/" autocomplete="off">
-
-					<input class="input header__search-input">
-
-					<button class="button header__search-btn form__btn-submit">
-						Поиск по сайту
-					</button>
-
-				</form>
-
-				<span class="header__sep hidden-sm"></span>
-
-				<a href="cart.html" class="header__cart">
-					Корзина
-				</a>
-
-			</div>
-
 		</div>
-
-		<hr class="hidden-sm">
 
 		<nav class="menu">
 
-			<div class="center">
+			<div class="menu__flex center">
 
-				<button class="button menu__btn-toggle visible-sm" type="button">
-					<span>открыть/закрыть</span> меню <span>сайта</span>
-				</button>
+				<div class="menu__left">
+
+					<a class="menu__logo" href="/" title="На главную {{ site }}">
+
+						<img src="/img/logo.svg" width="56" height="58" alt="{{ site }}">
+
+					</a>
+
+					<button class="button menu__btn-toggle visible-sm" type="button">
+						<span>открыть/закрыть</span> меню <span>сайта</span>
+					</button>
+
+				</div>
 
 				<ul class="menu__list">
 
-					<li class="menu__item hidden-sm">
-						<a class="menu__link" href="/">О компании</a>
+					<li class="menu__item">
+						<a class="menu__link" href="/">Контакты</a>
 					</li>
+
+					<li class="menu__item">
+						<a class="menu__link" href="/">Акции</a>
+					</li>
+
 					<li class="menu__item menu__item--current menu__item--parent">
 
 						<a class="menu__link hidden-sm" href="/">Каталог</a>
@@ -66,22 +59,22 @@
 
 								<ul class="menu__sub-list">
 									<li>
-										<a href="/catalog.html">
+										<a href="/catalog/">
 											<span>Стиральные машины</span>
 										</a>
 									</li>
 									<li>
-										<a href="/catalog.html">
+										<a href="/catalog/">
 											<span>Сушильные машины</span>
 										</a>
 									</li>
 									<li>
-										<a href="/catalog.html">
+										<a href="/catalog/">
 											<span>Холодильники</span>
 										</a>
 									</li>
 									<li>
-										<a href="/catalog.html">
+										<a href="/catalog/">
 											<span>Морозильники</span>
 										</a>
 									</li>
@@ -93,28 +86,28 @@
 							<div class="menu__sub-col">
 
 								<h3 class="menu__sub-head hidden-sm">
-								Встраиваемая техника
+									Встраиваемая техника
 								</h3>
 
 								<ul class="menu__sub-list">
 
 									<li>
-										<a href="/catalog.html">
+										<a href="/catalog/">
 											<span>Варочные поверхности</span>
 										</a>
 									</li>
 									<li>
-										<a href="/catalog.html">
+										<a href="/catalog/">
 											<span>Духовые шкафы</span>
 										</a>
 									</li>
 									<li>
-										<a href="/catalog.html">
+										<a href="/catalog/">
 											<span>Посудомоечные машины</span>
 										</a>
 									</li>
 									<li>
-										<a href="/catalog.html">
+										<a href="/catalog/">
 											<span>Встраиваемые холодильники</span>
 										</a>
 									</li>
@@ -127,17 +120,42 @@
 						</div>
 
 					</li>
+
 					<li class="menu__item">
 						<a class="menu__link" href="/">Доставка и оплата</a>
 					</li>
+
 					<li class="menu__item">
-						<a class="menu__link" href="/">Новости</a>
-					</li>
-					<li class="menu__item">
-						<a class="menu__link" href="/">Контакты</a>
+						<a class="menu__link" href="/">Сервис</a>
 					</li>
 
 				</ul>
+
+				<div class="menu__right">
+
+					<form class="menu__search" action="/" autocomplete="off">
+
+						<input class="input menu__search-input" name="keywords">
+
+						<button class="button menu__search-btn" aria-label="Поиск по сайту">
+
+							<svg width="24" height="24" viewBox="0 0 24 24">
+								<path d="M14.05 15.46a7.5 7.5 0 1 1 1.41-1.41L22 20.59 20.59 22l-6.54-6.54ZM15 9.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0Z" fill-rule="evenodd"/>
+							</svg>
+
+						</button>
+
+					</form>
+
+					<a href="/cart/" class="menu__cart" title="Корзина">
+
+						<svg width="24" height="24" viewBox="0 0 24 24">
+							<path d="M19.38 6a2 2 0 0 1 1.7 1 2 2 0 0 1 .09 1.89l-3.28 6.56A1 1 0 0 1 17 16H8a1 1 0 0 1-1-.74L4.24 5H3a1 1 0 1 1 0-2h2a1 1 0 0 1 1 .74L6.58 6h12.8ZM8.76 14h7.62l3-6H7.13l1.63 6Zm-.2 4.44a1.5 1.5 0 1 1-2.12 2.12 1.5 1.5 0 0 1 2.12-2.12Zm10 2.12a1.5 1.5 0 1 0-2.12-2.12 1.5 1.5 0 0 0 2.12 2.12Z"/>
+						</svg>
+
+					</a>
+
+				</div>
 
 			</div>
 

@@ -6,56 +6,69 @@
 
 }
 
+html {
+
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+	scroll-behavior: smooth;
+	overflow-y: scroll;
+
+	&.scroll-behavior-off {
+
+		scroll-behavior: auto;
+
+	}
+
+}
+
 body {
 
-	min-height: 100vh;
 	min-width: 320px;
-	font: 14px/20px 'PT Serif', 'Times New Roman', Times;
-	/* font-family: 'Montserrat', sans-serif; */
+	color: var(--color);
+	font-size: 16px;
+	line-height: 1.5;
+	font-family: 'Gotham', sans-serif;
 	-webkit-text-size-adjust: none;
 	-webkit-overflow-scrolling: touch;
 	-ms-overflow-style: scrollbar;
-	overflow-y: scroll;
 	display: flex;
-	letter-spacing: .8px;
+	flex-grow: 1;
 	flex-direction: column;
-	background-color: #000;
-
-	/* IE10+ CSS styles go here */
-	@media (-ms-high-contrast: none), (-ms-high-contrast: active) {
-
-		min-height: 100vh;
-
-	}
+	position: relative;
 
 }
 
 a {
 
-	color: inherit;
+	color: currentColor;
 	text-decoration: none;
-
-	&:hover {
-
-		cursor: pointer;
-		text-decoration: none;
-
-	}
+	transition: var(--transitionDefault);
+	cursor: pointer;
 
 }
 
 ::selection {
 
-	color: #fff;
-	background: var(--red);
+	color: var(--bg);
+	background-color: var(--color);
 
 }
 
 img {
 
 	border: 0;
+	display: block;
 	position: relative;
-	vertical-align: top;
+
+}
+
+svg {
+
+	display: block;
+	position: relative;
+	fill: currentColor;
+	transition: var(--transitionDefault);
 
 }
 
@@ -66,70 +79,78 @@ li {
 
 }
 
-/*
------------------------------------------------------------------------------*/
-.notsel {
+hr {
 
-	user-select: none;
+	opacity: 0.1;
+	border: 0;
+	height: 1px;
+	background-color: var(--color);
 
 }
 
-
 .h1 {
 
+	font-weight: 500;
+	font-size: 60px;
+	line-height: 1.2;
+	text-align: center;
+
+	@media $mdWidth {
+
+		font-size: 48px;
+		line-height: 1.25;
+
+	}
+
+	@media $mdWidth {
+
+		font-size: 34px;
+		line-height: 40px;
+
+	}
 
 }
 
 .h2 {
 
+	font-weight: 600;
+	font-size: 34px;
+	line-height: 48px;
+
+	@media $mdWidth {
+
+		font-size: 26px;
+		line-height: 32px;
+
+	}
 
 }
 
 .h3 {
 
-	font-size: 16px;
-	line-height: 30px;
-	font-weight: 400;
+	font-weight: 600;
+	font-size: 24px;
+	text-align: center;
 
 }
 
-hr {
-
-	border: 0;
-	height: 1px;
-	position: relative;
-	background-color: var(--red);
-
-}
-
-
-main,
-header,
-footer,
-section,
-article,
-aside,
-time {
-
-	display: block;
-	position: relative;
-
-}
-
+/*
+-----------------------------------------------------------------------------*/
 .main {
 
+	flex-shrink: 0;
 	flex-grow: 1;
-	background-color: #fff;
 
 }
 
-.vensel {
+.wrapper {
 
-	display: block;
-	margin: auto;
+	flex-shrink: 0;
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
 
 }
-
 
 /* hidden
 -----------------------------------------------------------------------------*/
@@ -151,11 +172,5 @@ time {
 
 	clip: rect(0 0 0 0) !important;
 	overflow: hidden !important;
-
-}
-
-.white-space {
-
-	white-space: nowrap;
 
 }

@@ -1,4 +1,4 @@
-
+/*
 (function(){
 
 	var forms = document.querySelectorAll('.form');
@@ -190,4 +190,4 @@
 
 	});
 
-})();
+})();*/

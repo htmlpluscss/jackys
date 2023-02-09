@@ -1,25 +1,9 @@
 .header {
 
-	background-color: #000;
-	background-image: url(/img/header.webp);
-	background-position: center top;
-	background-repeat: no-repeat;
-	background-size: 600px auto;
-
-
-	@media ($mdWidth) {
-
-		background-size: 400px auto;
-
-	}
-
-	@media ($smWidth) {
-
-		background-position: left top;
-		background-size: auto 100px;
-		background-image: url(/img/header--mobile.webp) !important;
-
-	}
+	position: sticky;
+	top: 0;
+	z-index: 9;
+	background-color: #fff;
 
 	&__top {
 
@@ -119,112 +103,6 @@
 			letter-spacing: 1.1px;
 			font-weight: 400;
 			cursor: text;
-
-		}
-
-	}
-
-	&__search {
-
-		width: 30px;
-		height: 30px;
-		position: relative;
-
-		&-btn {
-
-			width: 30px;
-			height: 30px;
-			background: url(/img/sprite.svg) -4px -3px;
-
-			@media ($desktop) {
-
-				&:hover {
-
-					background-position: -4px -103px;
-
-				}
-
-			}
-
-		}
-
-		&-input {
-
-			position: absolute;
-			width: 256px;
-			height: 32px;
-			top: -2px;
-			right: 0;
-			border: 1px solid #fff;
-			color: #fff;
-			padding-left: 12px;
-			padding-right: 36px;
-
-			visibility: hidden;
-			opacity: 0;
-			z-index: -1;
-
-			transition: opacity 0.3s 0s, visibility 0s 0.3s;
-
-			.form--open & {
-
-				z-index: 1;
-				opacity: 1;
-				visibility: visible;
-				transition: opacity 0.3s 0s;
-
-			}
-
-		}
-
-	}
-
-	&__sep {
-
-		height: 20px;
-		width: 1px;
-		background-color: #a3a3a3;
-		margin: 0 20px;
-
-	}
-
-	&__cart {
-
-		font-size: 0;
-		color: transparent;
-		width: 30px;
-		height: 30px;
-		position: relative;
-
-		&::before {
-
-			position: absolute;
-			width: 30px;
-			height: 30px;
-			top: 0;
-			left: 0;
-			content: '';
-			background: url(/img/sprite.svg) -50px -3px;
-
-		}
-
-		@media ($desktop) {
-
-			&:hover::before {
-
-				background-position: -50px -103px;
-
-			}
-
-		}
-
-		@media ($smWidth) {
-
-			width: auto;
-			font-size: 16px;
-			color: #fff;
-			line-height: 30px;
-			padding-left: 40px;
 
 		}
 

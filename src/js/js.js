@@ -13,15 +13,6 @@ https://github.com/htmlpluscss/
 	let resizeTimeout = null,
 		windowWidthOLd = window.innerWidth;
 
-
-// footer__up
-
-	document.querySelector('.footer__up').addEventListener("click", ()=> {
-
-		window.scrollIntoView({ behavior: 'smooth' });
-
-	});
-
 	window.addEventListener("resize", event => {
 
 		window.requestAnimationFrame( () => {

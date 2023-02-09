@@ -1,4 +1,4 @@
-(function(){
+/*(function(){
 
 	if(JACKYS.gallery) {
 
@@ -51,4 +51,4 @@
 
 	}
 
-})();
+})();*/

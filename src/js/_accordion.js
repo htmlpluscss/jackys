@@ -1,4 +1,4 @@
-JACKYS.accordion = function(elems){
+/*JACKYS.accordion = function(elems){
 
 	Array.prototype.forEach.call(elems, function(elem){
 
@@ -53,4 +53,4 @@ if(document.querySelectorAll('.accordion').length) {
 
 	JACKYS.accordion(document.querySelectorAll('.accordion'));
 
-}
+}*/

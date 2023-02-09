@@ -1,4 +1,4 @@
-(function(forms){
+/*(function(forms){
 
 	if(!forms) {
 
@@ -49,4 +49,4 @@
 
 	});
 
-})(document.querySelectorAll('.buy-product__cart'));
+})(document.querySelectorAll('.buy-product__cart'));*/

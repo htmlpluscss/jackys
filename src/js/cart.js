@@ -1,4 +1,4 @@
-(function(cart){
+/*(function(cart){
 
 	if(!cart) {
 
@@ -144,4 +144,4 @@
 
 	});
 
-})(document.querySelector('.cart'));
+})(document.querySelector('.cart'));*/
