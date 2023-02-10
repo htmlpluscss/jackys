@@ -2,37 +2,19 @@
 
 	&__title {
 
-		font-size: 26px;
-		line-height: 32px;
-		font-weight: 700;
-		letter-spacing: 3px;
-		word-spacing: 2px;
-		display: block;
+		a {
 
-		@media $desktop {
+			color: var(--color);
 
-			a&:hover {
+			@media $desktop {
 
-				color: var(--red);
+				&:hover {
+
+					color: var(--gold);
+
+				}
 
 			}
-
-		}
-
-		@media $mdWidth {
-
-			font-size: 24px;
-			line-height: 30px;
-			letter-spacing: 2px;
-			word-spacing: 1px;
-
-		}
-
-		@media $smWidth {
-
-			font-size: 22px;
-			line-height: 26px;
-			letter-spacing: 1px;
 
 		}
 
@@ -64,21 +46,6 @@
 
 			margin-top: 30px;
 			clear: left;
-
-		}
-
-		&.in-cart .btn {
-
-			font-size: 0;
-			color: transparent;
-
-			&::after {
-
-				content: attr(data-buy);
-				font-size: 20px;
-				color: #fff;
-
-			}
 
 		}
 
@@ -118,37 +85,21 @@
 	&__available {
 
 		color: var(--red);
+		display: flex;
+		align-items: center;
 		text-transform: uppercase;
-		line-height: 27px;
-		height: 27px;
+		line-height: 24px;
+		height: 24px;
 		margin-top: 6px;
-		font-size: 11px;
-		padding-left: 38px;
+		font-size: 12px;
 		position: relative;
 		white-space: nowrap;
+		gap: 10px;
 		letter-spacing: 1.1px;
-
-		&::before {
-
-			position: absolute;
-			width: 27px;
-			height: 27px;
-			top: 0;
-			left: 0;
-			content: '';
-			background: url(/img/sprite.svg) -56px -42px;
-
-		}
 
 		&.is-not {
 
-			color: #a2a2a2;
-
-			&::before {
-
-				background-position: -6px -42px;
-
-			}
+			color: var(--grey);
 
 		}
 

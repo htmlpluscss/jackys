@@ -27,8 +27,8 @@
 
 	&__ico {
 
-		width: 115px;
-		height: 115px;
+		width: 96px;
+		height: 96px;
 		transform: rotate(45deg);
 		border-radius: 3px;
 		display: flex;
@@ -36,6 +36,15 @@
 		align-items: center;
 		margin: 18px auto 36px;
 		border: 2px solid var(--gold);
+
+		svg {
+
+			transform: rotate(-45deg);
+			width: 72px;
+			height: 72px;
+			fill: var(--gold);
+
+		}
 
 	}
 

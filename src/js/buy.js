@@ -1,52 +1,46 @@
-/*(function(forms){
+( forms => {
 
-	if(!forms) {
+	if( forms.length ) {
 
-		return;
+		[...forms].forEach( form => {
 
-	}
+			const btn = form.querySelector('.btn'),
+				  btnAlt = btn.getAttribute('data-alt'),
+				  btnDefault = btn.getAttribute('data-default');
 
-	Array.prototype.forEach.call(forms, function(form){
+			form.addEventListener('submit', event => {
 
-		form.addEventListener('submit',function(e){
+				event.preventDefault();
 
-			e.preventDefault();
+				const buy = form.classList.contains('in-cart') ? -1 : 1;
 
-			var buy = form.classList.contains('in-cart') ? -1 : 1;
+				form.elements.buy.value = buy;
 
-			form.querySelector('input[name="buy"]').value = buy;
+				btn.disabled = true;
 
-			form.querySelector('.btn').disabled = true;
+				// send form
 
-			// send form
+				fetch(form.getAttribute('action'), {
+					method: 'POST',
+					body: new FormData(form)
+				})
+				.then(response => response.json())
+				.then(result => {
 
-			var formData = new FormData(form),
-				xhr = new XMLHttpRequest();
+					console.log(result);
 
-			xhr.open("POST", form.getAttribute('action'));
-			xhr.send(formData);
+					btn.disabled = false;
 
-			xhr.onreadystatechange = function() {
+					btn.textContent = buy === 1 ? btnAlt : btnDefault;
 
-				if (xhr.readyState != 4){
+					form.classList.toggle('in-cart', buy === 1);
 
-					return;
+				});
 
-				}
-
-				form.querySelector('.btn').disabled = false;
-				form.classList.toggle('in-cart', buy === 1);
-
-				if (xhr.status != 200) {
-
-					console.log('ошибка ' + xhr.status);
-
-				}
-
-			}
+			});
 
 		});
 
-	});
+	}
 
-})(document.querySelectorAll('.buy-product__cart'));*/
+})(document.querySelectorAll('.buy-product__cart'));
