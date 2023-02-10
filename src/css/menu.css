@@ -136,13 +136,6 @@
 		letter-spacing: .5px;
 		font-weight: 500;
 
-		.menu-search-show & {
-
-			opacity: 0;
-			pointer-events: none;
-
-		}
-
 		@media $desktop {
 
 			&:hover {

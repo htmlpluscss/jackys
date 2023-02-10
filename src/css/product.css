@@ -1,36 +1,17 @@
 .product {
 
-	padding-bottom: 60px;
-
-	@media $smWidth {
-
-		padding: 20px 0 40px;
-
-	}
+	padding: 20px 0 40px;
 
 	&__primary {
 
 		display: flex;
-		padding: 0 0 40px 30px;
 		justify-content: space-between;
-
-		@media $mdWidth {
-
-			padding: 10px 0 30px;
-
-		}
-
-		@media $smWidth {
-
-			padding: 0;
-
-		}
 
 	}
 
 	&__desc {
 
-		width: 476px;
+		width: 512px;
 		display: flex;
 		flex-direction: column;
 
@@ -62,7 +43,6 @@
 
 		flex-shrink: 0;
 		width: 400px;
-		padding-top: 10px;
 		position: relative;
 
 		@media $mdWidth {
@@ -90,19 +70,39 @@
 	&__gift {
 
 		position: absolute;
-		right: 0;
-		bottom: 0;
-		color: var(--red);
-		text-align: center;
-		white-space: nowrap;
+		top: 0;
+		left: 0;
+		width: 96px;
+		height: 96px;
+		transform: rotate(45deg);
+		border-radius: 3px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border: 2px solid var(--gold);
+		background-color: rgba(255, 255, 255, .7);
 
 		svg {
 
-			display: block;
-			fill: var(--red);
-			margin: auto;
+			fill: var(--gold);
+			transform: rotate(-45deg);
 
 		}
+
+		&:hover {
+
+			background-color: rgba(255, 255, 255, .9);
+
+		}
+
+	}
+
+	&__technology {
+
+		display: flex;
+		flex-wrap: wrap;
+		gap: 10px;
+		margin: 24px 0;
 
 	}
 
@@ -176,51 +176,7 @@
 
 	}
 
-	&__hr {
-
-		height: 20px;
-		overflow: hidden;
-		background-color: transparent;
-
-		&::before {
-
-			position: absolute;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			height: 10px;
-			content: '';
-			box-shadow: 0 0 9px rgba(0,0,0,.18);
-
-		}
-
-	}
-
-	.accordion {
-
-		margin-bottom: 60px;
-
-		@media $smWidth {
-
-			margin-bottom: 30px;
-
-		}
-
-	}
-
 	&-table {
-
-		.center {
-
-			padding: 22px 30px;
-
-			@media $mdWidth {
-
-				padding: 0;
-
-			}
-
-		}
 
 		table {
 
@@ -289,7 +245,8 @@
 
 		b {
 
-			color: var(--red);
+			color: var(--gold);
+			font-weight: 500;
 
 		}
 

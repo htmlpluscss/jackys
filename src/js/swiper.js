@@ -37,10 +37,10 @@
 		swipePrev.innerHTML = '<svg width="16" height="16" viewBox="0 0 16 16"><path d="m5.22 7.33 3.57-3.57-.94-.95L2.67 8l5.18 5.19.94-.95-3.57-3.57h8.11V7.33H5.22Z"/></svg>';
 		swipeNext.innerHTML = '<svg width="16" height="16" viewBox="0 0 16 16"><path d="M10.78 7.33 7.21 3.76l.94-.95L13.33 8l-5.18 5.19-.94-.95 3.57-3.57H2.67V7.33h8.11Z"/></svg>';
 
-		swipeBtns.appendChild(swipePrev);
-		swipeBtns.appendChild(swipeNext);
-		swipeControls.appendChild(swipeBtns);
-		swipeControls.appendChild(swipeNav);
+		swipeBtns.append(swipePrev);
+		swipeBtns.append(swipeNext);
+		swipeControls.append(swipeBtns);
+		swipeControls.append(swipeNav);
 
 		resetSwipe = () => {
 
@@ -126,7 +126,7 @@
 				toggleSwipe = false;
 
 				swipe.parentNode.parentNode.classList.add('swiper-container-style');
-				swipe.parentNode.appendChild(swipeControls);
+				swipe.parentNode.append(swipeControls);
 
 				new Swiper(swipe, {
 					loop: true,
@@ -168,11 +168,11 @@
 
 				if ( window.innerWidth < 768 ) {
 
-					desktopBox.appendChild(swipe.parentNode);
+					desktopBox.append(swipe.parentNode);
 
 				} else {
 
-					modalBox.appendChild(swipe.parentNode);
+					modalBox.append(swipe.parentNode);
 
 				}
 
@@ -210,7 +210,7 @@
 
 		swipe.addEventListener('swiperJsLoad', () => {
 
-			swipe.appendChild(swipeControls);
+			swipe.append(swipeControls);
 
 			// eager
 			[...swipe.querySelectorAll('[loading="lazy"]')].forEach( img => img.setAttribute('loading','eager') );
@@ -268,7 +268,7 @@
 
 	if ( localStorage.getItem('fastLoadScript') ) {
 
-		document.head.appendChild(script);
+		document.head.append(script);
 
 	}
 	else {
