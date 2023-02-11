@@ -14,28 +14,6 @@
 }
 
 @font-face {
-	font-family: 'Revista';
-	font-display: swap;
-	src: url('/fonts/Revista-Regular.woff2');
-	font-weight: normal;
-	font-style: normal;
-}
-@font-face {
-	font-family: 'Revista';
-	font-display: swap;
-	src: url('/fonts/Revista-RegularItalic.woff2');
-	font-weight: normal;
-	font-style: italic;
-}
-@font-face {
-	font-family: 'Revista';
-	font-display: swap;
-	src: url('/fonts/Revista-Black.woff2');
-	font-weight: 900;
-	font-style: normal;
-}
-
-@font-face {
 	font-family: 'Gotham';
 	font-display: swap;
 	src: url('/fonts/Gotham-LightItalic.woff2');

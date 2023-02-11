@@ -44,16 +44,15 @@ details {
 		&::after {
 
 			position: absolute;
-			width: 10px;
-			height: 10px;
 			left: 50%;
-			margin-left: -5px;
+			margin-left: -6px;
 			content: '';
-			margin-bottom: 7px;
+			z-index: 1;
+			margin-bottom: 4px;
 			bottom: 100%;
-			background-color: var(--color);
-			transform: rotate(45deg);
-			pointer-events: none;
+			border-style: solid;
+			border-width: 8px 8px 0;
+			border-color: var(--color) transparent;
 			animation: opacity .3s;
 
 		}
