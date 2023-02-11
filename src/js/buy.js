@@ -12,10 +12,6 @@
 
 				event.preventDefault();
 
-				const buy = form.classList.contains('in-cart') ? -1 : 1;
-
-				form.elements.buy.value = buy;
-
 				btn.disabled = true;
 
 				// send form
@@ -31,9 +27,11 @@
 
 					btn.disabled = false;
 
-					btn.textContent = buy === 1 ? btnAlt : btnDefault;
+					btn.textContent = result.mode === 'del' ? btnAlt : btnDefault;
 
-					form.classList.toggle('in-cart', buy === 1);
+					form.classList.toggle('in-cart', result.mode === 'del');
+
+					form.elements.mode.value = result.mode;
 
 				});
 

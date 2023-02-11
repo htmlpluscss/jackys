@@ -99,9 +99,22 @@
 		gap: 10px;
 		letter-spacing: 1.1px;
 
+		svg {
+
+			fill: none;
+			stroke: currentColor;
+
+		}
+
 		&.is-not {
 
 			color: var(--grey);
+
+			svg {
+
+				transform: rotate(45deg);
+
+			}
 
 		}
 

@@ -46,6 +46,9 @@
 			opacity: 0;
 			transform: translateY(-50%);
 			transition-property: opacity;
+			fill: none;
+			stroke: #fff;
+
 
 		}
 

@@ -70,6 +70,13 @@
 		height: 300px;
 		z-index: 1;
 
+		svg {
+
+			fill: none;
+			stroke: currentColor;
+
+		}
+
 	}
 
 	&__head {
