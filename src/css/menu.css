@@ -146,12 +146,6 @@
 
 		}
 
-		@media $mdWidth {
-
-			padding: 0 20px;
-
-		}
-
 		@media $smWidth {
 
 			padding: 0 5px;
@@ -202,6 +196,8 @@
 			height: 30px;
 			line-height: 30px;
 			border: 1px solid #fff;
+			background-color: var(--color);
+			box-shadow: -4px 0 2px var(--color) !important;
 
 			.menu-search-show & {
 
@@ -279,12 +275,6 @@
 				padding: 30px 110px 20px 36px;
 				white-space: nowrap;
 
-				@media $mdWidth {
-
-					padding: 30px 40px;
-
-				}
-
 			}
 
 			li {
@@ -312,6 +302,16 @@
 				}
 
 			}
+
+		}
+
+	}
+
+	@media $mdWidth {
+
+		&__sub {
+
+			display: none;
 
 		}
 

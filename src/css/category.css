@@ -5,6 +5,19 @@
 		column-count: 3;
 		column-gap: 24px;
 
+		@media $mdWidth {
+
+			column-count: 2;
+			column-gap: 15px;
+
+		}
+
+		@media $smWidth {
+
+			column-count: auto;
+
+		}
+
 	}
 
 	&__item {
@@ -123,11 +136,11 @@
 
 		b {
 
-			font-size: 40px;
 			display: block;
+			color: currentColor;
 			text-transform: uppercase;
-			font-family: 'Revista';
 			font-style: normal;
+			text-align: left;
 			line-height: 1;
 			font-weight: 400;
 

@@ -7,9 +7,16 @@
 	&__list {
 
 		display: flex;
+		gap: 24px;
 		justify-content: space-around;
 
-		@media ($smWidth) {
+		@media $mdWidth {
+
+			gap: 20px;
+
+		}
+
+		@media $smWidth {
 
 			display: block;
 
@@ -20,8 +27,7 @@
 	&__item {
 
 		text-align: center;
-		padding: 0 10px;
-		flex-basis: 25%;
+		flex-basis: 1;
 
 	}
 
@@ -36,6 +42,13 @@
 		align-items: center;
 		margin: 18px auto 36px;
 		border: 2px solid var(--gold);
+
+		@media $mdWidth {
+
+			width: 72px;
+			height: 72px;
+
+		}
 
 		svg {
 
@@ -64,6 +77,12 @@
 		margin: 13px 20px;
 		color: #818181;
 		font-size: 14px;
+
+		@media $mdWidth {
+
+			font-size: 13px;
+
+		}
 
 	}
 

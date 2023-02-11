@@ -21,7 +21,7 @@
 			font-size: 20px;
 			color: #000;
 
-			@media ($smWidth) {
+			@media $smWidth {
 
 				font-size: 14px;
 				padding: 10px;

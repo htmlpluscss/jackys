@@ -8,9 +8,10 @@
 .center {
 
 	margin: 0 auto;
-	width: 1250px;
+	width: 1280px;
 	max-width: 100%;
 	position: relative;
+	padding: 0 15px;
 
 }
 

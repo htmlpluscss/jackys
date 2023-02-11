@@ -140,7 +140,7 @@ fieldset {
 	border: 0;
 	padding: 30px;
 
-	@media ($smWidth) {
+	@media $smWidth {
 
 		padding: 0 20px;
 

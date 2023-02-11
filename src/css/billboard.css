@@ -10,6 +10,12 @@
 	overflow: hidden;
 	background-color: var(--color);
 
+	@media $mdWidth {
+
+		height: 256px;
+
+	}
+
 	img {
 
 		position: absolute;

@@ -1,6 +1,6 @@
 .product {
 
-	padding: 20px 0 40px;
+	margin: 24px auto;
 
 	&__primary {
 
@@ -82,6 +82,13 @@
 		border: 2px solid var(--gold);
 		background-color: rgba(255, 255, 255, .7);
 
+		@media $mdWidth {
+
+			width: 72px;
+			height: 72px;
+
+		}
+
 		svg {
 
 			fill: var(--gold);
@@ -145,7 +152,7 @@
 
 			}
 
-			@media ($xsWidth) {
+			@media $xsWidth {
 
 				font-size: 12px;
 

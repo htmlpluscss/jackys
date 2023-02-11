@@ -1,6 +1,6 @@
 .cart  {
 
-	@media ($smWidth) {
+	@media $smWidth {
 
 		padding-top: 30px;
 
@@ -35,13 +35,13 @@
 
 			width: 400px;
 
-			@media ($mdWidth) {
+			@media $mdWidth {
 
 				width: calc(100% - 150px);
 
 			}
 
-			@media ($smWidth) {
+			@media $smWidth {
 
 				width: 100%;
 				padding: 0 20px !important;
@@ -56,7 +56,7 @@
 
 			width: 128px;
 
-			@media ($mdWidth) {
+			@media $mdWidth {
 
 				width: auto;
 				padding: 0 0 0 28px !important;
@@ -66,7 +66,7 @@
 
 		}
 
-		@media ($mdWidth) {
+		@media $mdWidth {
 
 			&-4 {
 
@@ -102,7 +102,7 @@
 		}
 
 
-		@media ($smWidth) {
+		@media $smWidth {
 
 			&-3 {
 
@@ -123,14 +123,14 @@
 
 			margin-left: auto;
 
-			@media ($mdWidth) {
+			@media $mdWidth {
 
 				padding: 0 !important;
 				margin-right: 20px;
 
 			}
 
-			@media ($smWidth) {
+			@media $smWidth {
 
 				clear: left;
 				text-align: center;
@@ -151,14 +151,14 @@
 			white-space: nowrap;
 
 
-			@media ($mdWidth) {
+			@media $mdWidth {
 
 				padding: 10px !important;
 				margin: 10px 20px;
 
 			}
 
-			@media ($smWidth) {
+			@media $smWidth {
 
 				margin: 0;
 
@@ -235,7 +235,7 @@
 
 	&__item {
 
-		@media ($mdWidth) {
+		@media $mdWidth {
 
 			padding-bottom: 20px;
 
@@ -318,13 +318,13 @@
 
 			display: flex;
 
-			@media ($mdWidth) {
+			@media $mdWidth {
 
 				flex-wrap: wrap;
 
 			}
 
-			@media ($smWidth) {
+			@media $smWidth {
 
 				display: block;
 
@@ -365,7 +365,7 @@
 
 				width: 158px;
 
-				@media ($smWidth) {
+				@media $smWidth {
 
 					width: auto;
 					padding: 5px;
@@ -374,7 +374,7 @@
 
 			}
 
-			@media ($smWidth) {
+			@media $smWidth {
 
 				flex-direction: column;
 
