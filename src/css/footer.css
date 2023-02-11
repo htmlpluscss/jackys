@@ -7,6 +7,7 @@
 	&__left {
 
 		width: 320px;
+		max-width: 100%;
 
 	}
 
@@ -33,15 +34,6 @@
 
 	}
 
-	@media $mdWidth {
-
-
-	}
-
-	@media $smWidth {
-
-
-	}
 
 	&__flex {
 
@@ -86,6 +78,15 @@
 		font-size: 14px;
 		line-height: 2;
 
+		@media $smWidth {
+
+			display: grid;
+			grid-template-columns: repeat(2, auto);
+			grid-gap: 0 10px;
+			grid-auto-flow: dense;
+
+		}
+
 		a {
 
 			text-transform: uppercase;
@@ -102,6 +103,19 @@
 
 	&__address {
 
+		b {
+
+			white-space: nowrap;
+			font-weight: 500;
+
+		}
+
+		@media $smWidth {
+
+			margin-top: 24px;
+			text-align: center;
+
+		}
 
 	}
 
@@ -110,6 +124,12 @@
 		font-size: 16px;
 		line-height: 30px;
 		margin-bottom: 8px;
+
+		@media $smWidth {
+
+			text-align: center;
+
+		}
 
 	}
 
@@ -129,11 +149,23 @@
 		padding: 24px 0;
 		font-size: 14px;
 
+		@media $smWidth {
+
+			padding: 12px 0;
+
+		}
+
 	}
 
 	&__time-social {
 
 		display: flex;
+
+		@media $smWidth {
+
+			justify-content: center;
+
+		}
 
 	}
 

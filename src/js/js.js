@@ -10,33 +10,6 @@ https://github.com/htmlpluscss/
 
 ( () => {
 
-	let resizeTimeout = null,
-		windowWidthOLd = window.innerWidth;
-
-	window.addEventListener("resize", event => {
-
-		window.requestAnimationFrame( () => {
-
-			if (resizeTimeout === null) {
-
-				resizeTimeout = setTimeout( () => {
-
-					resizeTimeout = null;
-
-					if( windowWidthOLd !== window.innerWidth || event.isTrusted === false ) {
-
-						windowWidthOLd = window.innerWidth;
-
-					}
-
-				}, 100);
-
-			}
-
-		});
-
-	});
-
 	window.addEventListener("load", () => {
 
 		localStorage.setItem('fastLoadScript', true);

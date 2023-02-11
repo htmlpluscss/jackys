@@ -1,5 +1,7 @@
 .category {
 
+	margin: 15px 0;
+
 	&__list {
 
 		column-count: 3;

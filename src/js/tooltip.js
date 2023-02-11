@@ -36,13 +36,21 @@
 
 			btn.addEventListener("mouseenter", () => {
 
-				[...tooltips].forEach( _tooltip => _tooltip.open = _tooltip === tooltip );
+				if ( window.innerWidth >= 1250 ) {
+
+					tooltip.open = true;
+
+				}
 
 			});
 
 			btn.addEventListener("mouseleave", () => {
 
-				tooltip.open = false;
+				if ( window.innerWidth >= 1250 ) {
+
+					tooltip.open = false;
+
+				}
 
 			});
 

@@ -8,12 +8,13 @@
 
 	[...items].forEach( accordion => {
 
-		let animateOn = false,
-			activeItem = null;
+		let activeItem = null;
 
 		const items = accordion.querySelectorAll('.accordion__item');
 
 		[...items].forEach( item => {
+
+			let animateOn = false;
 
 			const btn = item.querySelector('.accordion__btn'),
 				  head = item.querySelector('.accordion__head'),
@@ -42,7 +43,7 @@
 
 				if(animateOn && activeItem === item && !window.isInViewport(head)){
 
-					head.scrollIntoView({ behavior: 'smooth' });
+					item.scrollIntoView({ behavior: 'smooth' });
 
 				}
 

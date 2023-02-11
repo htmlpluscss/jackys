@@ -11,12 +11,35 @@
 		height: 70px;
 		grid-template-columns: 1fr 148px 1fr;
 
+		@media $smWidth {
+
+			grid-template-columns: 1fr 148px;
+
+		}
+
+		@media $xsWidth {
+
+			grid-template-columns: 1fr 128px;
+
+		}
+
 	}
 
 	&__logo {
 
 		display: flex;
 		align-items: center;
+
+		@media $xsWidth {
+
+			img {
+
+				width: 128px;
+				height: auto;
+
+			}
+
+		}
 
 	}
 
@@ -32,11 +55,19 @@
 		font-weight: 500;
 		color: var(--grey);
 
+		@media $xsWidth {
+
+			font-size: 14px;
+			font-weight: 700;
+
+		}
+
 		small {
 
 			display: block;
 			font-size: 12px;
 			text-align: right;
+			font-weight: 400;
 
 		}
 

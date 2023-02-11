@@ -114,6 +114,12 @@ hr {
 
 	}
 
+	@media $smWidth {
+
+		font-size: 28px;
+
+	}
+
 }
 
 .h2 {
@@ -125,6 +131,12 @@ hr {
 	font-family: 'Revista';
 	color: var(--grey);
 
+	@media $smWidth {
+
+		font-size: 24px;
+
+	}
+
 }
 
 .h3 {
@@ -135,6 +147,12 @@ hr {
 	text-align: center;
 	font-family: 'Revista';
 	color: var(--grey);
+
+	@media $smWidth {
+
+		font-size: 20px;
+
+	}
 
 }
 

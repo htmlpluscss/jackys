@@ -5,6 +5,7 @@ details {
 
 		list-style: none;
 		cursor: pointer;
+		position: relative;
 
 		&::-webkit-details-marker {
 
@@ -38,6 +39,27 @@ details {
 
 .details-img {
 
+	&[open] summary {
+
+		&::after {
+
+			position: absolute;
+			width: 10px;
+			height: 10px;
+			left: 50%;
+			margin-left: -5px;
+			content: '';
+			margin-bottom: 7px;
+			bottom: 100%;
+			background-color: var(--color);
+			transform: rotate(45deg);
+			pointer-events: none;
+			animation: opacity .3s;
+
+		}
+
+	}
+
 	& > div {
 
 		width: 236px;
@@ -55,22 +77,6 @@ details {
 		border-radius: 2px;
 		box-shadow: none;
 		text-align: center;
-
-		&::after {
-
-			position: absolute;
-			width: 10px;
-			height: 10px;
-			left: 50%;
-			margin-left: -5px;
-			content: '';
-			margin-top: -5px;
-			top: 100%;
-			background-color: var(--color);
-			transform: rotate(45deg);
-			pointer-events: none;
-
-		}
 
 	}
 

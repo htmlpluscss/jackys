@@ -6,7 +6,6 @@
 	margin-bottom: 16px;
 	background-color: var(--bg);
 
-
 	.swiper-controls {
 
 		top: auto;
@@ -80,6 +79,15 @@
 
 			left: 15px;
 			bottom: 15px;
+
+		}
+
+		@media $smWidth {
+
+			top: 15px;
+			right: 15px;
+			width: auto;
+			height: auto;
 
 		}
 

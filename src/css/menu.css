@@ -23,12 +23,26 @@
 
 		display: flex;
 
+		@media $smWidth {
+
+			flex-wrap: wrap;
+
+		}
+
 	}
 
 	&__left {
 
 		width: 256px;
 		position: relative;
+
+		@media $smWidth {
+
+			width: 50%;
+			display: flex;
+			justify-content: flex-end;
+
+		}
 
 	}
 
@@ -40,6 +54,12 @@
 		align-items: center;
 		gap: 12px;
 
+		@media $smWidth {
+
+			width: 50%;
+
+		}
+
 	}
 
 	&__btn-toggle {
@@ -48,45 +68,22 @@
 		font-size: 14px;
 		line-height: 32px;
 		text-transform: uppercase;
-		padding: 0 10px 0 36px;
 		letter-spacing: 1.4px;
 		display: none;
+		align-items: center;
+		transform: translateX(50%);
 
-		span {
+		svg {
 
-			position: absolute;
-			width: 22px;
-			height: 2px;
-			border-radius: 1px;
-			top: 10px;
-			left: 4px;
-			content: '';
-			background-color: #fff;
-			font-size: 0;
-			overflow: hidden;
-			padding: 0;
-			color: transparent;
-			transition: .3s;
+			stroke: #fff;
+			fill: none;
+			margin-right: 8px;
 
-			& ~ span {
+		}
 
-				top: 20px;
+		@media $smWidth {
 
-			}
-
-			.menu-show & {
-
-				top: 15px;
-				transform: rotate(45deg);
-
-				& ~ span {
-
-					top: 15px;
-					transform: rotate(-45deg);
-
-				}
-
-			}
+			display: flex;
 
 		}
 
@@ -101,16 +98,16 @@
 
 		@media $smWidth {
 
-			display: block;
-			padding-bottom: 12px;
-			transition: opacity .1s;
-			opacity: 0;
-			max-height: 0;
+			display: none;
+			order: 3;
+			border-top: 1px solid var(--gold);
+			padding: 15px;
+			margin-left: -15px;
+			margin-right: -15px;
 
 			.menu-show & {
 
-				opacity: 1;
-				max-height: 1000px;
+				display: block;
 
 			}
 
@@ -141,22 +138,6 @@
 			&:hover {
 
 				color: var(--gold);
-
-			}
-
-		}
-
-		@media $smWidth {
-
-			padding: 0 5px;
-			line-height: 0;
-			overflow: hidden;
-			transition: .3s;
-
-			.menu-show & {
-
-				padding: 5px;
-				line-height: 20px;
 
 			}
 
@@ -202,6 +183,12 @@
 			.menu-search-show & {
 
 				display: block;
+
+			}
+
+			@media $smWidth {
+
+				height: 30px;
 
 			}
 
@@ -307,7 +294,7 @@
 
 	}
 
-	@media $mdWidth {
+	@media $tablet {
 
 		&__sub {
 
@@ -321,37 +308,30 @@
 
 		&__sub {
 
-			&::after,
-			&::before {
+			margin-left: 24px;
 
-				width: 64px;
-				height: 0;
-				display: block;
-				margin: 0 auto;
-				content: '';
-				background-color: #fff;
-				transition: .3s;
+			li {
 
-				.menu-show & {
-
-					height: 1px;
-					margin: 20px auto;
-
-				}
+				margin: 5px;
 
 			}
 
-			a {
+		}
 
-				font-size: 14px;
-				text-transform: uppercase;
-				position: relative;
-				color: inherit;
-				letter-spacing: 1.4px;
-				padding: 0;
-				line-height: 36px;
+	}
 
-			}
+}
+
+@media $smWidth {
+
+	.menu-show {
+
+		background-color: var(--color);
+
+		.main,
+		.footer {
+
+			display: none;
 
 		}
 

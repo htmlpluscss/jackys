@@ -2,6 +2,12 @@
 
 	margin-top: 64px;
 
+	@media $smWidth {
+
+		margin: 0;
+
+	}
+
 	.intro p {
 
 		max-width: 480px;
@@ -11,6 +17,12 @@
 	&__item {
 
 		margin-top: 30px;
+
+		@media $smWidth {
+
+			margin-top: 15px;
+
+		}
 
 	}
 
