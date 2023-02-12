@@ -90,7 +90,7 @@
 					<form action="/" class="buy-product__cart in-cart">
 
 						<input type="hidden" name="product" value="123456789">
-						<input type="hidden" name="buy" value="1">
+						<input type="hidden" name="mode" value="del">
 
 						<div class="buy-product__price">
 							<span class="buy-product__price-value">258 000</span> ₽
@@ -113,9 +113,9 @@
 							<button class="btn btn--buy" data-default="Купить" data-alt="В корзине">
 
 								{% if item.buy %}
-									В корзине
-								{% else %}
 									Купить
+								{% else %}
+									В корзине
 								{% endif %}
 
 							</button>
