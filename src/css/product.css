@@ -276,6 +276,12 @@
 			margin: 16px 0;
 			display: flex;
 
+			@media $smWidth {
+
+				justify-content: center;
+
+			}
+
 			.btn {
 
 				min-width: 256px;
