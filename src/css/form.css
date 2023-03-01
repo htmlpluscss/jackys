@@ -130,6 +130,23 @@ legend {
 
 	}
 
+	&--red {
+
+		color: #fff;
+		background-color: var(--red);
+
+		@media $desktop {
+
+			&:hover {
+
+				background-color: #474644;
+
+			}
+
+		}
+
+	}
+
 	&--outline {
 
 		color: var(--color);

@@ -267,4 +267,38 @@
 
 	}
 
+	&__discontinued {
+
+		margin: 24px 0;
+
+		&-btn {
+
+			margin: 16px 0;
+			display: flex;
+
+			.btn {
+
+				min-width: 256px;
+				font-size: 16px;
+
+			}
+
+		}
+
+		&-text {
+
+			font-weight: 500;
+			font-size: 15px;
+			margin: 10px 0;
+
+		}
+
+		.buy-product__available svg {
+
+			transform: rotate(45deg);
+
+		}
+
+	}
+
 }

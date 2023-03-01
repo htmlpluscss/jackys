@@ -28,11 +28,47 @@
 		line-height: 22px;
 		text-align: justify;
 		margin: 20px 0;
+		font-weight: 500;
 
 		@media $mdWidth {
 
 			font-size: 14px;
 			line-height: 20px;
+
+		}
+
+	}
+
+	&__list {
+
+		font-size: 15px;
+		line-height: 22px;
+		margin: 20px 0;
+
+		@media $mdWidth {
+
+			font-size: 14px;
+			line-height: 20px;
+
+		}
+
+		li {
+
+			padding-left: 20px;
+
+			&::before {
+
+				position: absolute;
+				width: 6px;
+				height: 6px;
+				top: 6px;
+				left: 0;
+				border-radius: 2px;
+				border: 2px solid var(--gold);
+				content: '';
+				transform: rotate(45deg);
+
+			}
 
 		}
 

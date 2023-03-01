@@ -103,42 +103,31 @@
 
 					</div>
 
-					<form action="/" class="buy-product__cart in-cart">
+					<div class="product__discontinued">
 
-						<input type="hidden" name="product" value="123456789">
-						<input type="hidden" name="mode" value="del">
-
-						<div class="buy-product__price">
-							<span class="buy-product__price-value">258 000</span> ₽
-						</div>
-
-						<div class="buy-product__available{% if not item %} is-not{% endif %}">
+						<div class="buy-product__available">
 							<svg width="24" height="24" viewBox="0 0 68 68">
 								<path d="m34 0 34 34L34 68.0.0 34z"/>
 								<path d="M14 34h40M34 14v40"/>
 							</svg>
-							{% if item %}
-								В наличии
-							{% else %}
-								Нет в наличии
-							{% endif %}
+							Модель снята с производства
 						</div>
 
-						<div class="buy-product__btn">
+						<p class="product__discontinued-text">
+							Позвоните нам и мы постараемся подобрать модель подходящую по параметрам <a href="tel:+74952532211">+7 ( 495 ) 253 22 11</a>
+						</p>
 
-							<button class="btn btn--buy" data-default="Купить" data-alt="В корзине">
+						<div class="product__discontinued-btn">
 
-								{% if item.buy %}
-									Купить
-								{% else %}
-									В корзине
-								{% endif %}
+							<a href="#related" class="btn btn--red">
 
-							</button>
+								Аналоги
+
+							</a>
 
 						</div>
 
-					</form>
+					</div>
 
 				</div>
 
@@ -224,5 +213,7 @@
 {% include "product/accordion.html" %}
 
 	</article>
+
+{% include "product/related.html" %}
 
 {% endblock %}

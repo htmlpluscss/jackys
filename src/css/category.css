@@ -64,10 +64,11 @@
 			fill: none;
 			stroke: #fff;
 
-
 		}
 
 		@media $desktop {
+
+			max-width: 400px;
 
 			&:hover {
 
