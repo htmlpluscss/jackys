@@ -1,0 +1,32 @@
+				<ul class="product__technology">
+
+{% for img in ['44774','44778','44780','44786','44790','44796','44798','44799','46757','47597','47650','72681','72964'] %}
+
+					<li>
+
+						<details class="details-img">
+
+							<summary>
+
+								<picture>
+
+									<source srcset="/img/product/technology/{{ img }}--60x60.webp 1x, /img/product/technology/{{ img }}--120x120.webp 2x" type="image/webp">
+									<source srcset="/img/product/technology/{{ img }}--60x60.png 1x, /img/product/technology/{{ img }}--120x120.png 2x">
+
+									<img src="/img/product/technology/{{ img }}--60x60.png" width="60" height="60" alt="">
+
+								</picture>
+
+							</summary>
+
+							<div>
+								Описание технологии
+							</div>
+
+						</details>
+
+					</li>
+
+{% endfor %}
+
+				</ul>

@@ -15,198 +15,25 @@
 
 	<article class="product center">
 
-		<script type="application/ld+json">
+{% include "product/schema.html" %}
 
-			{
-				"@context": "https://schema.org",
-				"@type": "Product",
-				"name": "{{ title }}",
-				"description": "{{ description }}",
-				"image": "{{ url }}{{ ogImage }}",
-				"url": "{{ url }}{{ urlCurrent }}",
-				"brand": "{{ site }}",
-				"sku": "id",
-				"offers": {
-					"@type": "Offer",
-					"price": "258000",
-					"priceValidUntil": "2023-03-03",
-					"availability": "https://schema.org/InStock",
-					"priceCurrency": "RUB",
-					"url": "{{ url }}{{ urlCurrent }}"
-				}
+		<div class="product__primary buy-product">
 
-			}
+			<h1 class="buy-product__title h1">
+				60cm Cast Iron Trivets
+			</h1>
 
-		</script>
-
-		<div class="product__primary">
+{% include "product/img.html" %}
 
 			<div class="product__desc">
 
-				<div class="buy-product">
+{% include "product/intro.html" %}
 
-					<h1 class="buy-product__title h1">
-						60cm Cast Iron Trivets
-					</h1>
-
-					<div class="product__img visible-sm">
-
-						<a href="/img/product/img@big.jpg" class="fancybox-gallery-open">
-
-							<picture>
-
-								<source srcset="/img/product/img@1x.webp 1x, /img/product/img@2x.webp 2x" type="image/webp">
-
-								<source srcset="/img/product/img@1x.png 1x, /img/product/img@2x.png 2x">
-
-								<img src="/img/product/img@1x.png" alt="60cm Cast Iron Trivets">
-
-							</picture>
-
-						</a>
-
-						<a href="/img/product/" class="product__gift">
-
-							<svg width="48" height="48" viewBox="0 0 24 24"><path d="M20 5.5A3.5 3.5 0 0 0 16.5 2h-.2c-1.74.06-3.27 1.26-4.3 3.18l-.14-.25C10.8 3.1 9.24 1.97 7.48 2a3.5 3.5 0 0 0-3.14 5H4a2 2 0 0 0-2 2v2c0 1.1.9 2 2 2v6.18A3 3 0 0 0 7 22h10.18A3 3 0 0 0 20 19v-6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-.34c.22-.45.34-.96.34-1.5ZM16.5 7a1.5 1.5 0 1 0-.02-3c-1.18-.02-2.38 1.1-3.12 3h3.14Zm-5.86 0C9.9 5.1 8.7 3.98 7.5 4a1.5 1.5 0 0 0-.14 3H10.64ZM7.5 9H4v2h7V9H7.5ZM6 19v-6h5v7H6.88A1 1 0 0 1 6 19Zm11 1h-4v-7h5v6.12a1 1 0 0 1-1 .88Zm3-9h-7V9h7v2Z" fill-rule="evenodd"/></svg>
-
-						</a>
-
-					</div>
-
-					<p class="buy-product__text">
-						Обновленная газовая варочная панель в элегантном и современном стиле, сочетает в себе традиции с современным дизайном и технологиями, раскрывая все ноу-хау и опыт De Dietrich.
-					</p>
-
-					<ul class="buy-product__list">
-
-						<li>
-							4 газовые конфорки: <br>
-							Левая задняя — стандартная 1500 Вт;<br>
-							Левая передняя — большая мощная 3100 Вт;<br>
-							Правая задняя — мощная 2250 Вт;<br>
-							Правая передняя — маленькая 850 Вт
-						</li>
-
-						<li>
-							Общая мощность: 7700 Вт
-						</li>
-
-					</ul>
-
-					<div class="visible-sm">
-
-						<div class="product__btns">
-							<a href="https://webbackend.shriro.com.au/images/upload/files/CBIE622.pdf" target="_blank" rel="nofollow">Характеристики</a>
-							<a href="https://webbackend.shriro.com.au/images/upload/files/CBIE622.pdf" target="_blank" rel="nofollow">Инструкция</a>
-							<a href="/img/product/img@big.png" class="fancybox-gallery-open">Галерея</a>
-						</div>
-
-					</div>
-
-					<div class="product__discontinued">
-
-						<div class="buy-product__available">
-							<svg width="24" height="24" viewBox="0 0 68 68">
-								<path d="m34 0 34 34L34 68.0.0 34z"/>
-								<path d="M14 34h40M34 14v40"/>
-							</svg>
-							Модель снята с производства
-						</div>
-
-						<p class="product__discontinued-text">
-							Позвоните нам и мы постараемся подобрать модель подходящую по параметрам <a href="tel:+74952532211">+7 ( 495 ) 253 22 11</a>
-						</p>
-
-						<div class="product__discontinued-btn">
-
-							<a href="#related" class="btn btn--red">
-
-								Аналоги
-
-							</a>
-
-						</div>
-
-					</div>
-
-				</div>
-
-				<div class="product__btns hidden-sm">
-					<a href="https://webbackend.shriro.com.au/images/upload/files/CBIE622.pdf" target="_blank" rel="nofollow">Характеристики</a>
-					<a href="https://webbackend.shriro.com.au/images/upload/files/CBIE622.pdf" target="_blank" rel="nofollow">Инструкция</a>
-					<a href="/img/product/img@big.png" class="fancybox-gallery-open">Галерея</a>
-				</div>
-
-				<ul class="product__technology">
-
-{% for img in ['44774','44778','44780','44786','44790','44796','44798','44799','46757','47597','47650','72681','72964'] %}
-
-					<li>
-
-						<details class="details-img">
-
-							<summary>
-
-								<picture>
-
-									<source srcset="/img/product/technology/{{ img }}--60x60.webp 1x, /img/product/technology/{{ img }}--120x120.webp 2x" type="image/webp">
-									<source srcset="/img/product/technology/{{ img }}--60x60.png 1x, /img/product/technology/{{ img }}--120x120.png 2x">
-
-									<img src="/img/product/technology/{{ img }}--60x60.png" width="60" height="60" alt="">
-
-								</picture>
-
-							</summary>
-
-							<div>
-								Описание технологии
-							</div>
-
-						</details>
-
-					</li>
-
-{% endfor %}
-
-				</ul>
+{% include "product/discontinued.html" %}
 
 			</div>
 
-			<div class="product__img hidden-sm">
-
-				<a href="/img/product/img@big.jpg" class="fancybox-gallery-open">
-
-					<picture>
-
-						<source srcset="/img/product/img@1x.webp 1x, /img/product/img@2x.webp 2x" type="image/webp">
-
-						<source srcset="/img/product/img@1x.png 1x, /img/product/img@2x.png 2x">
-
-						<img src="/img/product/img@1x.png" alt="60cm Cast Iron Trivets">
-
-					</picture>
-
-				</a>
-
-				<a href="/img/product/" class="product__gift" title="Подарок к покупке">
-
-					<svg width="48" height="48" viewBox="0 0 24 24"><path d="M20 5.5A3.5 3.5 0 0 0 16.5 2h-.2c-1.74.06-3.27 1.26-4.3 3.18l-.14-.25C10.8 3.1 9.24 1.97 7.48 2a3.5 3.5 0 0 0-3.14 5H4a2 2 0 0 0-2 2v2c0 1.1.9 2 2 2v6.18A3 3 0 0 0 7 22h10.18A3 3 0 0 0 20 19v-6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-.34c.22-.45.34-.96.34-1.5ZM16.5 7a1.5 1.5 0 1 0-.02-3c-1.18-.02-2.38 1.1-3.12 3h3.14Zm-5.86 0C9.9 5.1 8.7 3.98 7.5 4a1.5 1.5 0 0 0-.14 3H10.64ZM7.5 9H4v2h7V9H7.5ZM6 19v-6h5v7H6.88A1 1 0 0 1 6 19Zm11 1h-4v-7h5v6.12a1 1 0 0 1-1 .88Zm3-9h-7V9h7v2Z" fill-rule="evenodd"/></svg>
-
-				</a>
-
-			</div>
-
-			<div class="product__gallery visuallyhidden">
-
-				<a href="https://lipsum.app/id/1/1024x768" data-fancybox="fancybox-gallery-open">
-					Image
-				</a>
-
-				<a href="https://www.youtube.com/watch?v=5AwdkGKmZ0I" data-fancybox="fancybox-gallery-open">
-					youtube
-				</a>
-
-			</div>
+{% include "product/technology.html" %}
 
 		</div>
 

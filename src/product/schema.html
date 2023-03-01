@@ -1,0 +1,23 @@
+		<script type="application/ld+json">
+
+			{
+				"@context": "https://schema.org",
+				"@type": "Product",
+				"name": "{{ title }}",
+				"description": "{{ description }}",
+				"image": "{{ url }}{{ ogImage }}",
+				"url": "{{ url }}{{ urlCurrent }}",
+				"brand": "{{ site }}",
+				"sku": "id",
+				"offers": {
+					"@type": "Offer",
+					"price": "258000",
+					"priceValidUntil": "2023-03-03",
+					"availability": "https://schema.org/InStock",
+					"priceCurrency": "RUB",
+					"url": "{{ url }}{{ urlCurrent }}"
+				}
+
+			}
+
+		</script>

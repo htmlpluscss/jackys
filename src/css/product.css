@@ -4,28 +4,26 @@
 
 	&__primary {
 
-		display: flex;
-		justify-content: space-between;
-
-	}
-
-	&__desc {
-
-		width: 512px;
-		display: flex;
-		flex-direction: column;
+		display: grid;
+		gap: 18px;
+		grid-template-columns: 512px 1fr;
 
 		@media $mdWidth {
 
-			width: 400px;
+			grid-template-columns: 400px 1fr;
 
 		}
 
 		@media $smWidth {
 
-			width: auto;
+			display: block;
 
 		}
+
+	}
+
+	&__desc {
+
 
 	}
 
@@ -41,13 +39,12 @@
 
 	&__img {
 
-		flex-shrink: 0;
-		width: 400px;
 		position: relative;
+		grid-row: span 3;
 
 		@media $mdWidth {
 
-			width: 256px;
+			grid-row: span 2;
 
 		}
 
@@ -121,73 +118,9 @@
 		gap: 10px;
 		margin: 24px 0;
 
-	}
-
-	&__btns {
-
-		display: flex;
-		margin-top: auto;
-		margin-bottom: 15px;
-		border: 1px solid #d7d7d7;
-		border-radius: 20px;
-
 		@media $mdWidth {
 
-			margin: 20px 0;
-
-		}
-
-		@media $smWidth {
-
-			margin-top: 0;
-			max-width: 400px;
-
-		}
-
-		a {
-
-			color: #676767;
-			line-height: 36px;
-			flex-grow: 1;
-			text-align: center;
-			position: relative;
-
-			@media $desktop {
-
-				&:hover {
-
-					color: var(--red);
-
-				}
-
-			}
-
-			@media $xsWidth {
-
-				font-size: 12px;
-
-			}
-
-			&::before {
-
-				position: absolute;
-				width: 1px;
-				height: 20px;
-				top: 0;
-				left: 0;
-				bottom: 0;
-				content: '';
-				margin: auto;
-				background-color: #d7d7d7;
-				pointer-events: none;
-
-			}
-
-			&:first-child::before {
-
-				display: none;
-
-			}
+			grid-column: span 2;
 
 		}
 
@@ -302,6 +235,35 @@
 		.buy-product__available svg {
 
 			transform: rotate(45deg);
+
+		}
+
+	}
+
+}
+
+.list-file {
+
+	li {
+
+		margin: 12px 0;
+
+	}
+
+	a {
+
+		display: flex;
+		align-items: center;
+		gap: 20px;
+		color: var(--red);
+
+		@media $desktop {
+
+			&:hover {
+
+				color: var(--grey);
+
+			}
 
 		}
 
