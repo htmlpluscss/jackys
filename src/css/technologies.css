@@ -1,0 +1,54 @@
+.technologies {
+
+	margin: 48px auto;
+	display: flex;
+	align-items: center;
+
+	&__img {
+
+		width: 360px;
+		flex-shrink: 0;
+
+		img {
+
+			width: 100%;
+			height: auto;
+
+		}
+
+		@media $mdWidth {
+
+			float: left;
+			max-width: 40%;
+			margin-right: 24px;
+			margin-bottom: 12px;
+
+		}
+
+	}
+
+	&__text {
+
+		margin-left: 48px;
+
+		p {
+
+			margin: 24px 0;
+
+		}
+
+		@media $mdWidth {
+
+			margin: 0;
+
+		}
+
+	}
+
+	@media $mdWidth {
+
+		display: block;
+
+	}
+
+}

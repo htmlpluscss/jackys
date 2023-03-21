@@ -1,0 +1,84 @@
+{% set title = "Технологии " + site %}
+{% set description = "Трансформация материалов в элегантные приборы при высочайшем уровне технического контроля и максимальной точности. Выражение через приборы самой сути нашего таланта: смелости и креативности, стремления к совершенству и воплощения чувственного и благородного дизайна приборов, помогающих вам создавать выдающиеся кулинарные блюда" %}
+
+{% set urlCurrent = "technologies" %}
+{% set ogImage = "/img/home/pure_white.jpg" %}
+
+{% extends "template/base.html" %}
+
+{% block content %}
+
+{% set breadcrumbs = ['Главная','Технологии De Dietrich'] %}
+
+	<article>
+
+{% include "_include/breadcrumbs.html" %}
+
+		<div class="center">
+
+			<div class="intro">
+
+				<h2 class="h2">
+					{{ title }}
+				</h2>
+
+			</div>
+
+			<div class="technologies">
+
+				<div class="technologies__img">
+
+					<picture>
+
+						<source srcset="/img/category/ambiance_coal_black.webp" type="image/webp">
+						<source srcset="/img/category/ambiance_coal_black.jpg">
+
+						<img class="category__img" src="/img/category/ambiance_coal_black.jpg" alt="{{ item.head }}" width="360" height="360" loading="lazy">
+
+					</picture>
+
+				</div>
+
+				<div class="technologies__text">
+
+					<p>
+						{{ description }}
+					</p>
+
+					<p>
+						{{ description }}
+					</p>
+
+				</div>
+
+			</div>
+
+			<hr class="romb">
+
+			<div class="youtube">
+
+				<a class="youtube__link" data-id="oSOiGLNVGg0" target="_blank" rel="nofollow noopener" href="https://www.youtube.com/watch?v=oSOiGLNVGg0" title="Домашняя Прачечная ASKO Pro Home Laundry">
+
+					<picture>
+
+						<source srcset="https://i.ytimg.com/vi_webp/oSOiGLNVGg0/mqdefault.webp 1x, https://i.ytimg.com/vi_webp/oSOiGLNVGg0/sddefault.webp 2x" type="image/webp" media="(max-width: 360px)">
+						<source srcset="https://i.ytimg.com/vi_webp/oSOiGLNVGg0/hqdefault.webp 1x, https://i.ytimg.com/vi_webp/oSOiGLNVGg0/maxresdefault.webp 2x" type="image/webp" media="(max-width: 767px)">
+						<source srcset="https://i.ytimg.com/vi_webp/oSOiGLNVGg0/sddefault.webp 1x, https://i.ytimg.com/vi_webp/oSOiGLNVGg0/maxresdefault.webp 2x" type="image/webp">
+
+						<source srcset="https://i.ytimg.com/vi/oSOiGLNVGg0/mqdefault.jpg 1x, https://i.ytimg.com/vi/oSOiGLNVGg0/sddefault.jpg 2x" media="(max-width: 360px)">
+						<source srcset="https://i.ytimg.com/vi/oSOiGLNVGg0/hqdefault.jpg 1x, https://i.ytimg.com/vi/oSOiGLNVGg0/maxresdefault.jpg 2x" media="(max-width: 767px)">
+						<source srcset="https://i.ytimg.com/vi/oSOiGLNVGg0/sddefault.jpg 1x, https://i.ytimg.com/vi/oSOiGLNVGg0/maxresdefault.jpg 2x">
+
+						<img class="youtube__img" src="https://i.ytimg.com/vi/oSOiGLNVGg0/sddefault.jpg" alt="Домашняя Прачечная ASKO Pro Home Laundry" loading="lazy">
+
+					</picture>
+
+				</a>
+
+			</div>
+
+		</div>
+
+	</article>
+
+{% endblock %}

@@ -186,6 +186,18 @@ hr {
 
 }
 
+hr.romb {
+
+	display: block;
+	width: 25px;
+	height: 25px;
+	margin: 48px auto;
+	border: 0;
+	background-color: #fff;
+	background-image: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='25' viewBox='0 0 68 68'%3E%3Cpath stroke='%23262626' fill='none' d='m34 0 34 34-34 34L0 34zM14 34h40M34 14v40'/%3E%3C/svg%3E");
+
+}
+
 /*
 -----------------------------------------------------------------------------*/
 .main {
