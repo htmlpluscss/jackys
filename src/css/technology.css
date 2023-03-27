@@ -31,52 +31,26 @@
 
 	}
 
-	&__ico {
-
-		width: 96px;
-		height: 96px;
-		transform: rotate(45deg);
-		border-radius: 3px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		margin: 18px auto 36px;
-		border: 2px solid var(--gold);
-
-		@media $mdWidth {
-
-			width: 72px;
-			height: 72px;
-
-		}
-
-		svg {
-
-			transform: rotate(-45deg);
-			width: 72px;
-			height: 72px;
-			fill: var(--gold);
-
-		}
-
-	}
-
 	&__name {
 
 		font-weight: 700;
-		text-transform: uppercase;
 		display: block;
-		color: #fff;
-		font-size: 14px;
-		letter-spacing: 1.2px;
+		color: var(--gold);
+		font-size: 20px;
+
+		@media $mdWidth {
+
+			font-size: 18px;
+
+		}
 
 	}
 
 	&__text {
 
 		margin: 13px 20px;
-		color: #818181;
-		font-size: 14px;
+		color: #fff;
+		font-size: 16px;
 
 		@media $mdWidth {
 
