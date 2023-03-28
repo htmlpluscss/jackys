@@ -8,9 +8,7 @@
 
 {% block content %}
 
-{% set breadcrumbs = ['Главная','Оформление заказа'] %}
-
-	<section>
+{% set breadcrumbs = ['Главная','Корзина'] %}
 
 {% include "_include/breadcrumbs.html" %}
 
@@ -171,11 +169,8 @@
 
 		</form>
 
-			<div class="tabs">
 
-				<fieldset class="tabs__item">
-
-				<form action="https://dedietrich-russia.ru/order.php?mode=OK" method=post class="cart__order center" id="cart-order">
+				<form action="https://dedietrich-russia.ru/order.php?mode=OK" method=post class="cart__order" id="cart-order">
 
 					<div class="input-row input-row--required">
 						<label for="CName" class="input-row__label">
@@ -311,18 +306,13 @@
 
 					</div>
 
+					<p class="cart__info-required">
+						<sup>*</sup> - поля обязательны для заполнения
+					</p>
 
 				</form>
-				</fieldset>
 
-			</div>
 
-			<p class="cart__info-required">
-				<sup>*</sup> - поля обязательны для заполнения
-			</p>
-
-		</div>
-
-	</section>
+	</div>
 
 {% endblock %}
