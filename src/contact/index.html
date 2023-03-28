@@ -1,0 +1,70 @@
+{% set title = "Контакты фирменного магазина " + site %}
+{% set description = "Телефон +7 ( 495 ) 253-22-11, пн-пт с 10:00 до 18:00" %}
+
+{% set urlCurrent = "catalog" %}
+{% set ogImage = "/img/home/pure_white.jpg" %}
+
+{% extends "template/base.html" %}
+
+{% block content %}
+
+{% set breadcrumbs = ['Главная','Контакты '] %}
+
+	<section>
+
+		<div class="billboard">
+
+			<h1 class="h1">
+				{{ title }}
+			</h1>
+
+			<picture>
+
+				<source srcset="/img/home/pure_white.webp" type="image/webp">
+				<source srcset="/img/home/pure_white.jpg">
+
+				<img src="/img/home/pure_white.jpg" alt="" loading="lazy" width="1980" height="600">
+
+			</picture>
+
+		</div>
+
+{% include "_include/breadcrumbs.html" %}
+
+		<div class="center">
+
+			<hr class="romb">
+
+			<div class="text-page text-page--column">
+
+				<div class="text-page__col">
+
+					<h2 class="h2">
+						Телефон:
+					</h2>
+
+					<p>
+						<a href="tel:+74952532211">+7 ( 495 ) 253-22-11</a>
+					</p>
+
+				</div>
+
+				<div class="text-page__col">
+
+					<h2 class="h2">
+						Время работы:
+					</h2>
+
+					<p>
+						пн-пт с 10:00 до 18:00 <br> Сб, Вс выходной
+					</p>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</section>
+
+{% endblock %}

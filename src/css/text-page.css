@@ -1,0 +1,43 @@
+.text-page {
+
+	max-width: 720px;
+	margin: auto;
+
+	&--column {
+
+		display: flex;
+		gap: 24px;
+
+		@media $smWidth {
+
+			display: block;
+
+		}
+
+	}
+
+	&__col {
+
+		flex-basis: 50%;
+
+	}
+
+	p {
+
+		margin: 24px 0;
+
+	}
+
+	.h2 {
+
+		text-align: left;
+
+	}
+
+	.h2 ~ .h2 {
+
+		margin-top: 48px;
+
+	}
+
+}
