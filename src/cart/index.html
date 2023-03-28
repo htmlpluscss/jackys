@@ -1,23 +1,29 @@
-{% set title = "Оформление заказа в интернет-магазине Asko-Home.ru" %}
-{% set description = "Оформление заказа в интернет-магазине Asko-Home.ru" %}
+{% set title = "Оформление заказа " + site %}
+{% set description = " Гарантийный срок на технику De Dietrich - 1 год" %}
+
+{% set urlCurrent = "catalog" %}
+{% set ogImage = "/img/home/pure_white.jpg" %}
 
 {% extends "template/base.html" %}
 
 {% block content %}
 
-{% set breadcrumbs = ['Главная','Ваш заказ'] %}
+{% set breadcrumbs = ['Главная','Оформление заказа'] %}
+
+	<section>
 
 {% include "_include/breadcrumbs.html" %}
 
-	<article class="cart center">
+		<div class="center cart">
 
-		<h1 class="cart__title">
-			Оформление заказа
-		</h1>
+			<h2 class="cart__title h2">
+				Оформление заказа
+			</h2>
 
-		<form action="/cart/" novalidate="novalidate" class="cart__list">
+		<form action="basket" method=post class="cart__list">
 
-			<input type="hidden" name="save_before_order" value="123456789">
+
+			<input type=hidden name=save_before_order>
 
 			<table>
 
@@ -34,105 +40,126 @@
 
 				<tbody>
 
-					<tr class="cart__item">
+								<tr class="cart__item">
 						<td class="cart__col-1">
-							<a href="/" target="_blank">
-								<img src="/img/product/img@1x.png" srcset="/img/product/img@2x.png 2x" alt="">
+							<a href="katalog/dedietrich-dpe7549xf" target="_blank">
+									<picture>
+										<source srcset="https://dedietrich-russia.ru/pic/300x300/dpe7549xf.webp 1x, https://dedietrich-russia.ru/pic/600x600/dpe7549xf.webp 2x" type="image/webp">
+										<source srcset="https://dedietrich-russia.ru/pic/300x300/dpe7549xf.jpg 1x, https://dedietrich-russia.ru/pic/600x600/dpe7549xf.jpg 2x">
+										<img src="https://dedietrich-russia.ru/pic/300x300/dpe7549xf.jpg" alt="Варочная панель  DeDietrich DPE7549XF" loading="lazy">
+									</picture>
 							</a>
 						</td>
 						<td class="cart__col-2">
-							<a class="link" href="/" target="_blank">
-								Отдельностоящая стиральная машина Asko Эксклюзивная коллекция ASKO x ALENA AKHMADULLINA: 4 единиц техники (сушильный шкаф, стиральная и сушильная машина и Hidden Helpers)
-							</a>
-							<div class="buy-product">
-								<div class="buy-product__available">
-									В наличии
-								</div>
-							</div>
-						</td>
-						<td class="cart__col-3">
-							<span class="quantity">
-								<button class="quantity__btn quantity__btn--down button" type="button">
-									уменьшить на одну штуку
-								</button>
-								<input type="tel" name="goods[364]" value="2" class="quantity__count input" maxlength="3">
-								<input type="hidden" value="390000" class="quantity__price">
-								<button class="quantity__btn quantity__btn--up button" type="button">
-									увеличить на одну штуку
-								</button>
-							</span>
-						</td>
-						<td class="cart__col-4" data-pref="+">
-							<div class="cart__item-price">
-								390 000
-							</div>
-						</td>
-						<td class="cart__col-5" data-pref="=">
-							<div class="cart__item-price cart__item-price--total">
-								780 000
-							</div>
-						</td>
-						<td class="cart__col-6">
-							<button class="cart__item-remove button" type="button">
-								удалить товар из корзины
-							</button>
-						</td>
-					</tr>
 
-					<tr class="cart__item">
-						<td class="cart__col-1">
-							<a href="/" target="_blank">
-								<img src="/img/product/img@1x.png" srcset="/img/product/img@2x.png 2x" alt="">
-							</a>
-						</td>
-						<td class="cart__col-2">
-							<a class="link" href="/" target="_blank">
-								Варочная стеклокерамическая панель HiLight Asko HC1643G
+							<a class="buy-product__title h3" href="katalog/dedietrich-dpe7549xf" target="_blank">
+								Варочная панель  <br>DeDietrich DPE7549XF
 							</a>
 							<div class="buy-product">
-								<div class="buy-product__available is-not">
-									под заказ от 2-х дней
-								</div>
+								<div class="buy-product__available is-not"><svg width="24" height="24" viewBox="0 0 68 68"><path d="m34 0 34 34L34 68.0.0 34z"></path><path d="M14 34h40M34 14v40"></path></svg>Нет в наличии</div>
 							</div>
 						</td>
+
 						<td class="cart__col-3">
 							<span class="quantity">
 								<button class="quantity__btn quantity__btn--down button" type="button">
 									уменьшить на одну штуку
 								</button>
-								<input type="tel" name="goods[141]" value="1" class="quantity__count input" maxlength="3">
-								<input type="hidden" value="29900" class="quantity__price">
-								<button class="quantity__btn quantity__btn--up button" type="button">
+								<input type="tel" name="goods[840]" value="1" class="quantity__count input" maxlength="3" onchange=this.form.submit()>
+								<input type="hidden" value="{MODEL.PRICE_MAIN}" class="quantity__price">
+								<button class="quantity__btn quantity__btn--up button" type="button" onclick="return this.form.submit()">
 									увеличить на одну штуку
 								</button>
 							</span>
 						</td>
+
 						<td class="cart__col-4" data-pref="+">
 							<div class="cart__item-price">
-								29 900
+								82 900
 							</div>
 						</td>
 						<td class="cart__col-5" data-pref="=">
 							<div class="cart__item-price cart__item-price--total">
-								29 900
+								82 900
 							</div>
 						</td>
 						<td class="cart__col-6">
+						<a href="https://dedietrich-russia.ru/order.php?ID=840&mode=del" title="Удалить">
 							<button class="cart__item-remove button" type="button">
 								удалить товар из корзины
-							</button>
+							</button></a>
+
+<!--a href="https://dedietrich-russia.ru/order.php?ID=840&mode=del" title="Удалить"><button class="cart__item-remove button" type="button">
+							</button></a-->
+
+
+						</td>
+					</tr>					<tr class="cart__item">
+						<td class="cart__col-1">
+							<a href="katalog/dedietrich-drc1771fn" target="_blank">
+									<picture>
+										<source srcset="https://dedietrich-russia.ru/pic/300x300/drc1771fn.webp 1x, https://dedietrich-russia.ru/pic/600x600/drc1771fn.webp 2x" type="image/webp">
+										<source srcset="https://dedietrich-russia.ru/pic/300x300/drc1771fn.jpg 1x, https://dedietrich-russia.ru/pic/600x600/drc1771fn.jpg 2x">
+										<img src="https://dedietrich-russia.ru/pic/300x300/drc1771fn.jpg" alt="Холодильник  DeDietrich DRC1771FN" loading="lazy">
+									</picture>
+							</a>
+						</td>
+						<td class="cart__col-2">
+
+							<a class="buy-product__title h3" href="katalog/dedietrich-drc1771fn" target="_blank">
+								Холодильник  <br>DeDietrich DRC1771FN
+							</a>
+							<div class="buy-product">
+								<div class="buy-product__available is-not"><svg width="24" height="24" viewBox="0 0 68 68"><path d="m34 0 34 34L34 68.0.0 34z"></path><path d="M14 34h40M34 14v40"></path></svg>Нет в наличии</div>
+							</div>
+						</td>
+
+						<td class="cart__col-3">
+							<span class="quantity">
+								<button class="quantity__btn quantity__btn--down button" type="button">
+									уменьшить на одну штуку
+								</button>
+								<input type="tel" name="goods[967]" value="3" class="quantity__count input" maxlength="3" onchange=this.form.submit()>
+								<input type="hidden" value="{MODEL.PRICE_MAIN}" class="quantity__price">
+								<button class="quantity__btn quantity__btn--up button" type="button" onclick="return this.form.submit()">
+									увеличить на одну штуку
+								</button>
+							</span>
+						</td>
+
+						<td class="cart__col-4" data-pref="+">
+							<div class="cart__item-price">
+								159 990
+							</div>
+						</td>
+						<td class="cart__col-5" data-pref="=">
+							<div class="cart__item-price cart__item-price--total">
+								479 970
+							</div>
+						</td>
+						<td class="cart__col-6">
+						<a href="https://dedietrich-russia.ru/order.php?ID=967&mode=del" title="Удалить">
+							<button class="cart__item-remove button" type="button">
+								удалить товар из корзины
+							</button></a>
+
+<!--a href="https://dedietrich-russia.ru/order.php?ID=967&mode=del" title="Удалить"><button class="cart__item-remove button" type="button">
+							</button></a-->
+
+
 						</td>
 					</tr>
 
 				</tbody>
 
 				<tfoot>
+
 					<tr>
 						<td colspan="6" class="cart__col-foot">
 							Итого:
 							<div class="cart__col-foot-bold">
 								<span class="cart__items-price">
-									809 900
+									562 870
 								</span>
 								рублей
 							</div>
@@ -144,51 +171,45 @@
 
 		</form>
 
-		<form action="/order/" novalidate="novalidate" class="cart__order form" data-redirect="/done/">
-
-			<input type="hidden" name="save_before_order" value="123456789">
-
 			<div class="tabs">
 
 				<fieldset class="tabs__item">
 
-					<legend class="tabs__btn">
-						Полный заказ
-					</legend>
+				<form action="https://dedietrich-russia.ru/order.php?mode=OK" method=post class="cart__order center" id="cart-order">
 
 					<div class="input-row input-row--required">
 						<label for="CName" class="input-row__label">
-							Ваше ФИО
+							ФИО *
 						</label>
 						<span class="input-row__input" data-error="Пожалуйста, укажите Ваше имя">
-							<input class="input" required="required" name="client[Name]" id="CName" data-mirror="QName">
+							<input class="input" required="required" name=client[Name] id=CName data-mirror="СName" onblur=setV(this.value)>
 						</span>
 					</div>
 
 					<div class="input-row input-row--required">
 						<label for="CPhone" class="input-row__label">
-							Ваш Телефон
+							Телефон *
 						</label>
 						<span class="input-row__input" data-error="Пожалуйста, укажите контактный телефон">
-							<input class="input" required="required" name="client[Phone]" id="CPhone" type="tel" data-mirror="QPhone">
+							<input class="input" required="required" name=client[Phone] id=CPhone type="tel" data-mirror="СPhone" onblur=setV2(this.value)>
+						</span>
+					</div>
+
+					<div class="input-row input-row--required">
+						<label for="CAddr" class="input-row__label">
+							Адрес доставки
+						</label>
+						<span class="input-row__input">
+							<input class="input" required="required" name=client[Address] id=CAddr>
 						</span>
 					</div>
 
 					<div class="input-row">
 						<label for="email" class="input-row__label">
-							Ваш e-mail
+							E-mail
 						</label>
 						<span class="input-row__input">
-							<input class="input" name="client[Mail]" type="email" id="email">
-						</span>
-					</div>
-
-					<div class="input-row">
-						<label for="CAddr" class="input-row__label">
-							Адрес доставки
-						</label>
-						<span class="input-row__input">
-							<input class="input" name="client[Address]" id="CAddr">
+							<input class="input" name=client[Mail] type="email" id="email">
 						</span>
 					</div>
 
@@ -198,191 +219,7 @@
 						</label>
 						<span class="input-row__input">
 							<span class="select">
-								<select name="order[Atr2][S]" id="metro">
-									<option value="699">-</option>
-									<option value="410">Авиамоторная</option>
-									<option value="411">Автозаводская</option>
-									<option value="412">Адмирала Ушакова</option>
-									<option value="414">Академическая</option>
-									<option value="415">Александровский сад</option>
-									<option value="416">Алексеевская</option>
-									<option value="417">Алма-Атинская</option>
-									<option value="418">Алтуфьево</option>
-									<option value="419">Аннино</option>
-									<option value="420">Арбатская</option>
-									<option value="421">Аэропорт</option>
-									<option value="422">Бабушкинская</option>
-									<option value="423">Багратионовская</option>
-									<option value="424">Баррикадная</option>
-									<option value="425">Бауманская</option>
-									<option value="426">Беговая</option>
-									<option value="427">Белорусская</option>
-									<option value="428">Беляево</option>
-									<option value="429">Бибирево</option>
-									<option value="430">Библиотека им.Ленина</option>
-									<option value="431">Битцевский парк</option>
-									<option value="432">Борисово</option>
-									<option value="433">Боровицкая</option>
-									<option value="434">Ботанический сад</option>
-									<option value="435">Братеево</option>
-									<option value="436">Братиславская</option>
-									<option value="437">Бульвар Адм. Ушакова</option>
-									<option value="438">Бульвар Дм. Донского</option>
-									<option value="594">Бульвар Рокоссовског</option>
-									<option value="439">Бунинская аллея</option>
-									<option value="440">Бутово</option>
-									<option value="441">Варшавская</option>
-									<option value="442">ВДНХ</option>
-									<option value="443">Владыкино</option>
-									<option value="444">Водный стадион</option>
-									<option value="445">Войковская</option>
-									<option value="446">Волгоградский пр-т</option>
-									<option value="447">Волжская</option>
-									<option value="448">Волоколамская</option>
-									<option value="450">Воробьевы горы</option>
-									<option value="451">Выставочная</option>
-									<option value="452">Выхино</option>
-									<option value="453">Деловой центр</option>
-									<option value="454">Динамо</option>
-									<option value="455">Дмитровская</option>
-									<option value="456">Добрынинская</option>
-									<option value="457">Домодедовская</option>
-									<option value="458">Достоевская</option>
-									<option value="459">Дубровка</option>
-									<option value="460">Жулебино</option>
-									<option value="461">Зябликово</option>
-									<option value="462">Измайловская</option>
-									<option value="463">Измайловский парк</option>
-									<option value="464">Калужская</option>
-									<option value="465">Кантемировская</option>
-									<option value="466">Каховская</option>
-									<option value="467">Каширская</option>
-									<option value="468">Киевская</option>
-									<option value="469">Китай-город</option>
-									<option value="470">Кожуховская</option>
-									<option value="471">Коломенская</option>
-									<option value="472">Комсомольская</option>
-									<option value="473">Коньково</option>
-									<option value="474">Красногвардейская</option>
-									<option value="475">Краснопресненская</option>
-									<option value="476">Красносельская</option>
-									<option value="477">Красные ворота</option>
-									<option value="478">Крестьянская застава</option>
-									<option value="479">Кропоткинская</option>
-									<option value="480">Крылатское</option>
-									<option value="481">Кузнецкий мост</option>
-									<option value="482">Кузьминки</option>
-									<option value="483">Кунцевская</option>
-									<option value="484">Курская</option>
-									<option value="485">Кутузовская</option>
-									<option value="486">Ленинский проспект</option>
-									<option value="487">Лермонтовский проспе</option>
-									<option value="488">Лубянка</option>
-									<option value="489">Люблино</option>
-									<option value="490">Марксистская</option>
-									<option value="491">Марьина Роща</option>
-									<option value="492">Марьино</option>
-									<option value="493">Маяковская</option>
-									<option value="494">Медведково</option>
-									<option value="495">Международная</option>
-									<option value="496">Менделеевская</option>
-									<option value="497">Митино</option>
-									<option value="498">Молодежная</option>
-									<option value="499">Мякинино</option>
-									<option value="500">Нагатинская</option>
-									<option value="501">Нагорная</option>
-									<option value="502">Нахимовский проспект</option>
-									<option value="503">Новогиреево</option>
-									<option value="504">Новокосино</option>
-									<option value="505">Новокузнецкая</option>
-									<option value="506">Новослободская</option>
-									<option value="507">Новоясеневская</option>
-									<option value="508">Новые черемушки</option>
-									<option value="509">Октябрьская</option>
-									<option value="510">Октябрьское поле</option>
-									<option value="511">Орехово</option>
-									<option value="512">Отрадное</option>
-									<option value="513">Охотный ряд</option>
-									<option value="514">Павелецкая</option>
-									<option value="515">Парк культуры</option>
-									<option value="516">Парк Победы</option>
-									<option value="517">Партизанская</option>
-									<option value="518">Первомайская</option>
-									<option value="519">Перово</option>
-									<option value="520">Петровско-Разумовск.</option>
-									<option value="521">Печатники</option>
-									<option value="522">Пионерская</option>
-									<option value="523">Планерная</option>
-									<option value="524">Площадь Ильича</option>
-									<option value="525">Площадь революции</option>
-									<option value="526">Полежаевская</option>
-									<option value="527">Полянка</option>
-									<option value="528">Пражская</option>
-									<option value="529">Преображенская пл.</option>
-									<option value="530">Пролетарская</option>
-									<option value="531">Проспект Вернадского</option>
-									<option value="532">Проспект Мира</option>
-									<option value="533">Профсоюзная</option>
-									<option value="534">Пушкинская</option>
-									<option value="535">Пятницкое шоссе</option>
-									<option value="536">Речной вокзал</option>
-									<option value="537">Рижская</option>
-									<option value="538">Римская</option>
-									<option value="539">Рязанский проспект</option>
-									<option value="540">Савеловская</option>
-									<option value="541">Свиблово</option>
-									<option value="542">Севастопольская</option>
-									<option value="543">Семеновская</option>
-									<option value="544">Серпуховская</option>
-									<option value="545">Скобелевская</option>
-									<option value="546">Славянский бульвар</option>
-									<option value="547">Смоленская</option>
-									<option value="548">Сокол</option>
-									<option value="549">Сокольники</option>
-									<option value="550">Спортивная</option>
-									<option value="551">Строгино</option>
-									<option value="552">Студенческая</option>
-									<option value="553">Сухаревская</option>
-									<option value="554">Сходненская</option>
-									<option value="555">Таганская</option>
-									<option value="556">Тверская</option>
-									<option value="557">Театральная</option>
-									<option value="558">Текстильщики</option>
-									<option value="559">Теплый стан</option>
-									<option value="560">Тимирязевская</option>
-									<option value="561">Третьяковская</option>
-									<option value="562">Трубная</option>
-									<option value="563">Тульская</option>
-									<option value="564">Тургеневская</option>
-									<option value="565">Тушинская</option>
-									<option value="566">Улица 1905 года</option>
-									<option value="567">Улица акад. Янгеля</option>
-									<option value="568">Улица Горчакова</option>
-									<option value="569">Улица Подбельского</option>
-									<option value="570">Улица Скобелевская</option>
-									<option value="571">Университет</option>
-									<option value="572">Ушакова</option>
-									<option value="573">Филевский парк</option>
-									<option value="574">Фили</option>
-									<option value="575">Фрунзенская</option>
-									<option value="576">Царицыно</option>
-									<option value="577">Цветной бульвар</option>
-									<option value="578">Черкизовская</option>
-									<option value="579">Чертановская</option>
-									<option value="580">Чеховская</option>
-									<option value="581">Чистые пруды</option>
-									<option value="582">Чкаловская</option>
-									<option value="583">Шаболовская</option>
-									<option value="713">Шелепиха</option>
-									<option value="584">Шипиловская</option>
-									<option value="585">Шоссе энтузиастов</option>
-									<option value="586">Щелковская</option>
-									<option value="587">Щукинская</option>
-									<option value="588">Электрозаводская</option>
-									<option value="589">Юго-Западная</option>
-									<option value="590">Южная</option>
-									<option value="591">Ясенево</option>
-								</select>
+
 							</span>
 						</span>
 					</div>
@@ -393,19 +230,19 @@
 						</label>
 						<span class="input-row__input">
 							<label class="checkbox">
-								<input class="checkbox__input visuallyhidden" type="radio" name="order[Atr3][S]" value="598" id="v_598">
+								<input class="checkbox__input visuallyhidden" type="radio" name="order[Atr3][S]" value="140">
 								<span class="checkbox__label">
 									Нет
 								</span>
 							</label>
 							<label class="checkbox">
-								<input class="checkbox__input visuallyhidden" type="radio" name="order[Atr3][S]" value="599" id="v_599">
+								<input class="checkbox__input visuallyhidden" type="radio" name="order[Atr3][S]" value="141">
 								<span class="checkbox__label">
 									Грузовой
 								</span>
 							</label>
 							<label class="checkbox">
-								<input class="checkbox__input visuallyhidden" type="radio" name="order[Atr3][S]" value="600" id="v_600">
+								<input class="checkbox__input visuallyhidden" type="radio" name="order[Atr3][S]" value="142">
 								<span class="checkbox__label">
 									Пассажирский
 								</span>
@@ -418,7 +255,7 @@
 							Дата доставки
 						</label>
 						<span class="input-row__input">
-							<input class="input" name="order[DeliveryDate]" id="DDate" type="date" min="2019-03-25" value="2019-03-25">
+							<input class="input" name="calendar" type="date" onClick=DateInput(this);>
 						</span>
 					</div>
 
@@ -428,25 +265,25 @@
 						</label>
 						<span class="input-row__input">
 							<label class="checkbox">
-								<input class="checkbox__input visuallyhidden" type="radio" name="order[Atr1][S]" value="408" id="v_408">
+								<input class="checkbox__input visuallyhidden" type="radio" name="order[Atr1][S]" value=114>
 								<span class="checkbox__label">
 									Наличными
 								</span>
 							</label>
 							<label class="checkbox">
-								<input class="checkbox__input visuallyhidden" type="radio" name="order[Atr1][S]" value="597" id="v_597">
+								<input class="checkbox__input visuallyhidden" type="radio" name="order[Atr1][S]" value="115">
 								<span class="checkbox__label">
 									Банковской картой
 								</span>
 							</label>
 							<label class="checkbox">
-								<input class="checkbox__input visuallyhidden" type="radio" name="order[Atr1][S]" value="698" id="v_698">
+								<input class="checkbox__input visuallyhidden" type="radio" name="order[Atr1][S]" value="116">
 								<span class="checkbox__label">
 									Безналичный расчет
 								</span>
 							</label>
 							<label class="checkbox">
-								<input class="checkbox__input visuallyhidden" type="radio" name="order[Atr1][S]" value="697" id="v_697">
+								<input class="checkbox__input visuallyhidden" type="radio" name="order[Atr1][S]" value="117">
 								<span class="checkbox__label">
 									on-line (картой)
 								</span>
@@ -459,36 +296,23 @@
 							Дополнительная информация
 						</label>
 						<span class="input-row__input">
-							<textarea class="input" name="order[Memo]" id="textarea"></textarea>
+							<textarea class="input" name=order[Memo] id="textarea"></textarea>
 						</span>
 					</div>
 
-				</fieldset>
 
-				<fieldset class="tabs__item">
+					<div class="buy-product__btn">
 
-					<legend class="tabs__btn">
-						Быстрый заказ
-					</legend>
+						<button class="btn btn--buy" data-default="Купить" data-alt="Оформить заказ">
 
-					<div class="input-row input-row--required">
-						<label for="QName" class="input-row__label">
-							Ваше ФИО
-						</label>
-						<span class="input-row__input" data-error="Пожалуйста, укажите Ваше имя">
-							<input class="input" required="required" name="client[QName]" id="QName" data-mirror="CName">
-						</span>
+								Оформить заказ
+
+						</button>
+
 					</div>
 
-					<div class="input-row input-row--required">
-						<label for="QPhone" class="input-row__label">
-							Ваш Телефон
-						</label>
-						<span class="input-row__input" data-error="Пожалуйста, укажите контактный телефон">
-							<input class="input" required="required" name="client[QPhone]" id="QPhone" type="tel" data-mirror="CPhone">
-						</span>
-					</div>
 
+				</form>
 				</fieldset>
 
 			</div>
@@ -497,12 +321,8 @@
 				<sup>*</sup> - поля обязательны для заполнения
 			</p>
 
-			<button class="btn cart__submit form__btn-submit">
-				Оформить заказ
-			</button>
+		</div>
 
-		</form>
-
-	</article>
+	</section>
 
 {% endblock %}

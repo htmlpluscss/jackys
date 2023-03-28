@@ -1,0 +1,86 @@
+{% set title = "Сервисное обслуживание " + site %}
+{% set description = " Гарантийный срок на технику De Dietrich - 1 год" %}
+
+{% set urlCurrent = "catalog" %}
+{% set ogImage = "/img/home/pure_white.jpg" %}
+
+{% extends "template/base.html" %}
+
+{% block content %}
+
+{% set breadcrumbs = ['Главная','Сервис'] %}
+
+	<section>
+
+		<div class="billboard">
+
+			<h1 class="h1">
+				Сервисное обслуживание
+			</h1>
+
+			<picture>
+
+				<source srcset="/img/home/pure_white.webp" type="image/webp">
+				<source srcset="/img/home/pure_white.jpg">
+
+				<img src="/img/home/pure_white.jpg" alt="" loading="lazy" width="1980" height="600">
+
+			</picture>
+
+		</div>
+
+{% include "_include/breadcrumbs.html" %}
+
+		<div class="center">
+
+			<hr class="romb">
+
+			<div class="text-page text-page--text-center">
+
+				<h2 class="h2">
+					Гарантия на технику De Dietrich
+				</h2>
+
+				<p>
+					 Гарантийный срок на технику De Dietrich - <b>1 год.</b>
+				</p>
+
+				<hr class="romb">
+
+				<h2 class="h2">
+					Официальные сервисные центры
+				</h2>
+
+				<p>
+					<b>г. Москва</b>, <br>1-й Варшавский проезд. дом 1Ас9
+				</p>
+
+				<p>
+					8 (800) 707-85-70, +7 (499) 444-52-45, +7 (495) 981-15-88, +7 (499) 345-12-34 <br>пн-пт с 10:00 до 17:00
+				</p>
+
+				<p>
+					<b>г. Санкт-Петербург</b>, <br>ул. Выборгская, дом 8
+				</p>
+
+				<p>
+					+7 (812) 313-24-46 <br> пн-пт с 10:00 до 17:00
+				</p>
+
+				<hr class="romb">
+
+				<h2 class="h2">
+					Подключение техники
+				</h2>
+
+				<p>
+					Во избежание неисправности, поломки и внешних повреждений, мы категорически <b>НЕ РЕКОМЕНДУЕМ</b> устанавливать технику самостоятельно. Обратитесь в сервисный центр вашего города или официальный сервисный центр De Dietrich.
+				</p>
+
+			</div>
+
+		</div>
+
+	</section>
+
+{% endblock %}
