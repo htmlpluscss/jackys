@@ -196,7 +196,32 @@
 
 	}
 
-	&__cart {
+	&__cart,
+	&__compare {
+
+		position: relative;
+
+		&[data-count]::after {
+
+			position: absolute;
+			width: 14px;
+			height: 14px;
+			top: -8px;
+			right: -8px;
+			font-size: 10px;
+			line-height: 14px;
+			background-color: var(--gold);
+			text-align: center;
+			color: #fff;
+			content: attr(data-count);
+
+		}
+
+		&[data-count="0"]::after {
+
+			display: none;
+
+		}
 
 		@media $desktop {
 

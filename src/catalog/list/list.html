@@ -63,6 +63,24 @@
 								это премиальный бренд, созданный группой талантливых разработчиков, имеющих опыт работы на ведущих заводах по производству бытовой техники в Европе.
 							</p>
 
+							<form action="/compare/" class="buy-product__compare">
+
+								<input type="hidden" name="product" value="123456789">
+
+								<button class="buy-product__compare-btn button">
+
+									<svg width="24" height="24" viewBox="0 0 24 24">
+										<path d="M19 4a1 1 0 0 0-1 1v15a1 1 0 1 0 2 0V5a1 1 0 0 0-1-1Zm-7 4a1 1 0 0 0-1 1v11a1 1 0 1 0 2 0V9a1 1 0 0 0-1-1Zm-8 5a1 1 0 1 1 2 0v7a1 1 0 1 1-2 0v-7Z"/>
+									</svg>
+
+									<span class="buy-product__compare-text">
+										Добавить в сравнение
+									</span>
+
+								</button>
+
+							</form>
+
 							<form action="/" class="buy-product__cart{% if item.buy %} in-cart{% endif %}">
 
 								<input type="hidden" name="product" value="123456789">

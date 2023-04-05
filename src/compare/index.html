@@ -1,0 +1,22 @@
+{% set title = "Сравнение товаров" %}
+{% set description = "данный ур закрыть от индекса" %}
+
+{% extends "template/base.html" %}
+
+{% block content %}
+
+{% set breadcrumbs = ['Главная','Сравнение товаров'] %}
+
+	<article>
+
+{% include "_include/breadcrumbs.html" %}
+
+		<div class="center compare">
+
+{% include "compare/list.html" %}
+
+		</div>
+
+	</article>
+
+{% endblock %}

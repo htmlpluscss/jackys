@@ -82,10 +82,9 @@
 							</div>
 						</td>
 						<td class="cart__col-6">
-						<a href="https://dedietrich-russia.ru/order.php?ID=840&mode=del" title="Удалить">
-							<button class="cart__item-remove button" type="button">
-								удалить товар из корзины
-							</button></a>
+						<a href="https://dedietrich-russia.ru/order.php?ID=840&mode=del" class="cart__item-remove">
+							удалить товар из корзины
+						</a>
 
 <!--a href="https://dedietrich-russia.ru/order.php?ID=840&mode=del" title="Удалить"><button class="cart__item-remove button" type="button">
 							</button></a-->
@@ -136,10 +135,9 @@
 							</div>
 						</td>
 						<td class="cart__col-6">
-						<a href="https://dedietrich-russia.ru/order.php?ID=967&mode=del" title="Удалить">
-							<button class="cart__item-remove button" type="button">
+						<a href="https://dedietrich-russia.ru/order.php?ID=967&mode=del" class="cart__item-remove">
 								удалить товар из корзины
-							</button></a>
+						</a>
 
 <!--a href="https://dedietrich-russia.ru/order.php?ID=967&mode=del" title="Удалить"><button class="cart__item-remove button" type="button">
 							</button></a-->
@@ -213,14 +211,13 @@
 							Метро
 						</label>
 						<span class="input-row__input">
-							<span class="select">
-
-							</span>
+							<select id="metro" class="select">
+							</select>
 						</span>
 					</div>
 
 					<div class="input-row">
-						<label for="v_598" class="input-row__label input-row__label--checkbox">
+						<label class="input-row__label input-row__label--checkbox">
 							Лифт
 						</label>
 						<span class="input-row__input">
@@ -250,12 +247,12 @@
 							Дата доставки
 						</label>
 						<span class="input-row__input">
-							<input class="input" name="calendar" type="date" onClick=DateInput(this);>
+							<input class="input" name="calendar" type="date" id="DDate" onClick=DateInput(this);>
 						</span>
 					</div>
 
 					<div class="input-row">
-						<label for="v_408" class="input-row__label input-row__label--checkbox">
+						<label class="input-row__label input-row__label--checkbox">
 							Способ оплаты
 						</label>
 						<span class="input-row__input">

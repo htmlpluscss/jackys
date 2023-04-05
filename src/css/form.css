@@ -365,6 +365,7 @@ legend {
 		line-height: 22px;
 		font-weight: 500;
 		font-size: 14px;
+		display: flex;
 
 	}
 
@@ -373,15 +374,7 @@ legend {
 		display: block;
 		cursor: pointer;
 		user-select: none;
-		padding-left: 26px;
-		background-repeat: no-repeat;
-
-
-	}
-
-	&__input:disabled ~ &__label {
-
-		pointer-events: none;
+		padding-left: 10px;
 
 	}
 
@@ -392,32 +385,19 @@ legend {
 
 	}
 
-	&__input[type="radio"]:disabled + &__label {
-
-	}
-
 	@media $desktop {
 
 	}
 
-	&__input:checked + &__label {
+	&__input:not(:checked) + svg path + path {
 
-
-	}
-
-	&__input:checked:disabled ~ &__label {
-
+		opacity: 0;
 
 	}
 
 	&__input[type="radio"]:checked + &__label {
 
 		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='7.5' stroke='%23161616'/%3E%3Ccircle cx='8' cy='8' r='5' fill='%23161616'/%3E%3C/svg%3E");
-
-	}
-
-	&__input[type="radio"]:checked:disabled + &__label {
-
 
 	}
 

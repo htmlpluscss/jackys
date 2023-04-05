@@ -169,4 +169,19 @@
 
 	}
 
+	&__compare {
+
+		margin: 24px 0;
+
+		&-btn {
+
+			display: flex;
+			gap: 12px;
+			font-size: 14px;
+			align-items: center;
+
+		}
+
+	}
+
 }
